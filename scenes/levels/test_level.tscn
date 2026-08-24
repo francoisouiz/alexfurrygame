@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cnsfsr6ks51e8"]
+
+[ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/player.tscn" id="1_jbqir"]
+[ext_resource type="PackedScene" uid="uid://bpfgughq4aext" path="res://scenes/ui/in_game_ui.tscn" id="2_yautc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jbqir"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_yautc"]
+sky_material = SubResource("ProceduralSkyMaterial_jbqir")
+
+[sub_resource type="Environment" id="Environment_fr1um"]
+background_mode = 2
+sky = SubResource("Sky_yautc")
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hp5k"]
+albedo_color = Color(1, 0, 0.06666667, 1)
+
+[node name="TestLevel" type="Node3D" unique_id=97473924]
+
+[node name="Player" parent="." unique_id=392277457 instance=ExtResource("1_jbqir")]
+transform = Transform3D(1, 0, 0, 0, 0.7853208, 0.619089, 0, -0.619089, 0.7853208, 0, 1.7283921, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=101282993]
+environment = SubResource("Environment_fr1um")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=379019674]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="LevelContainer" type="CSGCombiner3D" parent="." unique_id=1989378804]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelContainer" unique_id=1940974739]
+size = Vector3(14.628906, 0.2626953, 12.794922)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="LevelContainer" unique_id=184852117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8524265, 0.23671198, -2.7265844)
+size = Vector3(3.1523438, 0.4696045, 2.6044922)
+material = SubResource("StandardMaterial3D_3hp5k")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="LevelContainer" unique_id=111132975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9884272, 1.6269121, -2.7265844)
+size = Vector3(3.1523438, 0.45703125, 2.6044922)
+material = SubResource("StandardMaterial3D_3hp5k")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="LevelContainer" unique_id=966404641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2162695, 1.6269121, 1.9090338)
+size = Vector3(3.1523438, 0.45703125, 2.6044922)
+material = SubResource("StandardMaterial3D_3hp5k")
+
+[node name="InGameUI" parent="." unique_id=20912192 instance=ExtResource("2_yautc")]
