@@ -21,7 +21,7 @@ albedo_color = Color(1, 0, 0.06666667, 1)
 [node name="TestLevel" type="Node3D" unique_id=97473924]
 
 [node name="Player" parent="." unique_id=392277457 instance=ExtResource("1_jbqir")]
-transform = Transform3D(1, 0, 0, 0, 0.7853208, 0.619089, 0, -0.619089, 0.7853208, 0, 1.7283921, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 8.302927e-05, 0, -8.302927e-05, 1, 0, 1.7283921, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=101282993]
 environment = SubResource("Environment_fr1um")

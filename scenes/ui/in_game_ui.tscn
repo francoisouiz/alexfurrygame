@@ -2,12 +2,7 @@
 
 [ext_resource type="Script" uid="uid://hcqdn1ltvb38" path="res://scripts/ui/in_game_ui.gd" id="1_8o238"]
 [ext_resource type="Texture2D" uid="uid://bfop1cwyjle2k" path="res://assets/temp/Screenshot 2023-05-28 235047.png" id="1_uyty4"]
-[ext_resource type="Script" uid="uid://t36ug3tx0hto" path="res://scripts/ui/buttons/keyword.gd" id="2_qvqbd"]
-[ext_resource type="Script" uid="uid://bfr06ddrii2hb" path="res://scripts/ui/buttons/tween_component.gd" id="3_3nhwc"]
-[ext_resource type="Script" uid="uid://b10af77hyq1xp" path="res://scripts/ui/buttons/evidence.gd" id="4_5y6qm"]
-[ext_resource type="Script" uid="uid://8b5dfbwqwtsa" path="res://scripts/ui/buttons/names.gd" id="5_3nhwc"]
-[ext_resource type="Script" uid="uid://b16uagweb8xdw" path="res://scripts/ui/buttons/nouns.gd" id="6_5y6qm"]
-[ext_resource type="Script" uid="uid://b8yybkttvh3yg" path="res://scripts/ui/buttons/verbs.gd" id="7_spc33"]
+[ext_resource type="Script" uid="uid://bfr06ddrii2hb" path="res://scripts/ui/tween_component.gd" id="4_3nhwc"]
 [ext_resource type="Script" uid="uid://bfdwmf7nl7olt" path="res://scripts/ui/slots.gd" id="9_s3j3l"]
 [ext_resource type="Script" uid="uid://bwg3vg7l8lqqn" path="res://scripts/ui/grid_slots.gd" id="10_wccuv"]
 
@@ -108,7 +103,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -274.0
-offset_top = 1.0
+offset_bottom = 159.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -116,7 +111,7 @@ grow_vertical = 2
 custom_minimum_size = Vector2(0, 102.235)
 layout_mode = 2
 
-[node name="Keyword" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1760031797 node_paths=PackedStringArray("evidence_button")]
+[node name="Keyword" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1760031797]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -126,27 +121,22 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_eeonk")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qvqbd")
 theme_override_styles/hover = SubResource("StyleBoxTexture_3nhwc")
 text = "Keywords"
-script = ExtResource("2_qvqbd")
-is_active = true
-evidence_button = NodePath("../Evidence")
 
 [node name="TweenComponent" type="Node" parent="Panel/VBoxContainer/HBoxContainer/Keyword" unique_id=33699195 node_paths=PackedStringArray("parent")]
-script = ExtResource("3_3nhwc")
+script = ExtResource("4_3nhwc")
 orig_custom = 60.0
 parent = NodePath("..")
 
-[node name="Evidence" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=147584855 node_paths=PackedStringArray("keyword_button")]
+[node name="Evidence" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=147584855]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 theme_override_styles/normal = SubResource("StyleBoxFlat_yautc")
 text = "Evidence"
-script = ExtResource("4_5y6qm")
-keyword_button = NodePath("../Keyword")
 
 [node name="TweenComponent" type="Node" parent="Panel/VBoxContainer/HBoxContainer/Evidence" unique_id=268006650 node_paths=PackedStringArray("parent")]
-script = ExtResource("3_3nhwc")
+script = ExtResource("4_3nhwc")
 orig_custom = 60.0
 parent = NodePath("..")
 
@@ -162,11 +152,9 @@ size_flags_vertical = 8
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
 text = "Names"
-script = ExtResource("5_3nhwc")
-is_active = true
 
 [node name="TweenComponent" type="Node" parent="Panel/VBoxContainer/KeywordClasses/Names" unique_id=2072980846 node_paths=PackedStringArray("parent")]
-script = ExtResource("3_3nhwc")
+script = ExtResource("4_3nhwc")
 orig_custom = 30.0
 parent = NodePath("..")
 
@@ -178,10 +166,9 @@ size_flags_vertical = 8
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
 text = "Nouns"
-script = ExtResource("6_5y6qm")
 
 [node name="TweenComponent" type="Node" parent="Panel/VBoxContainer/KeywordClasses/Nouns" unique_id=293934391 node_paths=PackedStringArray("parent")]
-script = ExtResource("3_3nhwc")
+script = ExtResource("4_3nhwc")
 orig_custom = 30.0
 parent = NodePath("..")
 
@@ -193,10 +180,9 @@ size_flags_vertical = 8
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
 text = "Verbs"
-script = ExtResource("7_spc33")
 
 [node name="TweenComponent" type="Node" parent="Panel/VBoxContainer/KeywordClasses/Verbs" unique_id=955908595 node_paths=PackedStringArray("parent")]
-script = ExtResource("3_3nhwc")
+script = ExtResource("4_3nhwc")
 orig_custom = 30.0
 parent = NodePath("..")
 
@@ -248,4 +234,9 @@ grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_5as1l")
 icon_alignment = 2
 
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Keyword" to="." method="_on_keyword_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Evidence" to="." method="_on_evidence_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/KeywordClasses/Names" to="." method="_on_names_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/KeywordClasses/Nouns" to="." method="_on_nouns_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/KeywordClasses/Verbs" to="." method="_on_verbs_pressed"]
 [connection signal="pressed" from="JournalButton" to="." method="_on_journal_button_pressed"]

@@ -10,7 +10,7 @@ size = Vector3(1.3330078, 1.2321777, 0.35546875)
 script = ExtResource("1_g2els")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1786136967]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45927453, -0.27168173, 5.1157002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1375164, 0.9046021, 5.718478)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=961870845]
 shape = SubResource("BoxShape3D_s3x7s")
