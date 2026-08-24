@@ -8,6 +8,3 @@ offset_right = 10.0
 offset_bottom = 10.0
 size_flags_vertical = 0
 script = ExtResource("1_ah0sq")
-
-[connection signal="button_down" from="." to="." method="_on_button_down"]
-[connection signal="button_up" from="." to="." method="_on_button_up"]

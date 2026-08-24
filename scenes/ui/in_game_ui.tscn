@@ -64,28 +64,37 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "the killer is"
 
-[node name="Panel" type="PanelContainer" parent="Journal/HFlowContainer" unique_id=1529513317]
+[node name="Panel" type="PanelContainer" parent="Journal/HFlowContainer" unique_id=1529513317 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
 custom_maximum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("9_s3j3l")
+name_container = NodePath("../../../Panel/VBoxContainer/KeywordNames")
+noun_container = NodePath("../../../Panel/VBoxContainer/KeywordNouns")
+verb_container = NodePath("../../../Panel/VBoxContainer/KeywordVerbs")
 
-[node name="Panel2" type="PanelContainer" parent="Journal/HFlowContainer" unique_id=590670219]
+[node name="Panel2" type="PanelContainer" parent="Journal/HFlowContainer" unique_id=590670219 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
 custom_maximum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("9_s3j3l")
+name_container = NodePath("../../../Panel/VBoxContainer/KeywordNames")
+noun_container = NodePath("../../../Panel/VBoxContainer/KeywordNouns")
+verb_container = NodePath("../../../Panel/VBoxContainer/KeywordVerbs")
 
 [node name="Label2" type="Label" parent="Journal/HFlowContainer" unique_id=542245082]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "and the victim is"
 
-[node name="Panel3" type="PanelContainer" parent="Journal/HFlowContainer" unique_id=1201821877]
+[node name="Panel3" type="PanelContainer" parent="Journal/HFlowContainer" unique_id=1201821877 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
 custom_maximum_size = Vector2(70, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 script = ExtResource("9_s3j3l")
+name_container = NodePath("../../../Panel/VBoxContainer/KeywordNames")
+noun_container = NodePath("../../../Panel/VBoxContainer/KeywordNouns")
+verb_container = NodePath("../../../Panel/VBoxContainer/KeywordVerbs")
 
 [node name="Panel" type="Panel" parent="." unique_id=450107853]
 anchors_preset = 11
@@ -186,7 +195,7 @@ script = ExtResource("4_3nhwc")
 orig_custom = 30.0
 parent = NodePath("..")
 
-[node name="KeywordNames" type="GridContainer" parent="Panel/VBoxContainer" unique_id=976645366]
+[node name="KeywordNames" type="GridContainer" parent="Panel/VBoxContainer" unique_id=976645366 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
 custom_minimum_size = Vector2(0, 200)
 propagate_maximum_size = false
 layout_mode = 2
@@ -196,22 +205,31 @@ theme_override_constants/v_separation = 4
 columns = 3
 script = ExtResource("10_wccuv")
 type = "name"
+name_container = NodePath(".")
+noun_container = NodePath("../KeywordNouns")
+verb_container = NodePath("../KeywordVerbs")
 
-[node name="KeywordNouns" type="GridContainer" parent="Panel/VBoxContainer" unique_id=592453720]
+[node name="KeywordNouns" type="GridContainer" parent="Panel/VBoxContainer" unique_id=592453720 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
 custom_minimum_size = Vector2(0, 200)
 propagate_maximum_size = false
 layout_mode = 2
 size_flags_vertical = 0
 script = ExtResource("10_wccuv")
 type = "noun"
+name_container = NodePath("../KeywordNames")
+noun_container = NodePath(".")
+verb_container = NodePath("../KeywordVerbs")
 
-[node name="KeywordVerbs" type="GridContainer" parent="Panel/VBoxContainer" unique_id=466267557]
+[node name="KeywordVerbs" type="GridContainer" parent="Panel/VBoxContainer" unique_id=466267557 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
 custom_minimum_size = Vector2(0, 200)
 propagate_maximum_size = false
 layout_mode = 2
 size_flags_vertical = 0
 script = ExtResource("10_wccuv")
 type = "verb"
+name_container = NodePath("../KeywordNames")
+noun_container = NodePath("../KeywordNouns")
+verb_container = NodePath(".")
 
 [node name="EvidenceObjects" type="GridContainer" parent="Panel/VBoxContainer" unique_id=820033689]
 layout_mode = 2

@@ -12,6 +12,7 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 		"button": self,
 		"origin_slot": get_parent()
 	}
+	
 	var preview: Button = Button.new()
 	preview.text = self.text
 	preview.icon = self.icon
