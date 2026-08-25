@@ -29,9 +29,7 @@ func _ready() -> void:
 	_update_corner_visibility()
 	
 func _on_prev_corner_pressed() -> void:
-	if journal_busy:
-		return
-	if current_page - 2 < 0:
+	if journal_busy or current_page - 2 < 0:
 		return
 	journal_busy = true
 	await _flip_page(-1)
@@ -47,9 +45,7 @@ func _on_tab_pressed(chapter_start_page: int) -> void:
 	_update_corner_visibility()
 
 func _on_next_corner_pressed() -> void:
-	if journal_busy:
-		return
-	if current_page + 2 >= page_scenes.size():
+	if journal_busy or current_page + 2 >= page_scenes.size():
 		return
 	journal_busy = true
 	await _flip_page(1)
@@ -59,14 +55,20 @@ func _on_next_corner_pressed() -> void:
 func _update_corner_visibility() -> void:
 	prev_corner.visible = current_page - 2 >= 0
 	next_corner.visible = current_page + 2 < page_scenes.size()
+	
+func _save_current_spread_state() -> void:
+	if left_viewport.get_child_count() > 0:
+		Variables.save_page_slots(current_page, left_viewport.get_child(0))
+	if right_viewport.get_child_count() > 0:
+		Variables.save_page_slots(current_page + 1, right_viewport.get_child(0))
 
 func _populate_viewport(page_index: int, viewport: SubViewport) -> void:
-	_return_dropped_buttons_to_inventory(viewport)
 	for child: Node in viewport.get_children():
 		child.queue_free()
 	if page_index >= 0 and page_index < page_scenes.size():
 		var page: Node = page_scenes[page_index].instantiate()
 		viewport.add_child(page)
+		Variables.restore_page_slots(page_index, page)
 
 func _render_page_to_viewport(page_index: int, viewport: SubViewport) -> Texture2D:
 	for child: Node in viewport.get_children():
@@ -79,31 +81,8 @@ func _render_page_to_viewport(page_index: int, viewport: SubViewport) -> Texture
 	await RenderingServer.frame_post_draw
 	return viewport.get_texture()
 
-func _return_dropped_buttons_to_inventory(viewport: SubViewport) -> void:
-	for page_root: Node in viewport.get_children():
-		_scan_and_return(page_root)
-
-func _scan_and_return(node: Node) -> void:
-	for child: Node in node.get_children():
-		if child is Button and child.get_parent() is PanelContainer:
-			var dropped_button: Button = child
-			var slot: PanelContainer = child.get_parent()
-			slot.remove_child(dropped_button)
-			_return_to_inventory(dropped_button)
-		else:
-			_scan_and_return(child)
-
-func _return_to_inventory(button: Button) -> void:
-	match button.type:
-		"name":
-			Variables.keywordNames.add_child(button)
-		"noun":
-			Variables.keywordNouns.add_child(button)
-		"verb":
-			Variables.keywordVerbs.add_child(button)
-	button.custom_minimum_size = Vector2.ZERO
-
 func _flip_page(direction: int, duration: float = 0.4) -> void:
+	_save_current_spread_state()
 	var flip_mat: ShaderMaterial = flip_page.material
 	var front_ind: int
 	var back_ind: int

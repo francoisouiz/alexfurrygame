@@ -6,6 +6,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_s3x7s"]
 size = Vector3(1.3330078, 1.2321777, 0.35546875)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3q5lw"]
+size = Vector3(1.4521484, 1.4333496, 0.62475586)
+
 [node name="Player" type="CharacterBody3D" unique_id=392277457]
 script = ExtResource("1_g2els")
 
@@ -13,7 +16,13 @@ script = ExtResource("1_g2els")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1375164, 0.9046021, 5.718478)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=961870845]
+visible = false
 shape = SubResource("BoxShape3D_s3x7s")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1533276229]
 texture = ExtResource("2_g2els")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=684145319]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=1302204738]
+shape = SubResource("BoxShape3D_3q5lw")

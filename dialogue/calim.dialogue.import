@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dg316fb3576ai"
+path="res://.godot/imported/calim.dialogue-e963fa63a2046d43baa5da39bdf385ed.tres"
+
+[deps]
+
+source_file="res://dialogue/calim.dialogue"
+dest_files=["res://.godot/imported/calim.dialogue-e963fa63a2046d43baa5da39bdf385ed.tres"]
+
+[params]
+
+defaults=true

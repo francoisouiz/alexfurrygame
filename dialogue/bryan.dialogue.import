@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dts3q3dxyo0h0"
+path="res://.godot/imported/bryan.dialogue-632f65dd41b04729f8d9677c71b2ca5f.tres"
+
+[deps]
+
+source_file="res://dialogue/bryan.dialogue"
+dest_files=["res://.godot/imported/bryan.dialogue-632f65dd41b04729f8d9677c71b2ca5f.tres"]
+
+[params]
+
+defaults=true

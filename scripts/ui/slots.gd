@@ -9,30 +9,26 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	
 	if origin_slot == self:
 		return
+		
+	var from_sidebar: bool = origin_slot is GridContainer
 	
 	var local_button: Button = null
 	for child: Variant in get_children():
 		if child is Button:
 			local_button = child
+			break
+	
+	if local_button != null:
+		local_button.queue_free()
 		
-	if local_button == null:
-		origin_slot.remove_child(dragged_button)
-		add_child(dragged_button)
-		_fit(dragged_button)
+	if from_sidebar:
+		var new_button: Button = dragged_button.duplicate()
+		new_button.type = dragged_button.type
+		add_child(new_button)
+		_fit(new_button)
 	else:
 		origin_slot.remove_child(dragged_button)
-		self.remove_child(local_button)
-		print(local_button)
-		self.add_child(dragged_button)
-		
-		match local_button.type:
-			"name":
-				Variables.keywordNames.add_child(local_button)
-			"noun":
-				Variables.keywordNouns.add_child(local_button)
-			"verb":
-				Variables.keywordVerbs.add_child(local_button)
-
+		add_child(dragged_button)
 		_fit(dragged_button)
 
 func _fit(button: Button) -> void:
@@ -40,4 +36,3 @@ func _fit(button: Button) -> void:
 	button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	button.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	
-		
