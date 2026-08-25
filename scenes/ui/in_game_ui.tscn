@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://bpfgughq4aext"]
+
+[ext_resource type="Script" uid="uid://hcqdn1ltvb38" path="res://scripts/ui/in_game_ui.gd" id="1_8o238"]
+[ext_resource type="Texture2D" uid="uid://bfop1cwyjle2k" path="res://assets/temp/Screenshot 2023-05-28 235047.png" id="1_uyty4"]
+[ext_resource type="Script" uid="uid://bfr06ddrii2hb" path="res://scripts/ui/tween_component.gd" id="4_3nhwc"]
+[ext_resource type="Script" uid="uid://bfdwmf7nl7olt" path="res://scripts/ui/slots.gd" id="9_s3j3l"]
+[ext_resource type="Script" uid="uid://bwg3vg7l8lqqn" path="res://scripts/ui/grid_slots.gd" id="10_wccuv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q5lw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eeonk"]
+texture = ExtResource("1_uyty4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qvqbd"]
+texture = ExtResource("1_uyty4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3nhwc"]
+texture = ExtResource("1_uyty4")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yautc"]
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3x7s"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5as1l"]
+texture = ExtResource("1_uyty4")
+
+[node name="InGameUI" type="CanvasLayer" unique_id=20912192]
+script = ExtResource("1_8o238")
+
+[node name="Journal" type="Panel" parent="." unique_id=1658649705]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -371.0
+offset_top = -158.0
+offset_right = 200.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3q5lw")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Journal" unique_id=1101298632]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -241.0
+offset_top = -100.5
+offset_right = 234.5
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Journal/HFlowContainer" unique_id=1129641656]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "the killer is"
+
+[node name="Panel" type="PanelContainer" parent="Journal/HFlowContainer" unique_id=1529513317 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
+custom_maximum_size = Vector2(70, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("9_s3j3l")
+name_container = NodePath("../../../Panel/VBoxContainer/KeywordNames")
+noun_container = NodePath("../../../Panel/VBoxContainer/KeywordNouns")
+verb_container = NodePath("../../../Panel/VBoxContainer/KeywordVerbs")
+
+[node name="Panel2" type="PanelContainer" parent="Journal/HFlowContainer" unique_id=590670219 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
+custom_maximum_size = Vector2(70, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("9_s3j3l")
+name_container = NodePath("../../../Panel/VBoxContainer/KeywordNames")
+noun_container = NodePath("../../../Panel/VBoxContainer/KeywordNouns")
+verb_container = NodePath("../../../Panel/VBoxContainer/KeywordVerbs")
+
+[node name="Label2" type="Label" parent="Journal/HFlowContainer" unique_id=542245082]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "and the victim is"
+
+[node name="Panel3" type="PanelContainer" parent="Journal/HFlowContainer" unique_id=1201821877 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
+custom_maximum_size = Vector2(70, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("9_s3j3l")
+name_container = NodePath("../../../Panel/VBoxContainer/KeywordNames")
+noun_container = NodePath("../../../Panel/VBoxContainer/KeywordNouns")
+verb_container = NodePath("../../../Panel/VBoxContainer/KeywordVerbs")
+
+[node name="Panel" type="Panel" parent="." unique_id=450107853]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -274.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1456129062]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -274.0
+offset_bottom = 159.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=953007507]
+custom_minimum_size = Vector2(0, 102.235)
+layout_mode = 2
+
+[node name="Keyword" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=1760031797]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+offset_transform_enabled = true
+theme_override_styles/normal = SubResource("StyleBoxTexture_eeonk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qvqbd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3nhwc")
+text = "Keywords"
+
+[node name="TweenComponent" type="Node" parent="Panel/VBoxContainer/HBoxContainer/Keyword" unique_id=33699195 node_paths=PackedStringArray("parent")]
+script = ExtResource("4_3nhwc")
+orig_custom = 60.0
+parent = NodePath("..")
+
+[node name="Evidence" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=147584855]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_yautc")
+text = "Evidence"
+
+[node name="TweenComponent" type="Node" parent="Panel/VBoxContainer/HBoxContainer/Evidence" unique_id=268006650 node_paths=PackedStringArray("parent")]
+script = ExtResource("4_3nhwc")
+orig_custom = 60.0
+parent = NodePath("..")
+
+[node name="KeywordClasses" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=1024149628]
+custom_minimum_size = Vector2(0, 60.295)
+layout_mode = 2
+
+[node name="Names" type="Button" parent="Panel/VBoxContainer/KeywordClasses" unique_id=684874607]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
+text = "Names"
+
+[node name="TweenComponent" type="Node" parent="Panel/VBoxContainer/KeywordClasses/Names" unique_id=2072980846 node_paths=PackedStringArray("parent")]
+script = ExtResource("4_3nhwc")
+orig_custom = 30.0
+parent = NodePath("..")
+
+[node name="Nouns" type="Button" parent="Panel/VBoxContainer/KeywordClasses" unique_id=781050183]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
+text = "Nouns"
+
+[node name="TweenComponent" type="Node" parent="Panel/VBoxContainer/KeywordClasses/Nouns" unique_id=293934391 node_paths=PackedStringArray("parent")]
+script = ExtResource("4_3nhwc")
+orig_custom = 30.0
+parent = NodePath("..")
+
+[node name="Verbs" type="Button" parent="Panel/VBoxContainer/KeywordClasses" unique_id=1152384284]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
+text = "Verbs"
+
+[node name="TweenComponent" type="Node" parent="Panel/VBoxContainer/KeywordClasses/Verbs" unique_id=955908595 node_paths=PackedStringArray("parent")]
+script = ExtResource("4_3nhwc")
+orig_custom = 30.0
+parent = NodePath("..")
+
+[node name="KeywordNames" type="GridContainer" parent="Panel/VBoxContainer" unique_id=976645366 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
+custom_minimum_size = Vector2(0, 200)
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 4
+columns = 3
+script = ExtResource("10_wccuv")
+type = "name"
+name_container = NodePath(".")
+noun_container = NodePath("../KeywordNouns")
+verb_container = NodePath("../KeywordVerbs")
+
+[node name="KeywordNouns" type="GridContainer" parent="Panel/VBoxContainer" unique_id=592453720 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
+custom_minimum_size = Vector2(0, 200)
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_vertical = 0
+script = ExtResource("10_wccuv")
+type = "noun"
+name_container = NodePath("../KeywordNames")
+noun_container = NodePath(".")
+verb_container = NodePath("../KeywordVerbs")
+
+[node name="KeywordVerbs" type="GridContainer" parent="Panel/VBoxContainer" unique_id=466267557 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
+custom_minimum_size = Vector2(0, 200)
+propagate_maximum_size = false
+layout_mode = 2
+size_flags_vertical = 0
+script = ExtResource("10_wccuv")
+type = "verb"
+name_container = NodePath("../KeywordNames")
+noun_container = NodePath("../KeywordNouns")
+verb_container = NodePath(".")
+
+[node name="EvidenceObjects" type="GridContainer" parent="Panel/VBoxContainer" unique_id=820033689]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/EvidenceObjects" unique_id=1683061896]
+layout_mode = 2
+text = "these are evidence"
+
+[node name="JournalButton" type="Button" parent="." unique_id=1167386118]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -99.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_5as1l")
+icon_alignment = 2
+
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Keyword" to="." method="_on_keyword_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Evidence" to="." method="_on_evidence_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/KeywordClasses/Names" to="." method="_on_names_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/KeywordClasses/Nouns" to="." method="_on_nouns_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/KeywordClasses/Verbs" to="." method="_on_verbs_pressed"]
+[connection signal="pressed" from="JournalButton" to="." method="_on_journal_button_pressed"]

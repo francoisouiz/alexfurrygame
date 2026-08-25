@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cr0i3q8p2iyya"]
+
+[ext_resource type="Script" uid="uid://ckkes2mcl5j5u" path="res://scripts/menus/main_menu_ui.gd" id="1_r2bkh"]
+
+[node name="MainMenuUI" type="Control" unique_id=771544304]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -3.0
+offset_right = -6.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r2bkh")
+
+[node name="Background" type="TextureRect" parent="." unique_id=157789097]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1123587735]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.875
+offset_top = 22.0
+offset_right = 146.875
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1081869624]
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 39
+text = "Start"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=2028110846]
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 39
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
