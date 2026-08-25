@@ -48,6 +48,7 @@ shadow_enabled = true
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="LevelContainer" unique_id=1940974739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36217713, -0.084756136, 0)
 size = Vector3(14.628906, 0.2626953, 12.794922)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="LevelContainer" unique_id=184852117]
