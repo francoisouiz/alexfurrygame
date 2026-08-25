@@ -39,6 +39,10 @@ folder_colors={
 "res://scripts/": "blue"
 }
 
+[gui]
+
+theme/custom_font="uid://bhlhbikwhl7g6"
+
 [input]
 
 left={

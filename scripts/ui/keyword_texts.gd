@@ -35,7 +35,7 @@ var _active_preview: Control = null
 
 func _process(_delta: float) -> void:
 	if _active_preview and is_instance_valid(_active_preview):
-		if not Input.is_action_pressed("ui_touch") and not (Input.get_mouse_button_mask() & MOUSE_BUTTON_MASK_LEFT):
+		if not (Input.get_mouse_button_mask() & MOUSE_BUTTON_MASK_LEFT):
 			_active_preview.queue_free()
 			_active_preview = null
 		else:
