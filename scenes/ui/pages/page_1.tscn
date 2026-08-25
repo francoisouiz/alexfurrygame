@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b6hian7r3poy7"]
+
+[ext_resource type="Script" uid="uid://bfdwmf7nl7olt" path="res://scripts/ui/slots.gd" id="1_6swl2"]
+
+[node name="Page1" type="Control" unique_id=1454747359]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 380.0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="." unique_id=2093804088]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HFlowContainer" unique_id=664062251]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "page 2 killer is"
+
+[node name="Panel" type="PanelContainer" parent="HFlowContainer" unique_id=2054216220]
+custom_minimum_size = Vector2(70, 0)
+custom_maximum_size = Vector2(70, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_6swl2")
+
+[node name="Panel2" type="PanelContainer" parent="HFlowContainer" unique_id=404880836]
+custom_minimum_size = Vector2(70, 0)
+custom_maximum_size = Vector2(70, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_6swl2")
+
+[node name="Label2" type="Label" parent="HFlowContainer" unique_id=403344171]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "and page 2 victim is"
+
+[node name="Panel3" type="PanelContainer" parent="HFlowContainer" unique_id=801749660]
+custom_minimum_size = Vector2(70, 0)
+custom_maximum_size = Vector2(70, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_6swl2")

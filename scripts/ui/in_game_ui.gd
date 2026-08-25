@@ -1,19 +1,19 @@
 extends CanvasLayer
 
-@onready var journal: Panel = $Journal
-@onready var keyword: Button = $Panel/VBoxContainer/HBoxContainer/Keyword
-@onready var evidence: Button = $Panel/VBoxContainer/HBoxContainer/Evidence
+@onready var journal: Node = $Journal
+@onready var keyword: Button = $SideBar/VBoxContainer/HBoxContainer/Keyword
+@onready var evidence: Button = $SideBar/VBoxContainer/HBoxContainer/Evidence
 
-@onready var keyword_classes: HBoxContainer = $Panel/VBoxContainer/KeywordClasses
-@onready var names: Button = $Panel/VBoxContainer/KeywordClasses/Names
-@onready var nouns: Button = $Panel/VBoxContainer/KeywordClasses/Nouns
-@onready var verbs: Button = $Panel/VBoxContainer/KeywordClasses/Verbs
+@onready var keyword_classes: HBoxContainer = $SideBar/VBoxContainer/KeywordClasses
+@onready var names: Button = $SideBar/VBoxContainer/KeywordClasses/Names
+@onready var nouns: Button = $SideBar/VBoxContainer/KeywordClasses/Nouns
+@onready var verbs: Button = $SideBar/VBoxContainer/KeywordClasses/Verbs
 
-@onready var keyword_names: GridContainer = $Panel/VBoxContainer/KeywordNames
-@onready var keyword_nouns: GridContainer = $Panel/VBoxContainer/KeywordNouns
-@onready var keyword_verbs: GridContainer = $Panel/VBoxContainer/KeywordVerbs
+@onready var keyword_names: GridContainer = $SideBar/VBoxContainer/KeywordNames
+@onready var keyword_nouns: GridContainer = $SideBar/VBoxContainer/KeywordNouns
+@onready var keyword_verbs: GridContainer = $SideBar/VBoxContainer/KeywordVerbs
 
-@onready var evidence_objects: GridContainer = $Panel/VBoxContainer/EvidenceObjects
+@onready var evidence_objects: GridContainer = $SideBar/VBoxContainer/EvidenceObjects
 
 var KEYWORD_TEXTS: PackedScene = preload("uid://2e02bl5vknkv")
 var is_journalling: bool = false
@@ -24,6 +24,10 @@ func _ready() -> void:
 	_on_names_pressed()
 	disable_node(journal)
 	disable_node(evidence_objects)
+	Variables.keywordNames = keyword_names
+	Variables.keywordNouns = keyword_nouns
+	Variables.keywordVerbs = keyword_verbs
+	Variables.preview_layer = $DragPreviewLayer
 
 func _on_journal_button_pressed() -> void:
 	is_journalling = not is_journalling

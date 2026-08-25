@@ -18,6 +18,34 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	preview.icon = self.icon
 	preview.size = self.size
 	preview.modulate.a = 0.8
+	preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
-	set_drag_preview(preview)
+	var overlay: Control = Variables.preview_layer
+	overlay.add_child(preview)
+	preview.global_position = _get_mouse_position_in_root() - preview.size / 2
+
+	# store it so we can update/clean it up
+	_active_preview = preview
+
+	set_drag_preview(Control.new())
+	
 	return drag_data
+
+var _active_preview: Control = null
+
+func _process(_delta: float) -> void:
+	if _active_preview and is_instance_valid(_active_preview):
+		if not Input.is_action_pressed("ui_touch") and not (Input.get_mouse_button_mask() & MOUSE_BUTTON_MASK_LEFT):
+			_active_preview.queue_free()
+			_active_preview = null
+		else:
+			_active_preview.global_position = _get_mouse_position_in_root() - _active_preview.size / 2
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_DRAG_END:
+		if _active_preview and is_instance_valid(_active_preview):
+			_active_preview.queue_free()
+		_active_preview = null
+
+func _get_mouse_position_in_root() -> Vector2:
+	return get_tree().root.get_mouse_position()

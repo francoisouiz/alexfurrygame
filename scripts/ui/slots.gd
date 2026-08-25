@@ -1,9 +1,5 @@
 extends PanelContainer
 
-@export var name_container: GridContainer
-@export var noun_container: GridContainer
-@export var verb_container: GridContainer
-
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 	return data is Dictionary and data.has("button")
 
@@ -31,11 +27,11 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 		
 		match local_button.type:
 			"name":
-				name_container.add_child(local_button)
+				Variables.keywordNames.add_child(local_button)
 			"noun":
-				noun_container.add_child(local_button)
+				Variables.keywordNouns.add_child(local_button)
 			"verb":
-				verb_container.add_child(local_button)
+				Variables.keywordVerbs.add_child(local_button)
 
 		_fit(dragged_button)
 
