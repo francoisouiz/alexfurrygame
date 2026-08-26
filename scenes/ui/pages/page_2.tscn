@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://b3tfgyvdm7mca"]
+[gd_scene format=3 uid="uid://debf1s6jtimho"]
 
-[ext_resource type="Texture2D" uid="uid://08dbqpx6cphv" path="res://assets/temp/right.png" id="1_sbaut"]
-[ext_resource type="Script" uid="uid://bfdwmf7nl7olt" path="res://scripts/ui/slots.gd" id="2_edypw"]
+[ext_resource type="Script" uid="uid://bfdwmf7nl7olt" path="res://scripts/ui/slots.gd" id="1_cwht6"]
+[ext_resource type="Texture2D" uid="uid://cucs3as4qdsdp" path="res://assets/temp/left_end.png" id="1_wg13i"]
 
-[node name="Page" type="Control" unique_id=1454747359]
+[node name="Page2" type="Control" unique_id=1454747359]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_sbaut")
+texture = ExtResource("1_wg13i")
 
 [node name="HFlowContainer" type="HFlowContainer" parent="." unique_id=635817153]
 layout_mode = 1
@@ -38,21 +38,21 @@ texture_filter = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-text = "PAGE 5"
+text = "the killer 2 is"
 
 [node name="Panel" type="PanelContainer" parent="HFlowContainer" unique_id=933127081]
 custom_minimum_size = Vector2(90, 20)
 custom_maximum_size = Vector2(90, 20)
 layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource("2_edypw")
+script = ExtResource("1_cwht6")
 
 [node name="Panel2" type="PanelContainer" parent="HFlowContainer" unique_id=1366640663]
 custom_minimum_size = Vector2(90, 20)
 custom_maximum_size = Vector2(90, 20)
 layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource("2_edypw")
+script = ExtResource("1_cwht6")
 
 [node name="Label2" type="Label" parent="HFlowContainer" unique_id=1977630302]
 layout_mode = 2
@@ -65,4 +65,4 @@ custom_minimum_size = Vector2(90, 20)
 custom_maximum_size = Vector2(90, 20)
 layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource("2_edypw")
+script = ExtResource("1_cwht6")

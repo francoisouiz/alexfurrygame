@@ -19,11 +19,9 @@ gradient = SubResource("Gradient_gs82g")
 width = 600
 height = 380
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tatpk"]
-content_margin_left = 5.0
-content_margin_top = 5.0
-content_margin_right = 5.0
-content_margin_bottom = 5.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3x7s"]
+content_margin_left = 10.0
+content_margin_right = 10.0
 bg_color = Color(0, 0, 0, 1)
 
 [node name="Journal" type="Control" unique_id=1058316455]
@@ -42,6 +40,7 @@ grow_vertical = 2
 scale = Vector2(0.965, 0.965)
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 2
 script = ExtResource("1_qmpw5")
 
 [node name="Background" type="Panel" parent="." unique_id=1874700570]
@@ -52,6 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x0pw7")
 
 [node name="PageStack" type="Node2D" parent="." unique_id=1914449572]
@@ -129,43 +129,48 @@ transparent_bg = true
 size = Vector2i(300, 380)
 render_target_update_mode = 1
 
-[node name="EdgeTabs" type="HBoxContainer" parent="." unique_id=2042714148]
-custom_minimum_size = Vector2(0, 50)
+[node name="EdgeTabs" type="HBoxContainer" parent="." unique_id=1172869120]
+custom_minimum_size = Vector2(-1, 50)
 layout_mode = 1
 anchors_preset = -1
 offset_left = 10.0
 offset_top = -50.0
-offset_right = 102.0
+offset_right = 100.0
 
-[node name="Tab1" type="Button" parent="EdgeTabs" unique_id=14941494]
-custom_minimum_size = Vector2(0, 30)
+[node name="Tab1" type="Button" parent="EdgeTabs" unique_id=286094970]
+custom_minimum_size = Vector2(60, 30)
+custom_maximum_size = Vector2(60, -1)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_tatpk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
 text = "Tab 1"
 
-[node name="TweenComponent" type="Node" parent="EdgeTabs/Tab1" unique_id=778112690 node_paths=PackedStringArray("parent")]
+[node name="TweenComponent" type="Node" parent="EdgeTabs/Tab1" unique_id=649466548 node_paths=PackedStringArray("parent")]
 script = ExtResource("3_gs82g")
 hover_addon = 5.0
 orig_custom = 30.0
 parent = NodePath("..")
 
-[node name="Tab2" type="Button" parent="EdgeTabs" unique_id=952550551]
-custom_minimum_size = Vector2(0, 30)
+[node name="Tab2" type="Button" parent="EdgeTabs" unique_id=1854572009]
+custom_minimum_size = Vector2(60, 30)
+custom_maximum_size = Vector2(60, -1)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_tatpk")
-text = "Tab 2"
+theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
+text = "Tab 2
+"
 
-[node name="TweenComponent" type="Node" parent="EdgeTabs/Tab2" unique_id=431293501 node_paths=PackedStringArray("parent")]
+[node name="TweenComponent" type="Node" parent="EdgeTabs/Tab2" unique_id=493222364 node_paths=PackedStringArray("parent")]
 script = ExtResource("3_gs82g")
 hover_addon = 5.0
 orig_custom = 30.0
 parent = NodePath("..")
+
+[node name="SolveAudio" type="AudioStreamPlayer2D" parent="." unique_id=1372838079]
 
 [connection signal="pressed" from="EdgeTabs/Tab1" to="." method="_on_tab_1_pressed"]
 [connection signal="pressed" from="EdgeTabs/Tab2" to="." method="_on_tab_2_pressed"]

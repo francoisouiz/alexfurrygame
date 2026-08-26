@@ -11,8 +11,9 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	var dragged_button: Button = data["button"]
 	var origin_slot: Control = data["origin_slot"]
-
+		
 	if origin_slot is GridContainer:
 		return
-		
+	
+	Variables.clear_selection()
 	dragged_button.queue_free()

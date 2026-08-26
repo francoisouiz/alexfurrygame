@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://d0i37iqxdqis5" path="res://scripts/ui/keyword_texts.gd" id="1_ah0sq"]
 
 [node name="KeywordTexts" type="Button" unique_id=649713981]
-custom_maximum_size = Vector2(-1, 30)
+custom_minimum_size = Vector2(0, 35)
 offset_right = 10.0
 offset_bottom = 10.0
+size_flags_horizontal = 3
 size_flags_vertical = 0
+theme_override_font_sizes/font_size = 20
 script = ExtResource("1_ah0sq")

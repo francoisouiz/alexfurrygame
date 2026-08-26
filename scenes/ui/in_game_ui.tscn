@@ -4,24 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://bfop1cwyjle2k" path="res://assets/temp/Screenshot 2023-05-28 235047.png" id="1_uyty4"]
 [ext_resource type="PackedScene" uid="uid://cfqtm57jlm07w" path="res://scenes/ui/journal.tscn" id="2_3nhwc"]
 [ext_resource type="Script" uid="uid://bfr06ddrii2hb" path="res://scripts/ui/tween_component.gd" id="4_3nhwc"]
+[ext_resource type="AudioStream" uid="uid://cdxtjbeqtocta" path="res://assets/sounds/book_close_new.mp3" id="6_spc33"]
+[ext_resource type="AudioStream" uid="uid://c86amsjmwydsj" path="res://assets/sounds/book_open_new.mp3" id="7_spc33"]
 [ext_resource type="Script" uid="uid://bwg3vg7l8lqqn" path="res://scripts/ui/grid_slots.gd" id="10_wccuv"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eeonk"]
-texture = ExtResource("1_uyty4")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qvqbd"]
-texture = ExtResource("1_uyty4")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3nhwc"]
-texture = ExtResource("1_uyty4")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yautc"]
-content_margin_top = 20.0
-content_margin_bottom = 20.0
-bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3x7s"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5as1l"]
+texture = ExtResource("1_uyty4")
 
 [sub_resource type="Animation" id="Animation_3nhwc"]
 length = 0.001
@@ -47,7 +38,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(83, -456)]
+"values": [Vector2(35, -522)]
 }
 
 [sub_resource type="Animation" id="Animation_5y6qm"]
@@ -75,7 +66,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.0667, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(83, -456), Vector2(83, -239), Vector2(83, 66)]
+"values": [Vector2(35, -521), Vector2(35, -305.99994), Vector2(35, 61)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_spc33"]
@@ -84,18 +75,8 @@ _data = {
 &"ui_transition": SubResource("Animation_5y6qm")
 }
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5as1l"]
-texture = ExtResource("1_uyty4")
-
 [node name="InGameUI" type="CanvasLayer" unique_id=20912192]
 script = ExtResource("1_8o238")
-
-[node name="Journal" parent="." unique_id=1058316455 instance=ExtResource("2_3nhwc")]
-offset_left = -493.0
-offset_top = -780.0
-offset_right = 107.0
-offset_bottom = -400.0001
-scale = Vector2(1.2, 1.2)
 
 [node name="SideBar" type="Panel" parent="." unique_id=450107853]
 anchors_preset = 11
@@ -103,7 +84,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 12.0
-offset_right = 286.00574
+offset_right = 286.00537
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -118,93 +99,59 @@ offset_bottom = 159.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SideBar/VBoxContainer" unique_id=953007507]
-custom_minimum_size = Vector2(0, 102.235)
-layout_mode = 2
-
-[node name="Keyword" type="Button" parent="SideBar/VBoxContainer/HBoxContainer" unique_id=1760031797]
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 8
-offset_transform_enabled = true
-theme_override_styles/normal = SubResource("StyleBoxTexture_eeonk")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_qvqbd")
-theme_override_styles/hover = SubResource("StyleBoxTexture_3nhwc")
-text = "Keywords"
-
-[node name="TweenComponent" type="Node" parent="SideBar/VBoxContainer/HBoxContainer/Keyword" unique_id=33699195 node_paths=PackedStringArray("parent")]
-script = ExtResource("4_3nhwc")
-orig_custom = 60.0
-parent = NodePath("..")
-
-[node name="Evidence" type="Button" parent="SideBar/VBoxContainer/HBoxContainer" unique_id=147584855]
-custom_minimum_size = Vector2(0, 60)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 8
-theme_override_styles/normal = SubResource("StyleBoxFlat_yautc")
-text = "Evidence"
-
-[node name="TweenComponent" type="Node" parent="SideBar/VBoxContainer/HBoxContainer/Evidence" unique_id=268006650 node_paths=PackedStringArray("parent")]
-script = ExtResource("4_3nhwc")
-orig_custom = 60.0
-parent = NodePath("..")
-
 [node name="KeywordClasses" type="HBoxContainer" parent="SideBar/VBoxContainer" unique_id=1024149628]
-custom_minimum_size = Vector2(0, 60.295)
+custom_minimum_size = Vector2(0, 84.53)
 layout_mode = 2
 
 [node name="Names" type="Button" parent="SideBar/VBoxContainer/KeywordClasses" unique_id=684874607]
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
 text = "Names"
 
 [node name="TweenComponent" type="Node" parent="SideBar/VBoxContainer/KeywordClasses/Names" unique_id=2072980846 node_paths=PackedStringArray("parent")]
 script = ExtResource("4_3nhwc")
-orig_custom = 30.0
+orig_custom = 50.0
 parent = NodePath("..")
 
 [node name="Nouns" type="Button" parent="SideBar/VBoxContainer/KeywordClasses" unique_id=781050183]
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
 text = "Nouns"
 
 [node name="TweenComponent" type="Node" parent="SideBar/VBoxContainer/KeywordClasses/Nouns" unique_id=293934391 node_paths=PackedStringArray("parent")]
 script = ExtResource("4_3nhwc")
-orig_custom = 30.0
+orig_custom = 50.0
 parent = NodePath("..")
 
 [node name="Verbs" type="Button" parent="SideBar/VBoxContainer/KeywordClasses" unique_id=1152384284]
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
 text = "Verbs"
 
 [node name="TweenComponent" type="Node" parent="SideBar/VBoxContainer/KeywordClasses/Verbs" unique_id=955908595 node_paths=PackedStringArray("parent")]
 script = ExtResource("4_3nhwc")
-orig_custom = 30.0
+orig_custom = 50.0
 parent = NodePath("..")
 
 [node name="KeywordNames" type="GridContainer" parent="SideBar/VBoxContainer" unique_id=976645366 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(-1, -1)
 propagate_maximum_size = false
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/h_separation = 6
-theme_override_constants/v_separation = 4
-columns = 3
+theme_override_constants/v_separation = 6
+columns = 2
 script = ExtResource("10_wccuv")
 type = "name"
 name_container = NodePath(".")
@@ -212,10 +159,12 @@ noun_container = NodePath("../KeywordNouns")
 verb_container = NodePath("../KeywordVerbs")
 
 [node name="KeywordNouns" type="GridContainer" parent="SideBar/VBoxContainer" unique_id=592453720 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(-1, -1)
 propagate_maximum_size = false
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_constants/v_separation = 6
+columns = 2
 script = ExtResource("10_wccuv")
 type = "noun"
 name_container = NodePath("../KeywordNames")
@@ -223,42 +172,64 @@ noun_container = NodePath(".")
 verb_container = NodePath("../KeywordVerbs")
 
 [node name="KeywordVerbs" type="GridContainer" parent="SideBar/VBoxContainer" unique_id=466267557 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
-custom_minimum_size = Vector2(0, 200)
+custom_minimum_size = Vector2(-1, -1)
 propagate_maximum_size = false
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_constants/v_separation = 6
+columns = 2
 script = ExtResource("10_wccuv")
 type = "verb"
 name_container = NodePath("../KeywordNames")
 noun_container = NodePath("../KeywordNouns")
 verb_container = NodePath(".")
 
-[node name="EvidenceObjects" type="GridContainer" parent="SideBar/VBoxContainer" unique_id=820033689]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="SideBar/VBoxContainer/EvidenceObjects" unique_id=1683061896]
-layout_mode = 2
-text = "these are evidence"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SideBar" unique_id=407518960]
-libraries/ = SubResource("AnimationLibrary_spc33")
-
 [node name="JournalButton" type="Button" parent="." unique_id=1167386118]
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -108.0
-offset_right = 140.0
+offset_left = -172.0
+offset_top = -110.0
+grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_5as1l")
 icon_alignment = 2
+
+[node name="DimOverlay" type="ColorRect" parent="." unique_id=1845720451]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Journal" parent="." unique_id=1058316455 node_paths=PackedStringArray("dim_overlay") instance=ExtResource("2_3nhwc")]
+offset_left = -541.0
+offset_top = -846.0
+offset_right = 59.0
+offset_bottom = -466.0
+scale = Vector2(1.37, 1.37)
+dim_overlay = NodePath("../DimOverlay")
 
 [node name="DragPreviewLayer" type="Control" parent="." unique_id=1425923709]
 layout_mode = 3
 anchors_preset = 0
 
-[connection signal="pressed" from="SideBar/VBoxContainer/HBoxContainer/Keyword" to="." method="_on_keyword_pressed"]
-[connection signal="pressed" from="SideBar/VBoxContainer/HBoxContainer/Evidence" to="." method="_on_evidence_pressed"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=407518960]
+root_node = NodePath("../SideBar")
+libraries/ = SubResource("AnimationLibrary_spc33")
+
+[node name="BookClose" type="AudioStreamPlayer2D" parent="." unique_id=2059900804]
+stream = ExtResource("6_spc33")
+volume_db = 10.0
+
+[node name="BookOpen" type="AudioStreamPlayer2D" parent="." unique_id=1932519286]
+stream = ExtResource("7_spc33")
+volume_db = 6.0
+
 [connection signal="pressed" from="SideBar/VBoxContainer/KeywordClasses/Names" to="." method="_on_names_pressed"]
 [connection signal="pressed" from="SideBar/VBoxContainer/KeywordClasses/Nouns" to="." method="_on_nouns_pressed"]
 [connection signal="pressed" from="SideBar/VBoxContainer/KeywordClasses/Verbs" to="." method="_on_verbs_pressed"]

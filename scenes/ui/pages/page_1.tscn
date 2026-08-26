@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://c5hhccudigdyg"]
+[gd_scene format=3 uid="uid://b6hian7r3poy7"]
 
-[ext_resource type="Texture2D" uid="uid://4b1krfuwsj52" path="res://assets/temp/right_end.png" id="1_dr6tr"]
-[ext_resource type="Script" uid="uid://bfdwmf7nl7olt" path="res://scripts/ui/slots.gd" id="2_qjhp1"]
+[ext_resource type="Script" uid="uid://bfdwmf7nl7olt" path="res://scripts/ui/slots.gd" id="1_6swl2"]
+[ext_resource type="Texture2D" uid="uid://08dbqpx6cphv" path="res://assets/temp/right.png" id="1_bku8l"]
 
 [node name="Page" type="Control" unique_id=1454747359]
 texture_filter = 1
@@ -18,7 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_dr6tr")
+texture = ExtResource("1_bku8l")
 
 [node name="HFlowContainer" type="HFlowContainer" parent="." unique_id=635817153]
 layout_mode = 1
@@ -33,36 +33,43 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/v_separation = 6
 
-[node name="Label" type="Label" parent="HFlowContainer" unique_id=1912286766]
-texture_filter = 1
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-text = "PAGE 7"
-
 [node name="Panel" type="PanelContainer" parent="HFlowContainer" unique_id=933127081]
 custom_minimum_size = Vector2(90, 20)
 custom_maximum_size = Vector2(90, 20)
 layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource("2_qjhp1")
+script = ExtResource("1_6swl2")
 
 [node name="Panel2" type="PanelContainer" parent="HFlowContainer" unique_id=1366640663]
 custom_minimum_size = Vector2(90, 20)
 custom_maximum_size = Vector2(90, 20)
 layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource("2_qjhp1")
+script = ExtResource("1_6swl2")
 
 [node name="Label2" type="Label" parent="HFlowContainer" unique_id=1977630302]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-text = "and the victim is"
+text = "sadly"
 
 [node name="Panel3" type="PanelContainer" parent="HFlowContainer" unique_id=2004532002]
 custom_minimum_size = Vector2(90, 20)
 custom_maximum_size = Vector2(90, 20)
 layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource("2_qjhp1")
+script = ExtResource("1_6swl2")
+
+[node name="Panel4" type="PanelContainer" parent="HFlowContainer" unique_id=1804683741]
+custom_minimum_size = Vector2(90, 20)
+custom_maximum_size = Vector2(90, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_6swl2")
+
+[node name="Panel5" type="PanelContainer" parent="HFlowContainer" unique_id=867462895]
+custom_minimum_size = Vector2(90, 20)
+custom_maximum_size = Vector2(90, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_6swl2")

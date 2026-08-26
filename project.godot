@@ -43,10 +43,12 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://addons/": "green",
-"res://assets/": "red",
-"res://scenes/": "yellow",
-"res://scripts/": "blue"
+"res://addons/": "red",
+"res://assets/": "orange",
+"res://dialogue/": "yellow",
+"res://scenes/": "green",
+"res://scripts/": "teal",
+"res://shaders/": "blue"
 }
 
 [gui]
