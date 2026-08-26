@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://cnsfsr6ks51e8"]
 
 [ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/player.tscn" id="1_jbqir"]
+[ext_resource type="Script" uid="uid://c5mlp6r4mts0r" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd" id="2_fr1um"]
 [ext_resource type="PackedScene" uid="uid://bpfgughq4aext" path="res://scenes/ui/in_game_ui.tscn" id="2_yautc"]
+[ext_resource type="Resource" uid="uid://dg316fb3576ai" path="res://dialogue/calim.dialogue" id="3_48ne7"]
+[ext_resource type="Script" uid="uid://bb636aic4yoo6" path="res://addons/dialogue_manager/nodes/marker/dialogue_marker_3d.gd" id="3_v45ci"]
+[ext_resource type="Resource" uid="uid://cu3ax2ifmvp86" path="res://dialogue/remi.dialogue" id="5_6xh4u"]
+[ext_resource type="Resource" uid="uid://dts3q3dxyo0h0" path="res://dialogue/bryan.dialogue" id="6_cyt5c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jbqir"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -17,6 +22,15 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hp5k"]
 albedo_color = Color(1, 0, 0.06666667, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s3x7s"]
+size = Vector3(3.9501953, 0.6291504, 3.720459)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3q5lw"]
+size = Vector3(4.3623047, 0.8515625, 3.388916)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l78km"]
+size = Vector3(4.1884766, 0.57836914, 3.2460938)
 
 [node name="TestLevel" type="Node3D" unique_id=97473924]
 
@@ -34,6 +48,7 @@ shadow_enabled = true
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="LevelContainer" unique_id=1940974739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36217713, -0.084756136, 0)
 size = Vector3(14.628906, 0.2626953, 12.794922)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="LevelContainer" unique_id=184852117]
@@ -41,14 +56,59 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8524265, 0.23671198, -2.726
 size = Vector3(3.1523438, 0.4696045, 2.6044922)
 material = SubResource("StandardMaterial3D_3hp5k")
 
+[node name="DialogueActionable3D" type="Area3D" parent="LevelContainer/CSGBox3D2" unique_id=838739436]
+script = ExtResource("2_fr1um")
+dialogue_resource = ExtResource("3_48ne7")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelContainer/CSGBox3D2/DialogueActionable3D" unique_id=400816115]
+shape = SubResource("BoxShape3D_s3x7s")
+
+[node name="DialogueMarker3D" type="Marker3D" parent="LevelContainer/CSGBox3D2" unique_id=1986783339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37575018, 0)
+script = ExtResource("3_v45ci")
+character_name = "Calim"
+metadata/_custom_type_script = "uid://bb636aic4yoo6"
+
 [node name="CSGBox3D3" type="CSGBox3D" parent="LevelContainer" unique_id=111132975]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9884272, 1.6269121, -2.7265844)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9884272, 0.45130062, -2.7265844)
 size = Vector3(3.1523438, 0.45703125, 2.6044922)
 material = SubResource("StandardMaterial3D_3hp5k")
 
+[node name="DialogueActionable3D" type="Area3D" parent="LevelContainer/CSGBox3D3" unique_id=1939765494]
+script = ExtResource("2_fr1um")
+dialogue_resource = ExtResource("5_6xh4u")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelContainer/CSGBox3D3/DialogueActionable3D" unique_id=1597707641]
+shape = SubResource("BoxShape3D_3q5lw")
+
+[node name="DialogueMarker3D" type="Marker3D" parent="LevelContainer/CSGBox3D3" unique_id=2049073794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2577045, 0)
+script = ExtResource("3_v45ci")
+character_name = "Remi"
+metadata/_custom_type_script = "uid://bb636aic4yoo6"
+
 [node name="CSGBox3D4" type="CSGBox3D" parent="LevelContainer" unique_id=966404641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2162695, 1.6269121, 1.9090338)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9472713, 0.17418551, 3.0433044)
 size = Vector3(3.1523438, 0.45703125, 2.6044922)
 material = SubResource("StandardMaterial3D_3hp5k")
+
+[node name="DialogueActionable3D" type="Area3D" parent="LevelContainer/CSGBox3D4" unique_id=1899490490]
+script = ExtResource("2_fr1um")
+dialogue_resource = ExtResource("6_cyt5c")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelContainer/CSGBox3D4/DialogueActionable3D" unique_id=673201010]
+shape = SubResource("BoxShape3D_l78km")
+
+[node name="DialogueMarker3D" type="Marker3D" parent="LevelContainer/CSGBox3D4" unique_id=1195391994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3185568, 0)
+script = ExtResource("3_v45ci")
+character_name = "Bryan"
+metadata/_custom_type_script = "uid://bb636aic4yoo6"
 
 [node name="InGameUI" parent="." unique_id=20912192 instance=ExtResource("2_yautc")]

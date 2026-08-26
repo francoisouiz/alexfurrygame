@@ -9,6 +9,14 @@ bg_color = Color(0.13077214, 0.13077214, 0.13077202, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x67cs"]
 shader = ExtResource("2_gs82g")
 shader_parameter/progress = 0.0
+shader_parameter/direction = 1.0
+
+[sub_resource type="Gradient" id="Gradient_gs82g"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n1n8h"]
+gradient = SubResource("Gradient_gs82g")
+width = 600
+height = 380
 
 [node name="Journal" type="Control" unique_id=1058316455]
 layout_mode = 3
@@ -29,6 +37,7 @@ size_flags_vertical = 4
 script = ExtResource("1_qmpw5")
 
 [node name="Background" type="Panel" parent="." unique_id=1874700570]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,7 +57,10 @@ stretch = true
 own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
+canvas_item_default_texture_filter = 0
 size = Vector2i(300, 380)
+size_2d_override = Vector2i(300, 380)
+size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="RightPageContainer" type="SubViewportContainer" parent="PageStack" unique_id=461491656]
@@ -61,11 +73,41 @@ stretch = true
 own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
+canvas_item_default_texture_filter = 0
 size = Vector2i(300, 380)
 render_target_update_mode = 4
 
 [node name="FlipPage" type="Sprite2D" parent="PageStack" unique_id=1233684263]
 material = SubResource("ShaderMaterial_x67cs")
+texture = SubResource("GradientTexture2D_n1n8h")
+offset = Vector2(300, 190)
+
+[node name="PrevCorner" type="TextureButton" parent="PageStack" unique_id=673428351]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 340.0
+offset_right = 40.0
+offset_bottom = 380.0
+grow_vertical = 0
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="NextCorner" type="TextureButton" parent="PageStack" unique_id=1905607454]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 560.0
+offset_top = 340.0
+offset_right = 600.0
+offset_bottom = 380.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_vertical = 8
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Viewports" type="Node" parent="." unique_id=315507575]
 

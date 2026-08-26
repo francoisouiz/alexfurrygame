@@ -15,6 +15,8 @@ extends CanvasLayer
 
 @onready var evidence_objects: GridContainer = $SideBar/VBoxContainer/EvidenceObjects
 
+@onready var animation_player: AnimationPlayer = $SideBar/AnimationPlayer
+
 var KEYWORD_TEXTS: PackedScene = preload("uid://2e02bl5vknkv")
 var is_journalling: bool = false
 var unlocked_words: Array[String] = []
@@ -22,7 +24,6 @@ var unlocked_words: Array[String] = []
 func _ready() -> void:
 	_on_keyword_pressed()
 	_on_names_pressed()
-	disable_node(journal)
 	disable_node(evidence_objects)
 	Variables.keywordNames = keyword_names
 	Variables.keywordNouns = keyword_nouns
@@ -32,9 +33,11 @@ func _ready() -> void:
 func _on_journal_button_pressed() -> void:
 	is_journalling = not is_journalling
 	if is_journalling:
-		enable_node(journal)
+		animation_player.play("ui_transition")
+		await animation_player.animation_finished
 	else:
-		disable_node(journal)
+		animation_player.play_backwards("ui_transition")
+		await animation_player.animation_finished
 
 func disable_node(node: Node) -> void:
 	node.process_mode = 4

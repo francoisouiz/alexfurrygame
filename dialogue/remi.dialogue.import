@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cu3ax2ifmvp86"
+path="res://.godot/imported/remi.dialogue-62be25c3ae4083db418ddd80ca34ec67.tres"
+
+[deps]
+
+source_file="res://dialogue/remi.dialogue"
+dest_files=["res://.godot/imported/remi.dialogue-62be25c3ae4083db418ddd80ca34ec67.tres"]
+
+[params]
+
+defaults=true
