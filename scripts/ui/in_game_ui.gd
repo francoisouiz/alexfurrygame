@@ -74,6 +74,25 @@ func _on_evidence_pressed() -> void:
 			disable_node(keyword_nouns)
 		"verbs":
 			disable_node(keyword_verbs)
+			
+func add_keyword(keyword: String, temp: Array, type: String, color: Color) -> void:
+	if keyword not in temp and keyword not in unlocked_words:
+		var new_keyword: Button = KEYWORD_TEXTS.instantiate()
+		new_keyword.text = keyword
+		new_keyword.type = type
+		var stylebox: StyleBoxFlat = new_keyword.get_theme_stylebox("normal").duplicate()
+		stylebox.bg_color = color
+		new_keyword.add_theme_stylebox_override("normal", stylebox)
+		new_keyword.add_theme_stylebox_override("hover", stylebox)
+		new_keyword.add_theme_stylebox_override("pressed", stylebox)
+		unlocked_words.append(keyword)
+		match type:
+			"name":
+				keyword_names.add_child(new_keyword)
+			"noun":
+				keyword_nouns.add_child(new_keyword)
+			"verb":
+				keyword_verbs.add_child(new_keyword)
 
 func _on_names_pressed() -> void:
 	Variables.active_second_button = "names"
@@ -89,12 +108,7 @@ func _on_names_pressed() -> void:
 	for node: Node in node_names:
 		temp.append(node.text)
 	for keyword: String in Variables.name_keywords:
-		if keyword not in temp and keyword not in unlocked_words:
-			var new_keyword: Button = KEYWORD_TEXTS.instantiate()
-			new_keyword.text = keyword
-			new_keyword.type = "name"
-			unlocked_words.append(keyword)
-			keyword_names.add_child(new_keyword)
+		add_keyword(keyword, temp, "name", Color.DARK_GREEN)
 
 
 func _on_nouns_pressed() -> void:
@@ -112,11 +126,7 @@ func _on_nouns_pressed() -> void:
 		temp.append(node.text)
 	for keyword: String in Variables.noun_keywords:
 		if keyword not in temp and keyword not in unlocked_words:
-			var new_keyword: Button = KEYWORD_TEXTS.instantiate()
-			new_keyword.text = keyword
-			new_keyword.type = "noun"
-			unlocked_words.append(keyword)
-			keyword_nouns.add_child(new_keyword)
+			add_keyword(keyword, temp, "noun", Color.DARK_BLUE)
 
 
 func _on_verbs_pressed() -> void:
@@ -134,8 +144,4 @@ func _on_verbs_pressed() -> void:
 		temp.append(node.text)
 	for keyword: String in Variables.verb_keywords:
 		if keyword not in temp and keyword not in unlocked_words:
-			var new_keyword: Button = KEYWORD_TEXTS.instantiate()
-			new_keyword.text = keyword
-			new_keyword.type = "verb"
-			unlocked_words.append(keyword)
-			keyword_verbs.add_child(new_keyword)
+			add_keyword(keyword, temp, "verb", Color.DARK_RED)

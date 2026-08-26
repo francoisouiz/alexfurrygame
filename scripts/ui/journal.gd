@@ -12,12 +12,6 @@ extends Control
 @onready var prev_corner: TextureButton = $PageStack/PrevCorner
 @onready var next_corner: TextureButton = $PageStack/NextCorner
 
-const PAGE_0: PackedScene = preload("uid://c1nmk7xyjwyx6")
-const PAGE_1: PackedScene = preload("uid://b6hian7r3poy7")
-const PAGE_2: PackedScene = preload("uid://debf1s6jtimho")
-const PAGE_3: PackedScene = preload("uid://6po6dqwddc4a")
-
-var page_scenes: Array[PackedScene] = [PAGE_0, PAGE_1, PAGE_2, PAGE_3]
 var current_page: int = 0
 var journal_busy: bool = false
 
@@ -26,7 +20,6 @@ func _ready() -> void:
 	prev_corner.pressed.connect(_on_prev_corner_pressed)
 	next_corner.pressed.connect(_on_next_corner_pressed)
 	await _refresh_static_spread()
-	_update_corner_visibility()
 	
 func _on_prev_corner_pressed() -> void:
 	if journal_busy or current_page - 2 < 0:
@@ -34,7 +27,6 @@ func _on_prev_corner_pressed() -> void:
 	journal_busy = true
 	await _flip_page(-1)
 	journal_busy = false
-	_update_corner_visibility()
 	
 func _on_tab_pressed(chapter_start_page: int) -> void:
 	if journal_busy:
@@ -42,19 +34,13 @@ func _on_tab_pressed(chapter_start_page: int) -> void:
 	journal_busy = true
 	await jump_to_page(chapter_start_page)
 	journal_busy = false
-	_update_corner_visibility()
 
 func _on_next_corner_pressed() -> void:
-	if journal_busy or current_page + 2 >= page_scenes.size():
+	if journal_busy or current_page + 2 >= Constants.PAGE_PATHS.size():
 		return
 	journal_busy = true
 	await _flip_page(1)
 	journal_busy = false
-	_update_corner_visibility()
-
-func _update_corner_visibility() -> void:
-	prev_corner.visible = current_page - 2 >= 0
-	next_corner.visible = current_page + 2 < page_scenes.size()
 	
 func _save_current_spread_state() -> void:
 	if left_viewport.get_child_count() > 0:
@@ -65,16 +51,16 @@ func _save_current_spread_state() -> void:
 func _populate_viewport(page_index: int, viewport: SubViewport) -> void:
 	for child: Node in viewport.get_children():
 		child.queue_free()
-	if page_index >= 0 and page_index < page_scenes.size():
-		var page: Node = page_scenes[page_index].instantiate()
+	if page_index >= 0 and page_index < Constants.PAGE_PATHS.size():
+		var page: Node = Constants.PAGE_PATHS[page_index].instantiate()
 		viewport.add_child(page)
 		Variables.restore_page_slots(page_index, page)
 
 func _render_page_to_viewport(page_index: int, viewport: SubViewport) -> Texture2D:
 	for child: Node in viewport.get_children():
 		child.queue_free()
-	if page_index >= 0 and page_index < page_scenes.size():
-		var page: Node = page_scenes[page_index].instantiate()
+	if page_index >= 0 and page_index < Constants.PAGE_PATHS.size():
+		var page: Node = Constants.PAGE_PATHS[page_index].instantiate()
 		viewport.add_child(page)
 	viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 	await RenderingServer.frame_post_draw
@@ -119,7 +105,6 @@ func _refresh_static_spread() -> void:
 	
 	_populate_viewport(left_index, left_viewport)
 	_populate_viewport(right_index, right_viewport)
-	_update_corner_visibility()
 		
 func jump_to_page(target: int) -> void:
 	var distance: int = absi(target - current_page)
@@ -127,7 +112,6 @@ func jump_to_page(target: int) -> void:
 	if distance <= 2:
 		await _flip_page(direction)
 		return
-		
 	var leaves_to_turn: int = distance / 2 
 	var total_time: float = clamp(leaves_to_turn * 0.05, 0.4, 1.2)
 	var per_flip: float = total_time / leaves_to_turn
@@ -139,3 +123,9 @@ func jump_to_page(target: int) -> void:
 		else:
 			dur = 0.35
 		await _flip_page(direction, dur)
+
+func _on_tab_1_pressed() -> void:
+	_on_tab_pressed(Constants.SECTION_PAGES.tab_1)
+
+func _on_tab_2_pressed() -> void:
+	_on_tab_pressed(Constants.SECTION_PAGES.tab_2)

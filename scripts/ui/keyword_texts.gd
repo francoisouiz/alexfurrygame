@@ -17,6 +17,10 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	preview.text = self.text
 	preview.icon = self.icon
 	preview.size = self.size
+	var stylebox: StyleBoxFlat = self.get_theme_stylebox("normal").duplicate()
+	preview.add_theme_stylebox_override("normal", stylebox)
+	preview.add_theme_stylebox_override("hover", stylebox)
+	preview.add_theme_stylebox_override("pressed", stylebox)
 	preview.modulate.a = 0.8
 	preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
