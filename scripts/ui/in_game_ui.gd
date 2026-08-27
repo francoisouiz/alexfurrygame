@@ -32,6 +32,14 @@ func _ready() -> void:
 func _on_journal_button_pressed() -> void:
 	is_journalling = not is_journalling
 	if is_journalling:
+		print(Variables.active_second_button)
+		match Variables.active_second_button:
+			"names":
+				_on_names_pressed()
+			"nouns":
+				_on_nouns_pressed()
+			"verbs":
+				_on_verbs_pressed()
 		animation_player.play("ui_transition")
 		book_open.play()
 		await animation_player.animation_finished
@@ -70,7 +78,6 @@ func add_keyword(keyword: String, temp: Array, type: String, color: Color) -> vo
 func _on_names_pressed() -> void:
 	Variables.active_second_button = "names"
 	enable_node(keyword_names)
-	
 	nouns.custom_minimum_size.y = 50
 	disable_node(keyword_nouns)
 	verbs.custom_minimum_size.y = 50

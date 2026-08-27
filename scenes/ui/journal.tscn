@@ -138,8 +138,8 @@ offset_top = -50.0
 offset_right = 100.0
 
 [node name="Tab1" type="Button" parent="EdgeTabs" unique_id=286094970]
-custom_minimum_size = Vector2(50, 30)
-custom_maximum_size = Vector2(60, -1)
+custom_minimum_size = Vector2(55, 30)
+custom_maximum_size = Vector2(55, -1)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
@@ -154,8 +154,8 @@ orig_custom = 30.0
 parent = NodePath("..")
 
 [node name="Tab2" type="Button" parent="EdgeTabs" unique_id=1854572009]
-custom_minimum_size = Vector2(50, 30)
-custom_maximum_size = Vector2(60, -1)
+custom_minimum_size = Vector2(55, 30)
+custom_maximum_size = Vector2(55, -1)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8

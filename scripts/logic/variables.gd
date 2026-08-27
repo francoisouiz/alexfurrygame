@@ -1,10 +1,12 @@
 extends Node
 
+signal keyword_unlocked(keyword_text: String, category: String, start_global_pos: Vector2)
+
 var active_first_button: String
 var active_second_button: String
-var name_keywords: Array = ["Jacob", "Calim", "Bryan", "Daza", "Errol", "Bayubay", "Villalobos"]
-var noun_keywords: Array = ["a pencil", "butt"]
-var verb_keywords: Array = ["killed", "likes", "is jealous of", "shoved"]
+var name_keywords: Array = []
+var noun_keywords: Array = []
+var verb_keywords: Array = []
 var evidence: Array = []
 var keywordNames: GridContainer
 var keywordNouns: GridContainer
@@ -20,9 +22,29 @@ var page_answers: Dictionary = {
 var verified_correct_pages: Dictionary = {}
 var revealed_locked_pages: Array[int] = []
 var page_slot_states: Dictionary = {}
+var unlocked_keywords_history: Array[String] = []
 
 var selected_slot: PanelContainer = null
 var selected_sidebar_button: Button = null
+
+func unlock_keyword(keyword_text: String, category: String, start_global_pos: Vector2 = Vector2.ZERO) -> void:
+	if keyword_text in unlocked_keywords_history:
+		return
+		
+	unlocked_keywords_history.append(keyword_text)
+	
+	match category.to_lower():
+		"name", "names":
+			if not keyword_text in name_keywords:
+				name_keywords.append(keyword_text)
+		"noun", "nouns":
+			if not keyword_text in noun_keywords:
+				noun_keywords.append(keyword_text)
+		"verb", "verbs":
+			if not keyword_text in verb_keywords:
+				verb_keywords.append(keyword_text)
+				
+	keyword_unlocked.emit(keyword_text, category, start_global_pos)
 
 func try_click_placement() -> void:
 	if selected_slot != null and selected_sidebar_button != null:

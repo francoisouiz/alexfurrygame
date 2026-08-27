@@ -101,7 +101,7 @@ grow_horizontal = 0
 grow_vertical = 2
 
 [node name="KeywordClasses" type="HBoxContainer" parent="SideBar/VBoxContainer" unique_id=1024149628]
-custom_minimum_size = Vector2(0, 84.53)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 
 [node name="Names" type="Button" parent="SideBar/VBoxContainer/KeywordClasses" unique_id=684874607]

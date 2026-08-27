@@ -1,3 +1,14 @@
 ~ start
-Calim: yo im calim
+if not Constants.talked_calim:
+	do unlock_keyword("Jacob", "name")
+	do unlock_keyword("Calim", "name")
+	Calim: Did you hear about Jacob Calim?
+	do unlock_keyword("likes", "verb")
+	Calim: He seems to like someone...
+	do unlock_keyword("Errol", "name")
+	do unlock_keyword("Bayubay", "name")
+	Calim: Errol Bayubay, was it?
+	$> Constants.talked_calim = true
+else:
+	Calim: sup
 => END

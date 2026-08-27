@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://726uk1ww7ncc" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cg1e4l0w8i1mp" path="res://assets/temp/icon.svg" id="2_g2els"]
+[ext_resource type="Script" uid="uid://bb636aic4yoo6" path="res://addons/dialogue_manager/nodes/marker/dialogue_marker_3d.gd" id="3_qhqgy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s3x7s"]
 size = Vector3(1.3330078, 1.2321777, 0.35546875)
@@ -26,3 +27,9 @@ texture = ExtResource("2_g2els")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=1302204738]
 shape = SubResource("BoxShape3D_3q5lw")
+
+[node name="DialogueMarker3D" type="Marker3D" parent="." unique_id=69242782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012173951, 0.7565762, 0)
+script = ExtResource("3_qhqgy")
+character_name = "Lucius"
+metadata/_custom_type_script = "uid://bb636aic4yoo6"

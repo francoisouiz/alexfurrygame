@@ -1,5 +1,8 @@
 extends Node
 
+var talked_calim: bool = false
+var talked_bryan: bool = false
+
 const SCENE_PATHS: Dictionary = {
 	"loading_screen": "uid://dks2u6hsx0uwt"
 }

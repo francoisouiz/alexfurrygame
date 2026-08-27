@@ -18,10 +18,12 @@ var custom_target: Node3D = null
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 @onready var progress: Polygon2D = %Progress
 
+@export var player_character_name: String = "Lucius"
+
 @export var character_portraits: Dictionary = {
 	"Remi": preload("uid://c4r26wtsocm0a"),
-	"Calim": preload("uid://bfop1cwyjle2k"),
-	"Bryan": preload("uid://cw0g3lt76x1vc")
+	"Calim": preload("uid://bf33b6vj4kg0k"),
+	"Bryan": preload("uid://cvrw86uc43kyg")
 }
 @onready var portrait: TextureRect = $Balloon/PanelContainer/HBoxContainer/Portrait
 
@@ -32,6 +34,8 @@ var will_hide_balloon: bool = false
 var locals: Dictionary = {}
 var _locale: String = TranslationServer.get_locale()
 var mutation_cooldown: Timer = Timer.new()
+var _keyword_queue: Array[Dictionary] = []
+var _is_processing_keywords: bool = false
 
 var dialogue_line: DialogueLine:
 	set(value):
@@ -68,6 +72,71 @@ func _process(_delta: float) -> void:
 		progress.visible = not dialogue_label.is_typing and dialogue_line.responses.size() == 0 and not dialogue_line.has_tag("voice")
 	
 	_update_3d_position()
+	
+func unlock_keyword(keyword_text: String, category: String) -> void:
+	var start_pos: Vector2 = balloon.global_position + (balloon.size / 2.0)
+	if keyword_text in Variables.unlocked_keywords_history:
+		return
+	Variables.unlock_keyword(keyword_text, category, start_pos)
+	
+	_keyword_queue.append({
+		"text": keyword_text,
+		"start_pos": start_pos,
+		"category": category
+	})
+	
+	if not _is_processing_keywords:
+		_process_keyword_queue()
+		
+func _process_keyword_queue() -> void:
+	_is_processing_keywords = true
+	
+	while _keyword_queue.size() > 0:
+		var data: Dictionary = _keyword_queue.pop_front()
+		
+		_animate_keyword_flying_preview(data["text"], data["start_pos"], data["category"])
+		
+		await get_tree().create_timer(0.15).timeout
+		
+	_is_processing_keywords = false
+
+func _animate_keyword_flying_preview(keyword_text: String, start_pos: Vector2, category: String) -> void:
+	var preview_btn: Button = Button.new()
+	preview_btn.text = keyword_text
+	preview_btn.top_level = true
+	var btn_size: Vector2 = Vector2(110, 40)
+	preview_btn.custom_minimum_size = Vector2(110, 40)
+	preview_btn.size = Vector2(110, 40)
+	preview_btn.pivot_offset = btn_size / 2.0
+	preview_btn.global_position = start_pos - Vector2(100, 50)
+	preview_btn.z_index = 100
+	
+	var stylebox: StyleBox = StyleBoxFlat.new()
+	match category:
+		"name":
+			stylebox.bg_color = Color.DARK_GREEN
+		"noun":
+			stylebox.bg_color = Color.DARK_BLUE
+		"verb":
+			stylebox.bg_color = Color.DARK_RED
+	preview_btn.add_theme_stylebox_override("normal", stylebox)
+	preview_btn.add_theme_stylebox_override("hover", stylebox)
+	preview_btn.add_theme_stylebox_override("pressed", stylebox)
+	preview_btn.add_theme_color_override("font_color", Color.WHITE)
+	preview_btn.add_theme_font_size_override("font_size", 20)
+	
+	add_child(preview_btn)
+	
+	var viewport_size: Vector2 = get_viewport().get_visible_rect().size
+	var target_pos: Vector2 = viewport_size - Vector2(130, 60)
+	
+	var tween: Tween = create_tween().set_parallel(true)
+	tween.tween_property(preview_btn, "global_position", target_pos, 0.8).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(preview_btn, "scale", Vector2(1.2, 1.2), 0.2)
+	tween.chain().tween_property(preview_btn, "scale", Vector2(1.0, 1.0), 0.3)
+	tween.chain().tween_property(preview_btn, "modulate:a", 0.0, 0.3)
+	await tween.finished
+	preview_btn.queue_free()
 
 
 func _update_3d_position() -> void:
@@ -77,6 +146,28 @@ func _update_3d_position() -> void:
 	var camera: Camera3D = get_viewport().get_camera_3d()
 	if not camera:
 		return
+		
+	if is_instance_valid(custom_target) and balloon.visible:
+		if camera.is_position_behind(custom_target.global_position):
+			balloon.visible = false
+		else:
+			balloon.visible = true
+			var screen_pos: Vector2 = camera.unproject_position(custom_target.global_position)
+			balloon.global_position = screen_pos - Vector2(balloon.size.x / 2.0, balloon.size.y)
+	
+	var responses_container: Control = responses_menu.get_parent() as Control
+	if is_instance_valid(responses_menu) and responses_menu.visible:
+		var player_marker: DialogueMarker3D = DialogueMarker3D.find_for_character(player_character_name)
+		
+		if is_instance_valid(player_marker):
+			if camera.is_position_behind(player_marker.global_position):
+				responses_container.visible = false
+			else:
+				responses_container.visible = true
+				var player_screen_pos: Vector2 = camera.unproject_position(player_marker.global_position)
+				
+				# Position the CenterContainer bottom-center over the player's marker
+				responses_container.global_position = player_screen_pos - Vector2(responses_container.size.x / 2.0, responses_container.size.y)
 
 	# Hide balloon if target is behind the camera
 	if camera.is_position_behind(custom_target.global_position):

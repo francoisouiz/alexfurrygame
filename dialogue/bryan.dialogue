@@ -1,9 +1,13 @@
 ~ start
-Bryan: i have bulbol
-Calim: me too bro i love your bulbol
-Remi: im a rat and i dont have bulbol lolmao
-- I also have bulbol
-	Bryan: mine better
-- I dont have bulbol
-	Calim: it oki bro
+if not Constants.talked_bryan:
+	do unlock_keyword("Bryan", "name")
+	do unlock_keyword("Daza", "name")
+	Bryan: I have a confession...
+	do unlock_keyword("killed", "verb")
+	do unlock_keyword("Errol", "name")
+	do unlock_keyword("Bayubay", "name")
+	Bryan: I killed Errol Bayubay...
+	$> Constants.talked_bryan = true
+else:
+	Bryan: sup
 => END
