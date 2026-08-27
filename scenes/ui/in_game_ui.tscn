@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bpfgughq4aext"]
 
 [ext_resource type="Script" uid="uid://hcqdn1ltvb38" path="res://scripts/ui/in_game_ui.gd" id="1_8o238"]
-[ext_resource type="Texture2D" uid="uid://bfop1cwyjle2k" path="res://assets/temp/Screenshot 2023-05-28 235047.png" id="1_uyty4"]
 [ext_resource type="PackedScene" uid="uid://cfqtm57jlm07w" path="res://scenes/ui/journal.tscn" id="2_3nhwc"]
 [ext_resource type="Script" uid="uid://bfr06ddrii2hb" path="res://scripts/ui/tween_component.gd" id="4_3nhwc"]
 [ext_resource type="AudioStream" uid="uid://cdxtjbeqtocta" path="res://assets/sounds/book_close_new.mp3" id="6_spc33"]
@@ -11,8 +10,10 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3x7s"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pwpia"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5as1l"]
-texture = ExtResource("1_uyty4")
+texture = SubResource("PlaceholderTexture2D_pwpia")
 
 [sub_resource type="Animation" id="Animation_3nhwc"]
 length = 0.001

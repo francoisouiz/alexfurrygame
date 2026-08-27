@@ -8,5 +8,5 @@ offset_right = 10.0
 offset_bottom = 10.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 25
 script = ExtResource("1_ah0sq")

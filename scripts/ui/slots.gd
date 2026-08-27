@@ -52,10 +52,12 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 		var new_button: Button = dragged_button.duplicate()
 		if "type" in dragged_button:
 			new_button.type = dragged_button.type
+		
 		new_button.text = dragged_button.text
 		
 		add_child(new_button)
-		_fit(new_button)
+		new_button.add_theme_font_size_override("font_size", 25)
+		
 	else:
 		dragged_button.get_parent().remove_child(dragged_button)
 		

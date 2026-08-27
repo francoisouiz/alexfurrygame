@@ -81,7 +81,7 @@ func _on_names_pressed() -> void:
 	for node: Node in node_names:
 		temp.append(node.text)
 	for keyword: String in Variables.name_keywords:
-		add_keyword(keyword, temp, "name", Color.FOREST_GREEN)
+		add_keyword(keyword, temp, "name", Color.DARK_GREEN)
 
 
 func _on_nouns_pressed() -> void:

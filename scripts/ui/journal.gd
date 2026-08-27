@@ -119,13 +119,6 @@ func _animate_page_buttons_shine(page_node: Node) -> void:
 				
 				await get_tree().create_timer(0.15).timeout
 	
-func _on_prev_corner_pressed() -> void:
-	if journal_busy or current_page - 2 < 0:
-		return
-	journal_busy = true
-	await _flip_page(-1)
-	journal_busy = false
-	
 func _on_tab_pressed(chapter_start_page: int) -> void:
 	if journal_busy:
 		return
@@ -239,3 +232,17 @@ func _on_tab_1_pressed() -> void:
 	
 func _on_tab_2_pressed() -> void:
 	_on_tab_pressed(Constants.SECTION_PAGES.tab_2)
+
+func _on_prev_corner_pressed() -> void:
+	if journal_busy or current_page - 2 < 0:
+		return
+	journal_busy = true
+	await _flip_page(-1)
+	journal_busy = false
+
+func _on_next_corner_pressed() -> void:
+	if journal_busy or current_page + 2 >= Constants.PAGE_PATHS.size():
+		return
+	journal_busy = true
+	await _flip_page(1)
+	journal_busy = false

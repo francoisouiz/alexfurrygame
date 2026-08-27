@@ -21,10 +21,12 @@ func _get_drag_data(_at_position: Vector2) -> Variant:
 	}
 	
 	var preview: Button = Button.new()
+	var new_stylebox: StyleBox = self.get_theme_stylebox("normal")
 	preview.text = self.text
 	preview.icon = self.icon
 	preview.size = self.size
 	preview.modulate.a = 0.8
+	preview.add_theme_stylebox_override("normal", new_stylebox)
 	preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	var overlay: Control = Variables.preview_layer
