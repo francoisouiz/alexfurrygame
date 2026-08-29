@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://cu3ax2ifmvp86" path="res://dialogue/remi.dialogue" id="5_6xh4u"]
 [ext_resource type="Resource" uid="uid://dts3q3dxyo0h0" path="res://dialogue/bryan.dialogue" id="6_cyt5c"]
 [ext_resource type="Resource" uid="uid://cykptmq3hbond" path="res://dialogue/map_prompt.dialogue" id="7_7x1jh"]
+[ext_resource type="Resource" uid="uid://u7l0vyewpsad" path="res://dialogue/journal_prompt.dialogue" id="8_hfwtw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jbqir"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -127,6 +128,20 @@ dialogue_cue = "start"
 metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelContainer/CSGBox3D5/DialogueActionable3D" unique_id=234634918]
+shape = SubResource("BoxShape3D_1kqjw")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="LevelContainer" unique_id=1577163461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3818035, 0.17418551, 3.0433044)
+size = Vector3(3.1523438, 0.45703125, 2.6044922)
+material = SubResource("StandardMaterial3D_3hp5k")
+
+[node name="DialogueActionable3D" type="Area3D" parent="LevelContainer/CSGBox3D6" unique_id=1206377266]
+script = ExtResource("2_fr1um")
+dialogue_resource = ExtResource("8_hfwtw")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelContainer/CSGBox3D6/DialogueActionable3D" unique_id=569221237]
 shape = SubResource("BoxShape3D_1kqjw")
 
 [node name="InGameUI" parent="." unique_id=20912192 instance=ExtResource("2_yautc")]

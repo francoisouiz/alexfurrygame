@@ -1,0 +1,3 @@
+~ start
+do Constants.journal_prompt.emit()
+=> END

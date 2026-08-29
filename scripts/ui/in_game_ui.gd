@@ -13,11 +13,15 @@ extends CanvasLayer
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var map_animation: AnimationPlayer = $Map/MapAnimation
+@onready var journal_button: Button = $JournalButton
 
 @onready var book_close: AudioStreamPlayer2D = $BookClose
 @onready var book_open: AudioStreamPlayer2D = $BookOpen
 
 @onready var bahay: Button = $Map/Bahay
+@onready var dim_overlay: ColorRect = $DimOverlay
+@onready var side_bar: Panel = $SideBar
+@onready var spot_light: CanvasLayer = $SpotLight
 
 
 var KEYWORD_TEXTS: PackedScene = preload("uid://2e02bl5vknkv")
@@ -33,11 +37,69 @@ func _ready() -> void:
 	Variables.keywordVerbs = keyword_verbs
 	Variables.preview_layer = $DragPreviewLayer
 	Constants.open_map.connect(_on_open_map)
+	Constants.journal_prompt.connect(_on_journal_prompt)
+	Constants.first_time_signal.connect(_on_first_time)
+	if not Constants.has_opened_journal:
+		disable_node(journal_button)
 
 func _on_open_map() -> void:
 	map_animation.play("map_animation")
 	await map_animation.animation_finished
 	on_map = true
+	
+func _on_first_time() -> void:
+	journal.z_index = 2
+	side_bar.z_index = 1
+	journal_button.z_index = 2
+	var fade_tween: Tween = create_tween()
+	fade_tween.tween_property(dim_overlay, "color:a", 0.6, 0.4)
+	await fade_tween.finished
+	var ui_sequence: Array[Control] = [journal, journal, journal]
+	var messages: Array[String] = [
+		"This info may or may not be correct.",
+		"Correct pages will be revealed in pairs of two.",
+		"Correctly fill out another page in the future to identify if this page is correct."
+	]
+	await spot_light.start_spotlight_sequence(ui_sequence, messages)
+	Constants.has_opened_journal = true
+	var unfade_tween: Tween = create_tween()
+	unfade_tween.tween_property(dim_overlay, "color:a", 0.0, 0.4)
+	await unfade_tween.finished
+	dim_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	journal.z_index = 0
+	side_bar.z_index = 0
+	journal_button.z_index = 0
+	
+func _on_journal_prompt() -> void:
+	if not Constants.has_opened_journal:
+		enable_node(journal_button)
+		_on_journal_button_pressed()
+		dim_overlay.mouse_filter = Control.MOUSE_FILTER_STOP
+		journal.z_index = 2
+		side_bar.z_index = 1
+		journal_button.z_index = 2
+		var fade_tween: Tween = create_tween()
+		fade_tween.tween_property(dim_overlay, "color:a", 0.6, 0.4)
+		await fade_tween.finished
+		var ui_sequence: Array[Control] = [journal, side_bar, side_bar, side_bar, journal, journal, journal_button]
+		var messages: Array[String] = [
+			"This is your journal. This is where you'll be working.",
+			"On the side are tabs for names, nouns, and verbs.",
+			"As you explore, keywords will be placed in this sidebar.",
+			"You can fill out your journal by dragging these keywords into empty slots.",
+			"You can also click a word from the sidebar and click again on the target slot.",
+			"Explore around the office to fill out the first page.",
+			"Toggle between exploring and journalling with this button."
+		]
+		await spot_light.start_spotlight_sequence(ui_sequence, messages)
+		Constants.has_opened_journal = true
+		var unfade_tween: Tween = create_tween()
+		unfade_tween.tween_property(dim_overlay, "color:a", 0.0, 0.4)
+		await unfade_tween.finished
+		dim_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		journal.z_index = 0
+		side_bar.z_index = 0
+		journal_button.z_index = 0
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit_map") and on_map:

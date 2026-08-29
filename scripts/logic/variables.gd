@@ -198,6 +198,15 @@ func is_page_filled_correctly(page_index: int, page_node: Node) -> bool:
 	var required: Array = page_answers[page_index]
 	var slots: Array = page_node.find_children("", "PanelContainer", true, false)
 	
+	var button_count: int = 0
+	if Constants.first_time_filled:
+		for slot: Node in slots:
+			if slot.get_children() != []:
+				button_count += 1
+	if button_count == required.size():
+		Constants.first_time_signal.emit()
+		Constants.first_time_filled = false
+		
 	if slots.size() < required.size():
 		return false
 		

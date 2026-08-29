@@ -96,6 +96,9 @@ func _process(_delta: float) -> void:
 	
 	_update_3d_position()
 	
+	if is_instance_valid(responses_menu) and responses_menu.visible:
+		_update_responses_position()
+	
 func unlock_keyword(keyword_text: String, category: String) -> void:
 	var start_pos: Vector2 = balloon.global_position + (balloon.size / 2.0)
 	if keyword_text in Variables.unlocked_keywords_history:
@@ -180,17 +183,11 @@ func _update_3d_position() -> void:
 	
 	var responses_container: Control = responses_menu.get_parent() as Control
 	if is_instance_valid(responses_menu) and responses_menu.visible:
-		var player_marker: DialogueMarker3D = DialogueMarker3D.find_for_character(player_character_name)
+		responses_container.visible = true
 		
-		if is_instance_valid(player_marker):
-			if camera.is_position_behind(player_marker.global_position):
-				responses_container.visible = false
-			else:
-				responses_container.visible = true
-				var player_screen_pos: Vector2 = camera.unproject_position(player_marker.global_position)
-				
-				# Position the CenterContainer bottom-center over the player's marker
-				responses_container.global_position = player_screen_pos - Vector2(responses_container.size.x / 2.0, responses_container.size.y)
+		# Get total viewport dimensions and calculate center position
+		var viewport_size: Vector2 = get_viewport().get_visible_rect().size
+		responses_container.global_position = (viewport_size / 2.0) - (responses_container.size / 2.0)
 
 	# Hide balloon if target is behind the camera
 	if camera.is_position_behind(custom_target.global_position):
@@ -233,6 +230,17 @@ func start(with_dialogue_resource: DialogueResource = null, cue: String = "", ex
 
 func set_expression(expression_name: String) -> void:
 	current_expression = expression_name
+	
+func _update_responses_position() -> void:
+	var responses_container: Control = responses_menu.get_parent() as Control
+	if not is_instance_valid(responses_container):
+		return
+
+	# Force container to recalculate layout size before reading size properties
+	responses_container.reset_size()
+	
+	var viewport_size: Vector2 = get_viewport().get_visible_rect().size
+	responses_container.global_position = (viewport_size / 2.0) - (responses_container.size / 2.0)
 
 
 func apply_dialogue_line() -> void:
@@ -266,6 +274,20 @@ func apply_dialogue_line() -> void:
 		portrait.hide()
 
 	current_expression = ""
+	
+	if dialogue_line.responses.size() > 0:
+		balloon.focus_mode = Control.FOCUS_NONE
+		
+		responses_menu.hide()
+		var responses_container: Control = responses_menu.get_parent() as Control
+		responses_container.hide()
+		_update_responses_position()
+		responses_menu.show()
+		responses_container.show()
+	else:
+		# Disable mouse blocking when no responses exist
+		var responses_container: Control = responses_menu.get_parent() as Control
+		responses_container.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 	if not dialogue_line.character.is_empty():
 		custom_target = DialogueMarker3D.find_for_character(dialogue_line.character)

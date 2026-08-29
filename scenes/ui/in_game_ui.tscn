@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://bfr06ddrii2hb" path="res://scripts/ui/tween_component.gd" id="4_3nhwc"]
 [ext_resource type="AudioStream" uid="uid://cdxtjbeqtocta" path="res://assets/sounds/book_close_new.mp3" id="6_spc33"]
 [ext_resource type="AudioStream" uid="uid://c86amsjmwydsj" path="res://assets/sounds/book_open_new.mp3" id="7_spc33"]
+[ext_resource type="Shader" uid="uid://c2un6243ma6b4" path="res://shaders/spotlight_mask.gdshader" id="8_8o238"]
+[ext_resource type="Script" uid="uid://d38j8vxxrpsc3" path="res://scripts/logic/tutorial_manager.gd" id="8_s3j3l"]
 [ext_resource type="Script" uid="uid://bwg3vg7l8lqqn" path="res://scripts/ui/grid_slots.gd" id="10_wccuv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8pydb"]
@@ -127,6 +129,14 @@ _data = {
 &"map_animation": SubResource("Animation_8o238")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s3x7s"]
+shader = ExtResource("8_8o238")
+shader_parameter/center_position = Vector2(0.5, 0.5)
+shader_parameter/hole_size = Vector2(0.1, 0.1)
+shader_parameter/corner_radius = 0.02
+shader_parameter/feather = 0.05
+shader_parameter/overlay_color = Color(0, 0, 0, 0.85)
+
 [node name="InGameUI" type="CanvasLayer" unique_id=20912192]
 script = ExtResource("1_8o238")
 
@@ -137,7 +147,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 12.0
-offset_right = 380.00537
+offset_right = 380.00513
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_h12yp")
@@ -311,6 +321,25 @@ text = "bahay ng alumni"
 
 [node name="MapAnimation" type="AnimationPlayer" parent="Map" unique_id=743321421]
 libraries/ = SubResource("AnimationLibrary_s3j3l")
+
+[node name="SpotLight" type="CanvasLayer" parent="." unique_id=1514367650 node_paths=PackedStringArray("overlay_rect", "tutorial_label")]
+layer = 200
+script = ExtResource("8_s3j3l")
+overlay_rect = NodePath("ColorRect")
+tutorial_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="SpotLight" unique_id=688115226]
+offset_right = 40.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 25
+
+[node name="ColorRect" type="ColorRect" parent="SpotLight" unique_id=1280934059]
+material = SubResource("ShaderMaterial_s3x7s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="pressed" from="SideBar/VBoxContainer/KeywordClasses/Names" to="." method="_on_names_pressed"]
 [connection signal="pressed" from="SideBar/VBoxContainer/KeywordClasses/Nouns" to="." method="_on_nouns_pressed"]

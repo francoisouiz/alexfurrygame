@@ -1,13 +1,4 @@
 ~ start
-if not Constants.talked_bryan:
-	do unlock_keyword("Bryan", "name")
-	do unlock_keyword("Daza", "name")
-	Bryan: I have a confession...
-	do unlock_keyword("killed", "verb")
-	do unlock_keyword("Errol", "name")
-	do unlock_keyword("Bayubay", "name")
-	Bryan: I killed Errol Bayubay...
-	$> Constants.talked_bryan = true
-else:
-	Bryan: sup
+Lucius: [i](I might be gay)[/i]
+Lucius: maybe not
 => END

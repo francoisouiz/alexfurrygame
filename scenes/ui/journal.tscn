@@ -159,7 +159,7 @@ text = "Tab 1"
 
 [node name="TweenComponent" type="Node" parent="EdgeTabs/Tab1" unique_id=649466548 node_paths=PackedStringArray("parent")]
 script = ExtResource("3_gs82g")
-hover_addon = 5.0
+hover_addon = 10.0
 orig_custom = 30.0
 parent = NodePath("..")
 
@@ -176,7 +176,7 @@ text = "Tab 2
 
 [node name="TweenComponent" type="Node" parent="EdgeTabs/Tab2" unique_id=493222364 node_paths=PackedStringArray("parent")]
 script = ExtResource("3_gs82g")
-hover_addon = 5.0
+hover_addon = 10.0
 orig_custom = 30.0
 parent = NodePath("..")
 

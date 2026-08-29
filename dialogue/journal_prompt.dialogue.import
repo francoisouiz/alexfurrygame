@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://u7l0vyewpsad"
+path="res://.godot/imported/journal_prompt.dialogue-98f8d593b3bf1974c0c13b6fc789bd0f.tres"
+
+[deps]
+
+source_file="res://dialogue/journal_prompt.dialogue"
+dest_files=["res://.godot/imported/journal_prompt.dialogue-98f8d593b3bf1974c0c13b6fc789bd0f.tres"]
+
+[params]
+
+defaults=true

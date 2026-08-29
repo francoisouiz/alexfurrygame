@@ -1,9 +1,19 @@
 ~ start
-Remi: default
+Remi: [pulse]default[/pulse]
+- When did you find out about the body?
+- Who else have you contacted about the case?
+- Does anyone else visit him often?
+- When was the last time you saw Mr. Esteban alive?
+- What do you mean by fits?
+- Do you know if he’s eaten anything weird recently?
+- What were you doing this morning?
+- Do you recognize these documents?
 do set_expression("angry")
 Remi: angy
 Remi: default
 do set_expression("smirk")
 Remi: smirk
 Remi: default
+do set_expression("frown")
+Gabriel: test
 => END

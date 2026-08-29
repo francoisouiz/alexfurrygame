@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Texture2D" uid="uid://cg1e4l0w8i1mp" path="res://assets/temp/icon.svg" id="2_ujumt"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_72ixx"]
+[ext_resource type="FontFile" uid="uid://cvepllopksqau" path="res://assets/fonts/Pixelosopher Italic.ttf" id="4_c6pds"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 content_margin_left = 20.0
@@ -76,8 +77,12 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7q1yg"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6pds"]
 bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="Animation" id="Animation_nlsx6"]
 length = 0.001
@@ -147,7 +152,7 @@ offset_right = 284.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_7q1yg")
+theme_override_styles/panel = SubResource("StyleBoxFlat_c6pds")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Balloon/PanelContainer" unique_id=2109265855]
 layout_mode = 2
@@ -171,7 +176,7 @@ size_flags_horizontal = 3
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/PanelContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1567782692]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.501961)
+modulate = Color(1, 1, 0, 1)
 layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 16
@@ -185,7 +190,12 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/italics_font = ExtResource("4_c6pds")
 theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+theme_override_font_sizes/bold_italics_font_size = 16
+theme_override_font_sizes/italics_font_size = 16
+theme_override_font_sizes/mono_font_size = 16
 text = "Dialogue..."
 
 [node name="MarginContainer2" type="MarginContainer" parent="Balloon/PanelContainer/HBoxContainer" unique_id=1260271480]
@@ -209,13 +219,15 @@ autoplay = &"progress"
 [node name="CenterContainer" type="CenterContainer" parent="Balloon" unique_id=1087901387]
 top_level = true
 layout_mode = 1
-offset_right = 184.0
-offset_bottom = 46.0
+offset_right = 212.0
+offset_bottom = 38.0
+mouse_filter = 2
 
 [node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/CenterContainer" unique_id=1801308483 node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
+mouse_filter = 0
 theme_override_constants/separation = 2
 alignment = 1
 script = ExtResource("3_72ixx")

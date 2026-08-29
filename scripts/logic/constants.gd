@@ -2,10 +2,12 @@ extends Node
 
 var current_level: String
 
-var talked_calim: bool = false
-var talked_bryan: bool = false
+var has_opened_journal: bool = false
+var first_time_filled: bool = true
 
 signal open_map
+signal journal_prompt
+signal first_time_signal
 
 const SCENE_PATHS: Dictionary = {
 	"loading_screen": "uid://dks2u6hsx0uwt",
