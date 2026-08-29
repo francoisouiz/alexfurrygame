@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clmyudyyma0h1" path="res://scripts/ui/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Texture2D" uid="uid://dus4ygwta7gps" path="res://assets/temp/Screenshot 2026-08-25 230552.png" id="2_ujumt"]
+[ext_resource type="Texture2D" uid="uid://cg1e4l0w8i1mp" path="res://assets/temp/icon.svg" id="2_ujumt"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_72ixx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
@@ -126,8 +126,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -12.0
-offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0

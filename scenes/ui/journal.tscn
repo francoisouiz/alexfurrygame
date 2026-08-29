@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://2tl8hhb5tvx8" path="res://scripts/ui/journal.gd" id="1_qmpw5"]
 [ext_resource type="Shader" uid="uid://bx37tyv7uljgk" path="res://shaders/pageflip.gdshader" id="2_gs82g"]
+[ext_resource type="Texture2D" uid="uid://0trht77eu2ix" path="res://assets/sprites/elements-Recovered.png" id="2_yv8vu"]
 [ext_resource type="Script" uid="uid://bfr06ddrii2hb" path="res://scripts/ui/tween_component.gd" id="3_gs82g"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0pw7"]
-bg_color = Color(0.13077214, 0.13077214, 0.13077202, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul30f"]
+atlas = ExtResource("2_yv8vu")
+region = Rect2(99, 408, 411, 256)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jkshn"]
+texture = SubResource("AtlasTexture_ul30f")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x67cs"]
 shader = ExtResource("2_gs82g")
@@ -16,8 +21,8 @@ shader_parameter/direction = 1.0
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_n1n8h"]
 gradient = SubResource("Gradient_gs82g")
-width = 600
-height = 380
+width = 560
+height = 360
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3x7s"]
 content_margin_left = 10.0
@@ -52,13 +57,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_x0pw7")
+theme_override_styles/panel = SubResource("StyleBoxTexture_jkshn")
 
 [node name="PageStack" type="Node2D" parent="." unique_id=1914449572]
 
 [node name="LeftPageContainer" type="SubViewportContainer" parent="PageStack" unique_id=734429547]
+offset_left = 20.0
+offset_top = 10.0
 offset_right = 300.0
-offset_bottom = 380.0
+offset_bottom = 370.0
 stretch = true
 
 [node name="LeftViewport" type="SubViewport" parent="PageStack/LeftPageContainer" unique_id=1197334810]
@@ -66,15 +73,16 @@ own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(300, 380)
+size = Vector2i(280, 360)
 size_2d_override = Vector2i(300, 380)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
 [node name="RightPageContainer" type="SubViewportContainer" parent="PageStack" unique_id=461491656]
 offset_left = 300.0
-offset_right = 600.0
-offset_bottom = 380.0
+offset_top = 10.0
+offset_right = 580.0
+offset_bottom = 360.0
 stretch = true
 
 [node name="RightViewport" type="SubViewport" parent="PageStack/RightPageContainer" unique_id=2112869871]
@@ -82,7 +90,7 @@ own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
-size = Vector2i(300, 380)
+size = Vector2i(280, 350)
 render_target_update_mode = 4
 
 [node name="FlipPage" type="Sprite2D" parent="PageStack" unique_id=1233684263]
@@ -94,9 +102,10 @@ offset = Vector2(300, 190)
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = 340.0
-offset_right = 40.0
-offset_bottom = 380.0
+offset_left = 24.870468
+offset_top = 324.35233
+offset_right = 64.87047
+offset_bottom = 364.35233
 grow_vertical = 0
 ignore_texture_size = true
 stretch_mode = 0
@@ -107,10 +116,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 560.0
-offset_top = 340.0
-offset_right = 600.0
-offset_bottom = 380.0
+offset_left = 537.82385
+offset_top = 323.31604
+offset_right = 577.82385
+offset_bottom = 363.31604
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_vertical = 8
@@ -133,9 +142,10 @@ render_target_update_mode = 1
 custom_minimum_size = Vector2(-1, 50)
 layout_mode = 1
 anchors_preset = -1
-offset_left = 10.0
-offset_top = -50.0
-offset_right = 100.0
+offset_left = 17.616589
+offset_top = -49.740936
+offset_right = 131.6166
+offset_bottom = 0.25906372
 
 [node name="Tab1" type="Button" parent="EdgeTabs" unique_id=286094970]
 custom_minimum_size = Vector2(55, 30)

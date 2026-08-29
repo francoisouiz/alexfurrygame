@@ -56,7 +56,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 		new_button.text = dragged_button.text
 		
 		add_child(new_button)
-		new_button.add_theme_font_size_override("font_size", 25)
+		new_button.add_theme_font_size_override("font_size", 14)
 		
 	else:
 		dragged_button.get_parent().remove_child(dragged_button)
@@ -67,6 +67,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 			_fit(target_button)
 			
 		add_child(dragged_button)
+		
 		_fit(dragged_button)
 	Variables._clear_click_selection()
 	var journal: Node = get_tree().get_first_node_in_group("journal")

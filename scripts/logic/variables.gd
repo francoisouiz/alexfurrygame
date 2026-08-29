@@ -4,7 +4,7 @@ signal keyword_unlocked(keyword_text: String, category: String, start_global_pos
 
 var active_first_button: String
 var active_second_button: String
-var name_keywords: Array = []
+var name_keywords: Array = ["Lucius", "Solano", "Gabriel", "John", "Utrera", "Benjamin", "Esteban", "test"]
 var noun_keywords: Array = []
 var verb_keywords: Array = []
 var evidence: Array = []
@@ -14,8 +14,8 @@ var keywordVerbs: GridContainer
 var preview_layer: Control
 
 var page_answers: Dictionary = {
-	0: ["Jacob", "Calim", "likes", "Errol", "Bayubay"],
-	1: ["Bryan", "Daza", "killed", "Errol", "Bayubay"],
+	0: ["Lucius", "Solano", "Gabriel", "John", "Utrera", "Benjamin", "Esteban"],
+	1: ["test"],
 	2: ["Bryan", "Daza", "killed", "Errol", "Bayubay"]
 }
 
@@ -55,6 +55,7 @@ func try_click_placement() -> void:
 		_clear_slot_buttons(selected_slot)
 		
 		var new_button: Button = selected_sidebar_button.duplicate()
+		new_button.add_theme_font_size_override("font_size", 14)
 		if "type" in selected_sidebar_button:
 			new_button.type = selected_sidebar_button.type
 		new_button.text = selected_sidebar_button.text
@@ -87,11 +88,12 @@ func try_slot_to_slot_transfer(target_slot: PanelContainer) -> void:
 	if target_button != null:
 		target_slot.remove_child(target_button)
 		
-		
+	
 	target_slot.add_child(source_button)
 	_fit_button(source_button)
 	
 	if target_button != null:
+		
 		selected_slot.add_child(target_button)
 		_fit_button(target_button)
 		
@@ -108,8 +110,6 @@ func select_sidebar_button(btn: Button) -> void:
 	selected_sidebar_button = btn	
 	if selected_slot != null:
 		try_click_placement()
-	else:
-		print("Selected sidebar button first: ", btn.text)
 		
 func clear_selection() -> void:
 	if selected_slot and selected_slot.has_method("set_highlight"):
@@ -123,10 +123,8 @@ func _clear_slot_buttons(slot: PanelContainer) -> void:
 			slot.remove_child(child)
 			child.queue_free()
 			
-func _fit_button(button: Button) -> void:
-	button.custom_minimum_size = Vector2.ZERO
-	button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	button.size_flags_vertical = Control.SIZE_EXPAND_FILL
+func _fit_button(btn: Button) -> void:
+	pass
 	
 func _clear_click_selection() -> void:
 	if selected_slot and selected_slot.has_method("set_highlight"):
@@ -183,8 +181,7 @@ func apply_locked_style_to_page(page_node: Node, page_idx: int) -> void:
 				child.mouse_filter = Control.MOUSE_FILTER_IGNORE
 				
 				var new_stylebox: StyleBoxFlat = StyleBoxFlat.new()
-				new_stylebox.bg_color = Color.WHITE
-				
+				new_stylebox.bg_color = Color.from_ok_hsl(30, 55, 88)
 				child.add_theme_stylebox_override("normal", new_stylebox)
 				child.add_theme_stylebox_override("hover", new_stylebox)
 				child.add_theme_stylebox_override("pressed", new_stylebox)

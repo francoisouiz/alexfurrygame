@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvrw86uc43kyg"
-path="res://.godot/imported/Screenshot 2026-08-27 184834.png-a1e449fc870b5a81913767671c8a929f.ctex"
+uid="uid://cn0i3qy07i73g"
+path="res://.godot/imported/GABRIEL_confused.png-db683055fb4ad48319fe2c97a86521ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temp/Screenshot 2026-08-27 184834.png"
-dest_files=["res://.godot/imported/Screenshot 2026-08-27 184834.png-a1e449fc870b5a81913767671c8a929f.ctex"]
+source_file="res://assets/portraits/GABRIEL_confused.png"
+dest_files=["res://.godot/imported/GABRIEL_confused.png-db683055fb4ad48319fe2c97a86521ee.ctex"]
 
 [params]
 

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bhlhbikwhl7g6"
-path="res://.godot/imported/IMFellDWPica-Regular.ttf-9ad7bfee9954d1ead73af46d5c41d4f1.fontdata"
+uid="uid://ddqeqcd1dl4hq"
+path="res://.godot/imported/Pixelosopher Bold.ttf-bac54a8ebb2e8a9fd3d6b59b4dec87fb.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/IMFellDWPica-Regular.ttf"
-dest_files=["res://.godot/imported/IMFellDWPica-Regular.ttf-9ad7bfee9954d1ead73af46d5c41d4f1.fontdata"]
+source_file="res://assets/fonts/Pixelosopher Bold.ttf"
+dest_files=["res://.godot/imported/Pixelosopher Bold.ttf-bac54a8ebb2e8a9fd3d6b59b4dec87fb.fontdata"]
 
 [params]
 

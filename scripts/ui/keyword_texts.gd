@@ -6,6 +6,7 @@ func _ready() -> void:
 	size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	size_flags_vertical = Control.SIZE_EXPAND_FILL
 	mouse_filter = Control.MOUSE_FILTER_PASS
+	
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	if mouse_filter == Control.MOUSE_FILTER_IGNORE:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dus4ygwta7gps"
-path="res://.godot/imported/Screenshot 2026-08-25 230552.png-fc7f2e01b78cbaaf6cd353f39373bd20.ctex"
+uid="uid://phx014uj3veg"
+path="res://.godot/imported/REMI_angry.png-0cee467d1bc97c7a3fd54cc21ddb06af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temp/Screenshot 2026-08-25 230552.png"
-dest_files=["res://.godot/imported/Screenshot 2026-08-25 230552.png-fc7f2e01b78cbaaf6cd353f39373bd20.ctex"]
+source_file="res://assets/portraits/REMI_angry.png"
+dest_files=["res://.godot/imported/REMI_angry.png-0cee467d1bc97c7a3fd54cc21ddb06af.ctex"]
 
 [params]
 

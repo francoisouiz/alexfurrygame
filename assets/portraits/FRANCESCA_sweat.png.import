@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4r26wtsocm0a"
-path="res://.godot/imported/84cpdhgt4a591.png-e09d41adbf761d016e16485a34bbeb6f.ctex"
+uid="uid://baqhmt06jj78q"
+path="res://.godot/imported/FRANCESCA_sweat.png-1f6ae30a65a1d5a0a3f189ade10d3b45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temp/84cpdhgt4a591.png"
-dest_files=["res://.godot/imported/84cpdhgt4a591.png-e09d41adbf761d016e16485a34bbeb6f.ctex"]
+source_file="res://assets/portraits/FRANCESCA_sweat.png"
+dest_files=["res://.godot/imported/FRANCESCA_sweat.png-1f6ae30a65a1d5a0a3f189ade10d3b45.ctex"]
 
 [params]
 

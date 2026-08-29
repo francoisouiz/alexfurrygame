@@ -65,7 +65,7 @@ func _play_pair_cutscene(pages_pair: Array[int]) -> void:
 				
 			await _flash_and_swap_to_solved_page(page_idx, vp)
 			
-	_save_current_spread_state()
+	save_current_spread_state()
 			
 	var unfade_tween: Tween = create_tween()
 	unfade_tween.tween_property(dim_overlay, "color:a", 0.0, 0.4)
@@ -98,13 +98,15 @@ func _animate_page_buttons_shine(page_node: Node) -> void:
 				child.add_theme_stylebox_override("normal", new_stylebox)
 				child.add_theme_stylebox_override("hover", new_stylebox)
 				child.add_theme_stylebox_override("pressed", new_stylebox)
+				child.focus_mode = Control.FOCUS_NONE
+				child.add_theme_stylebox_override("focus", StyleBoxEmpty.new())
 				
 				if solve_audio and solve_audio.stream:
 					solve_audio.play()
 					
 				var btn_tween: Tween = create_tween().set_parallel(true)
 				btn_tween.tween_property(child, "scale", Vector2(1.2, 1.2), 0.15).set_trans(Tween.TRANS_BACK)
-				btn_tween.tween_property(new_stylebox, "bg_color", Color.WHITE, 0.2)
+				btn_tween.tween_property(new_stylebox, "bg_color", Color("#F1E0CF"), 0.2)
 				btn_tween.tween_method(func(c: Color) -> void:
 					child.add_theme_color_override("font_color", c)
 					child.add_theme_color_override("font_hover_color", c)
@@ -127,7 +129,7 @@ func _on_tab_pressed(chapter_start_page: int) -> void:
 	journal_busy = false
 
 	
-func _save_current_spread_state() -> void:
+func save_current_spread_state() -> void:
 	if left_viewport.get_child_count() > 0:
 		Variables.save_page_slots(current_page, left_viewport.get_child(0))
 	if right_viewport.get_child_count() > 0:
@@ -167,7 +169,7 @@ func _render_page_to_viewport(page_index: int, viewport: SubViewport) -> Texture
 	return viewport.get_texture()
 	
 func _flip_page(direction: int, duration: float = 0.4) -> void:
-	_save_current_spread_state()
+	save_current_spread_state()
 	var flip_mat: ShaderMaterial = flip_page.material
 	var front_ind: int
 	var back_ind: int

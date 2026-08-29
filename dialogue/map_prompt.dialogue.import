@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cykptmq3hbond"
+path="res://.godot/imported/map_prompt.dialogue-bbd9de2dfd168f79f27d99e09930caaf.tres"
+
+[deps]
+
+source_file="res://dialogue/map_prompt.dialogue"
+dest_files=["res://.godot/imported/map_prompt.dialogue-bbd9de2dfd168f79f27d99e09930caaf.tres"]
+
+[params]
+
+defaults=true

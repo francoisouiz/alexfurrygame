@@ -1,39 +1,42 @@
-[gd_scene format=3 uid="uid://53o6mc8y0pby"]
+[gd_scene format=3 uid="uid://bug2a31fkd7o5"]
 
-[ext_resource type="Texture2D" uid="uid://08dbqpx6cphv" path="res://assets/temp/right.png" id="1_v8io0"]
+[ext_resource type="Texture2D" uid="uid://xxrdxvi3bygk" path="res://assets/resources/right_next.tres" id="1_f34rh"]
+[ext_resource type="FontFile" uid="uid://dr80jfvwrqij4" path="res://assets/fonts/the-lowly-scribe.ttf" id="2_f34rh"]
 
 [node name="Page" type="Control" unique_id=1454747359]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
+offset_top = -10.0
 offset_right = 300.0
-offset_bottom = 380.0
-mouse_filter = 2
+offset_bottom = 370.0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=394516674]
-texture_filter = 2
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_v8io0")
+texture = ExtResource("1_f34rh")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=976761752]
-layout_mode = 0
-offset_right = 267.0
-offset_bottom = 395.0
-theme_override_constants/margin_left = 19
-theme_override_constants/margin_top = -18
-theme_override_constants/margin_right = -9
-
-[node name="Label2" type="Label" parent="MarginContainer" unique_id=1977630302]
-custom_minimum_size = Vector2(250, 340)
-custom_maximum_size = Vector2(250, 340)
-layout_mode = 2
-size_flags_horizontal = 4
+[node name="Label2" type="Label" parent="." unique_id=474242504]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.0
+offset_top = 19.0
+offset_right = -2.0
+offset_bottom = 49.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "Bryan Daza sadly killed Errol Bayubay"
-autowrap_mode = 2
+theme_override_fonts/font = ExtResource("2_f34rh")
+theme_override_font_sizes/font_size = 28
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1

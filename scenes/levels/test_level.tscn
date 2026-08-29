@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bb636aic4yoo6" path="res://addons/dialogue_manager/nodes/marker/dialogue_marker_3d.gd" id="3_v45ci"]
 [ext_resource type="Resource" uid="uid://cu3ax2ifmvp86" path="res://dialogue/remi.dialogue" id="5_6xh4u"]
 [ext_resource type="Resource" uid="uid://dts3q3dxyo0h0" path="res://dialogue/bryan.dialogue" id="6_cyt5c"]
+[ext_resource type="Resource" uid="uid://cykptmq3hbond" path="res://dialogue/map_prompt.dialogue" id="7_7x1jh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jbqir"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,6 +32,9 @@ size = Vector3(4.3623047, 0.8515625, 3.388916)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l78km"]
 size = Vector3(4.1884766, 0.57836914, 3.2460938)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1kqjw"]
+size = Vector3(4.1054688, 1, 3.288086)
 
 [node name="TestLevel" type="Node3D" unique_id=97473924]
 
@@ -110,5 +114,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3185568, 0)
 script = ExtResource("3_v45ci")
 character_name = "Bryan"
 metadata/_custom_type_script = "uid://bb636aic4yoo6"
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="LevelContainer" unique_id=1288265140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2891526, 0.17418551, 3.0433044)
+size = Vector3(3.1523438, 0.45703125, 2.6044922)
+material = SubResource("StandardMaterial3D_3hp5k")
+
+[node name="DialogueActionable3D" type="Area3D" parent="LevelContainer/CSGBox3D5" unique_id=451427865]
+script = ExtResource("2_fr1um")
+dialogue_resource = ExtResource("7_7x1jh")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelContainer/CSGBox3D5/DialogueActionable3D" unique_id=234634918]
+shape = SubResource("BoxShape3D_1kqjw")
 
 [node name="InGameUI" parent="." unique_id=20912192 instance=ExtResource("2_yautc")]

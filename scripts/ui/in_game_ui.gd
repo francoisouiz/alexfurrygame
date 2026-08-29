@@ -12,13 +12,17 @@ extends CanvasLayer
 @onready var keyword_verbs: GridContainer = $SideBar/VBoxContainer/KeywordVerbs
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var map_animation: AnimationPlayer = $Map/MapAnimation
 
 @onready var book_close: AudioStreamPlayer2D = $BookClose
 @onready var book_open: AudioStreamPlayer2D = $BookOpen
 
+@onready var bahay: Button = $Map/Bahay
+
 
 var KEYWORD_TEXTS: PackedScene = preload("uid://2e02bl5vknkv")
 var is_journalling: bool = false
+var on_map: bool = false
 var unlocked_words: Array[String] = []
 
 func _ready() -> void:
@@ -28,11 +32,23 @@ func _ready() -> void:
 	Variables.keywordNouns = keyword_nouns
 	Variables.keywordVerbs = keyword_verbs
 	Variables.preview_layer = $DragPreviewLayer
+	Constants.open_map.connect(_on_open_map)
+
+func _on_open_map() -> void:
+	map_animation.play("map_animation")
+	await map_animation.animation_finished
+	on_map = true
+	
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("exit_map") and on_map:
+		map_animation.play_backwards("map_animation")
+		await map_animation.animation_finished
+		on_map = false
+
 
 func _on_journal_button_pressed() -> void:
 	is_journalling = not is_journalling
 	if is_journalling:
-		print(Variables.active_second_button)
 		match Variables.active_second_button:
 			"names":
 				_on_names_pressed()
@@ -47,6 +63,7 @@ func _on_journal_button_pressed() -> void:
 		animation_player.play_backwards("ui_transition")
 		book_close.play()
 		await animation_player.animation_finished
+	journal.save_current_spread_state()
 
 func disable_node(node: Node) -> void:
 	node.process_mode = 4
@@ -123,3 +140,7 @@ func _on_verbs_pressed() -> void:
 		temp.append(node.text)
 	for keyword: String in Variables.verb_keywords:
 		add_keyword(keyword, temp, "verb", Color.DARK_RED)
+
+
+func _on_bahay_pressed() -> void:
+	SceneLoader.load_scene(Constants.SCENE_PATHS.bahay)

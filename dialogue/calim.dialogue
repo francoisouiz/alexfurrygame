@@ -11,4 +11,5 @@ if not Constants.talked_calim:
 	$> Constants.talked_calim = true
 else:
 	Calim: sup
+	Placeholder: this is a test
 => END

@@ -21,10 +21,33 @@ var custom_target: Node3D = null
 @export var player_character_name: String = "Lucius"
 
 @export var character_portraits: Dictionary = {
-	"Remi": preload("uid://c4r26wtsocm0a"),
-	"Calim": preload("uid://bf33b6vj4kg0k"),
-	"Bryan": preload("uid://cvrw86uc43kyg")
+	"Arthur": preload("uid://c2ffts5dbi7qh"),
+	"Arthur_angry": preload("uid://cp5xcyy5memh7"),
+	"Arthur_sweat": preload("uid://dkbfgv5qclqmf"),
+	"Benjamin": preload("uid://djo6s4rkfwdri"),
+	"Felicia": preload("uid://sffqq786ef75"),
+	"Felicia_angry": preload("uid://bsu2hnv36nn48"),
+	"Felciia_lookaway": preload("uid://chja271k4g3xg"),
+	"Francesca": preload("uid://sl32im5rqsjh"),
+	"Francesca_smile": preload("uid://dv52utwef847r"),
+	"Francesca_sweat": preload("uid://baqhmt06jj78q"),
+	"Gabriel": preload("uid://dau5qp3v3v3f7"),
+	"Gabriel_confused": preload("uid://cn0i3qy07i73g"),
+	"Gabriel_frown": preload("uid://dgplj4k8fxla6"),
+	"Gary": preload("uid://b4p7vi3hnjxlv"),
+	"Gary_angry": preload("uid://m6ytr18advny"),
+	"Gary_eyesclosed": preload("uid://bgc10uccn0r56"),
+	"Lucius": preload("uid://dndrq8ewqk3bp"),
+	"Lucius_angry": preload("uid://druxi6obnw60t"),
+	"Lucius_glassesshine": preload("uid://bu6gns5vh5b7q"),
+	"Lucius_smile": preload("uid://b6xxjpuqr3u6j"),
+	"Lucius_sweat": preload("uid://ex6o2veliw8w"),
+	"Remi": preload("uid://bou3d5wcwln2p"),
+	"Remi_angry": preload("uid://phx014uj3veg"),
+	"Remi_smirk": preload("uid://xcsdjrd7de4e")
 }
+
+var current_expression: String = ""
 @onready var portrait: TextureRect = $Balloon/PanelContainer/HBoxContainer/Portrait
 
 
@@ -206,6 +229,10 @@ func start(with_dialogue_resource: DialogueResource = null, cue: String = "", ex
 		start_from_cue = cue
 	dialogue_line = await dialogue_resource.get_next_dialogue_line(start_from_cue, temporary_game_states)
 	show()
+	
+
+func set_expression(expression_name: String) -> void:
+	current_expression = expression_name
 
 
 func apply_dialogue_line() -> void:
@@ -221,12 +248,24 @@ func apply_dialogue_line() -> void:
 	
 	var char_name: String = dialogue_line.character
 	
-	if character_portraits.has(char_name):
+	var portrait_key: String = char_name
+	if not current_expression.is_empty():
+		portrait_key = char_name + "_" + current_expression
+		print(portrait_key)
+	
+	if character_portraits.has(portrait_key):
+		print("yes")
+		portrait.texture = character_portraits[portrait_key]
+		portrait.show()
+	elif character_portraits.has(char_name):
+		print("no")
 		portrait.texture = character_portraits[char_name]
 		portrait.show()
 	else:
 		portrait.texture = null
 		portrait.hide()
+
+	current_expression = ""
 	
 	if not dialogue_line.character.is_empty():
 		custom_target = DialogueMarker3D.find_for_character(dialogue_line.character)

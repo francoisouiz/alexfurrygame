@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw0g3lt76x1vc"
-path="res://.godot/imported/Screenshot 2026-08-26 004524.png-a843be1cb8ea80b5e76cea59ff5a5822.ctex"
+uid="uid://bsu2hnv36nn48"
+path="res://.godot/imported/FELICIA_angry.png-7ee2bf4882f0b9a59ff3e3babf9709a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temp/Screenshot 2026-08-26 004524.png"
-dest_files=["res://.godot/imported/Screenshot 2026-08-26 004524.png-a843be1cb8ea80b5e76cea59ff5a5822.ctex"]
+source_file="res://assets/portraits/FELICIA_angry.png"
+dest_files=["res://.godot/imported/FELICIA_angry.png-7ee2bf4882f0b9a59ff3e3babf9709a2.ctex"]
 
 [params]
 

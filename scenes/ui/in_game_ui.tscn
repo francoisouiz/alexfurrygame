@@ -2,13 +2,25 @@
 
 [ext_resource type="Script" uid="uid://hcqdn1ltvb38" path="res://scripts/ui/in_game_ui.gd" id="1_8o238"]
 [ext_resource type="PackedScene" uid="uid://cfqtm57jlm07w" path="res://scenes/ui/journal.tscn" id="2_3nhwc"]
+[ext_resource type="Texture2D" uid="uid://0trht77eu2ix" path="res://assets/sprites/elements-Recovered.png" id="2_spc33"]
 [ext_resource type="Script" uid="uid://bfr06ddrii2hb" path="res://scripts/ui/tween_component.gd" id="4_3nhwc"]
 [ext_resource type="AudioStream" uid="uid://cdxtjbeqtocta" path="res://assets/sounds/book_close_new.mp3" id="6_spc33"]
 [ext_resource type="AudioStream" uid="uid://c86amsjmwydsj" path="res://assets/sounds/book_open_new.mp3" id="7_spc33"]
 [ext_resource type="Script" uid="uid://bwg3vg7l8lqqn" path="res://scripts/ui/grid_slots.gd" id="10_wccuv"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pydb"]
+atlas = ExtResource("2_spc33")
+region = Rect2(626, 39, 145, 251)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h12yp"]
+texture = SubResource("AtlasTexture_8pydb")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3x7s"]
 bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pwpia"]
 
@@ -55,7 +67,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.06666667, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1152, 0), Vector2(1060, 0), Vector2(878, 0)]
+"values": [Vector2(1152, 0), Vector2(1060, 0), Vector2(822, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -76,18 +88,59 @@ _data = {
 &"ui_transition": SubResource("Animation_5y6qm")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q5lw"]
+
+[sub_resource type="Animation" id="Animation_spc33"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -648)]
+}
+
+[sub_resource type="Animation" id="Animation_8o238"]
+resource_name = "map_animation"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19393148, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -648), Vector2(0, -121), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s3j3l"]
+_data = {
+&"RESET": SubResource("Animation_spc33"),
+&"map_animation": SubResource("Animation_8o238")
+}
+
 [node name="InGameUI" type="CanvasLayer" unique_id=20912192]
 script = ExtResource("1_8o238")
 
 [node name="SideBar" type="Panel" parent="." unique_id=450107853]
+texture_filter = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 12.0
-offset_right = 286.00537
+offset_right = 380.00537
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_h12yp")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SideBar" unique_id=1456129062]
 layout_mode = 1
@@ -95,10 +148,12 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -274.0
+offset_left = -291.00513
+offset_right = -38.999756
 offset_bottom = 159.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_constants/separation = 2
 
 [node name="KeywordClasses" type="HBoxContainer" parent="SideBar/VBoxContainer" unique_id=1024149628]
 custom_minimum_size = Vector2(0, 70)
@@ -109,12 +164,13 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
 text = "Names"
 
 [node name="TweenComponent" type="Node" parent="SideBar/VBoxContainer/KeywordClasses/Names" unique_id=2072980846 node_paths=PackedStringArray("parent")]
 script = ExtResource("4_3nhwc")
+hover_addon = 15.0
 orig_custom = 50.0
 parent = NodePath("..")
 
@@ -123,12 +179,13 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
 text = "Nouns"
 
 [node name="TweenComponent" type="Node" parent="SideBar/VBoxContainer/KeywordClasses/Nouns" unique_id=293934391 node_paths=PackedStringArray("parent")]
 script = ExtResource("4_3nhwc")
+hover_addon = 15.0
 orig_custom = 50.0
 parent = NodePath("..")
 
@@ -137,12 +194,13 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
 text = "Verbs"
 
 [node name="TweenComponent" type="Node" parent="SideBar/VBoxContainer/KeywordClasses/Verbs" unique_id=955908595 node_paths=PackedStringArray("parent")]
 script = ExtResource("4_3nhwc")
+hover_addon = 15.0
 orig_custom = 50.0
 parent = NodePath("..")
 
@@ -151,7 +209,8 @@ custom_minimum_size = Vector2(-1, -1)
 propagate_maximum_size = false
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/v_separation = 6
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 3
 columns = 2
 script = ExtResource("10_wccuv")
 type = "name"
@@ -191,8 +250,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -172.0
-offset_top = -110.0
+offset_left = -140.0
+offset_top = -140.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_5as1l")
@@ -211,7 +270,7 @@ color = Color(0, 0, 0, 0)
 offset_left = -541.0
 offset_top = -846.0
 offset_right = 59.0
-offset_bottom = -466.0
+offset_bottom = -465.9999
 scale = Vector2(1.37, 1.37)
 dim_overlay = NodePath("../DimOverlay")
 
@@ -231,7 +290,30 @@ volume_db = 10.0
 stream = ExtResource("7_spc33")
 volume_db = 6.0
 
+[node name="Map" type="Panel" parent="." unique_id=170617226]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -648.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3q5lw")
+
+[node name="Bahay" type="Button" parent="Map" unique_id=920549023]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 81.0
+offset_right = 325.0
+offset_bottom = 149.0
+theme_override_font_sizes/font_size = 25
+text = "bahay ng alumni"
+
+[node name="MapAnimation" type="AnimationPlayer" parent="Map" unique_id=743321421]
+libraries/ = SubResource("AnimationLibrary_s3j3l")
+
 [connection signal="pressed" from="SideBar/VBoxContainer/KeywordClasses/Names" to="." method="_on_names_pressed"]
 [connection signal="pressed" from="SideBar/VBoxContainer/KeywordClasses/Nouns" to="." method="_on_nouns_pressed"]
 [connection signal="pressed" from="SideBar/VBoxContainer/KeywordClasses/Verbs" to="." method="_on_verbs_pressed"]
 [connection signal="pressed" from="JournalButton" to="." method="_on_journal_button_pressed"]
+[connection signal="pressed" from="Map/Bahay" to="." method="_on_bahay_pressed"]
