@@ -308,6 +308,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.546468, 1.3813376, -15.435
 [node name="InGameUI" parent="." unique_id=20912192 instance=ExtResource("9_pijg8")]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1887800685]
+visible = false
 offset_left = -27.0
 offset_top = -19.0
 offset_right = 1166.0

@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://caooyi17bj55y"]
+
+[ext_resource type="Texture2D" uid="uid://dcpfjb7ugvri2" path="res://assets/resources/left_next.tres" id="1_is06r"]
+[ext_resource type="Texture2D" uid="uid://dv52utwef847r" path="res://assets/portraits/FRANCESCA_smile.png" id="2_is06r"]
+[ext_resource type="FontFile" uid="uid://dr80jfvwrqij4" path="res://assets/fonts/the-lowly-scribe.ttf" id="2_wircv"]
+
+[node name="Page2" type="Control" unique_id=1454747359]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 380.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=394516674]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_is06r")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=652276417]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 18.0
+offset_right = 101.0
+offset_bottom = 82.0
+texture = ExtResource("2_is06r")
+
+[node name="Label2" type="Label" parent="." unique_id=474242504]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = 22.0
+offset_right = 120.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wircv")
+theme_override_font_sizes/font_size = 28
+text = "Francesca"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=1583940437]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.0
+offset_top = 60.0
+offset_right = 107.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wircv")
+theme_override_font_sizes/font_size = 28
+text = "Esteban"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=385502361]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 102.0
+offset_right = 120.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wircv")
+theme_override_font_sizes/font_size = 16
+text = "- Mr Esteban's Wife"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=285664050]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -129.0
+offset_top = 133.0
+offset_right = 152.0
+offset_bottom = 163.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wircv")
+theme_override_font_sizes/font_size = 16
+text = "- Recently seen with
+"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="." unique_id=370927262]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -114.0
+offset_top = 158.0
+offset_right = 167.0
+offset_bottom = 188.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wircv")
+theme_override_font_sizes/font_size = 16
+text = "Drew Sangster
+"
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="." unique_id=354092021]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 189.0
+offset_right = 319.0
+offset_bottom = 219.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wircv")
+theme_override_font_sizes/font_size = 16
+text = "- Admits to Benjamin's work in
+"
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="." unique_id=1778163237]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.0
+offset_top = 216.0
+offset_right = 332.0
+offset_bottom = 246.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wircv")
+theme_override_font_sizes/font_size = 16
+text = "the extrajudicial killings
+"
+vertical_alignment = 1

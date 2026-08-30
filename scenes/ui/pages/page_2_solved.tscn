@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://2scoswsi4hmb"]
+
+[ext_resource type="Texture2D" uid="uid://dcpfjb7ugvri2" path="res://assets/resources/left_next.tres" id="1_3maw6"]
+[ext_resource type="FontFile" uid="uid://dr80jfvwrqij4" path="res://assets/fonts/the-lowly-scribe.ttf" id="2_blt01"]
+[ext_resource type="Texture2D" uid="uid://cgs2vqbu22c0x" path="res://assets/character_sprites/BENJAMIN_sprite.png" id="3_3maw6"]
+
+[node name="Page2" type="Control" unique_id=1454747359]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 380.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=394516674]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3maw6")
+
+[node name="Label2" type="Label" parent="." unique_id=474242504]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.0
+offset_top = 20.0
+offset_right = 81.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_blt01")
+theme_override_font_sizes/font_size = 28
+text = "The Office"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=385502361]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = 66.0
+offset_right = 121.0
+offset_bottom = 96.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_blt01")
+theme_override_font_sizes/font_size = 16
+text = "The diseased, Benjamin Esteban"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=822765660]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -126.0
+offset_top = 97.0
+offset_right = 94.0
+offset_bottom = 127.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_blt01")
+theme_override_font_sizes/font_size = 16
+text = "was found dead on the floor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="." unique_id=1718006595]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = 123.0
+offset_right = -26.0
+offset_bottom = 153.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_blt01")
+theme_override_font_sizes/font_size = 16
+text = "in his office."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="." unique_id=411566625]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = 165.0
+offset_right = 34.0
+offset_bottom = 195.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_blt01")
+theme_override_font_sizes/font_size = 16
+text = "The blood and vomit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="." unique_id=747935217]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.0
+offset_top = 193.0
+offset_right = 101.0
+offset_bottom = 223.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_blt01")
+theme_override_font_sizes/font_size = 16
+text = "around his mouth implies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="." unique_id=1111532157]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -181.0
+offset_top = 219.0
+offset_right = 68.0
+offset_bottom = 249.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_blt01")
+theme_override_font_sizes/font_size = 16
+text = "a death by poison"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Photo" type="Control" parent="." unique_id=1270134394]
+anchors_preset = 0
+offset_left = 117.0
+offset_top = 251.0
+offset_right = 157.0
+offset_bottom = 291.0
+
+[node name="ColorRect2" type="ColorRect" parent="Photo" unique_id=2057865471]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 49.0
+offset_bottom = 46.0
+scale = Vector2(3.8, 2.505)
+
+[node name="ColorRect" type="ColorRect" parent="Photo" unique_id=1776674252]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 55.0
+offset_bottom = 50.0
+scale = Vector2(3.52, 2.3200002)
+color = Color(0.76156104, 0.76156086, 0.761561, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="Photo" unique_id=775662268]
+layout_mode = 0
+offset_left = 26.000008
+offset_top = 17.00003
+offset_right = 176.0
+offset_bottom = 117.00003
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_3maw6")

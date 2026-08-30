@@ -2,6 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://xxrdxvi3bygk" path="res://assets/resources/right_next.tres" id="1_f34rh"]
 [ext_resource type="FontFile" uid="uid://dr80jfvwrqij4" path="res://assets/fonts/the-lowly-scribe.ttf" id="2_f34rh"]
+[ext_resource type="Texture2D" uid="uid://sffqq786ef75" path="res://assets/portraits/FELICIA_default.png" id="3_qm7if"]
+[ext_resource type="Texture2D" uid="uid://c2ffts5dbi7qh" path="res://assets/portraits/ARTHUR_default.png" id="4_ph70o"]
+[ext_resource type="Texture2D" uid="uid://b4p7vi3hnjxlv" path="res://assets/portraits/GARY_default.png" id="5_adr4s"]
+[ext_resource type="Texture2D" uid="uid://sl32im5rqsjh" path="res://assets/portraits/FRANCESCA_default.png" id="6_rhc4c"]
+[ext_resource type="Texture2D" uid="uid://bou3d5wcwln2p" path="res://assets/portraits/REMI_default.png" id="7_yidlp"]
 
 [node name="Page" type="Control" unique_id=1454747359]
 texture_filter = 1
@@ -29,14 +34,260 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -164.0
-offset_top = 19.0
-offset_right = -2.0
-offset_bottom = 49.0
+offset_left = -121.0
+offset_top = 30.0
+offset_right = 117.0
+offset_bottom = 60.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_f34rh")
 theme_override_font_sizes/font_size = 28
-text = "test"
+text = "Primary Suspects"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=174742845]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 185.0
+offset_right = -55.0
+offset_bottom = 215.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f34rh")
+theme_override_font_sizes/font_size = 16
+text = "Hei
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=217944733]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 169.0
+offset_right = -55.0
+offset_bottom = 199.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f34rh")
+theme_override_font_sizes/font_size = 16
+text = "Felicia"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=389614808]
+texture_filter = 1
+layout_mode = 0
+offset_left = 23.0
+offset_top = 97.0
+offset_right = 93.0
+offset_bottom = 167.0
+texture = ExtResource("3_qm7if")
+
+[node name="Label6" type="Label" parent="." unique_id=1931553501]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -41.5
+offset_top = 182.0
+offset_right = 33.5
+offset_bottom = 212.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f34rh")
+theme_override_font_sizes/font_size = 16
+text = "Villalobos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="." unique_id=204331083]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 166.0
+offset_right = 32.0
+offset_bottom = 196.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f34rh")
+theme_override_font_sizes/font_size = 16
+text = "Arthur"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=963852675]
+texture_filter = 1
+layout_mode = 0
+offset_left = 110.0
+offset_top = 94.0
+offset_right = 180.0
+offset_bottom = 164.0
+texture = ExtResource("4_ph70o")
+
+[node name="Label8" type="Label" parent="." unique_id=1565206477]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 48.0
+offset_top = 180.0
+offset_right = 120.0
+offset_bottom = 210.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f34rh")
+theme_override_font_sizes/font_size = 16
+text = "Ortolano"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="." unique_id=162445274]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 48.0
+offset_top = 164.0
+offset_right = 120.0
+offset_bottom = 194.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f34rh")
+theme_override_font_sizes/font_size = 16
+text = "Gary"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=1097373292]
+texture_filter = 1
+layout_mode = 0
+offset_left = 198.0
+offset_top = 92.0
+offset_right = 268.0
+offset_bottom = 162.0
+texture = ExtResource("5_adr4s")
+
+[node name="Label10" type="Label" parent="." unique_id=1690407126]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.0
+offset_top = 324.0
+offset_right = -27.0
+offset_bottom = 354.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f34rh")
+theme_override_font_sizes/font_size = 16
+text = "Esteban"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label11" type="Label" parent="." unique_id=1905103107]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -102.0
+offset_top = 308.0
+offset_right = -24.0
+offset_bottom = 338.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f34rh")
+theme_override_font_sizes/font_size = 16
+text = "Francesca"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect5" type="TextureRect" parent="." unique_id=718909883]
+texture_filter = 1
+layout_mode = 0
+offset_left = 51.0
+offset_top = 236.0
+offset_right = 121.0
+offset_bottom = 306.0
+texture = ExtResource("6_rhc4c")
+
+[node name="Label12" type="Label" parent="." unique_id=2019103045]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 31.0
+offset_top = 321.0
+offset_right = 103.0
+offset_bottom = 351.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f34rh")
+theme_override_font_sizes/font_size = 16
+text = "Corleon"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label13" type="Label" parent="." unique_id=2039061797]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 31.0
+offset_top = 305.0
+offset_right = 103.0
+offset_bottom = 335.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f34rh")
+theme_override_font_sizes/font_size = 16
+text = "Remi"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect6" type="TextureRect" parent="." unique_id=213417600]
+texture_filter = 1
+layout_mode = 0
+offset_left = 181.0
+offset_top = 233.0
+offset_right = 251.0
+offset_bottom = 303.0
+texture = ExtResource("7_yidlp")

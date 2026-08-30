@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://p2avyshl0jal"]
+
+[ext_resource type="Texture2D" uid="uid://xxrdxvi3bygk" path="res://assets/resources/right_next.tres" id="1_jih1c"]
+[ext_resource type="FontFile" uid="uid://dr80jfvwrqij4" path="res://assets/fonts/the-lowly-scribe.ttf" id="2_sro3m"]
+[ext_resource type="Script" uid="uid://bfdwmf7nl7olt" path="res://scripts/ui/slots.gd" id="3_jih1c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sro3m"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4dp4"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Page" type="Control" unique_id=1454747359]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = -10.0
+offset_right = 300.0
+offset_bottom = 370.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=394516674]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jih1c")
+
+[node name="Label4" type="Label" parent="." unique_id=174742845]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -176.0
+offset_top = 145.0
+offset_right = 138.0
+offset_bottom = 175.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sro3m")
+theme_override_font_sizes/font_size = 16
+text = "- One of Mr Esteban's fellow
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="." unique_id=1487319710]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -135.0
+offset_top = 203.0
+offset_right = 179.0
+offset_bottom = 233.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sro3m")
+theme_override_font_sizes/font_size = 16
+text = "- Never got along with him
+"
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="." unique_id=1762824367]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.0
+offset_top = 239.0
+offset_right = 181.0
+offset_bottom = 269.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sro3m")
+theme_override_font_sizes/font_size = 16
+text = "- Has a mysterious
+"
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="." unique_id=1134459478]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.0
+offset_top = 272.0
+offset_right = 181.0
+offset_bottom = 302.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sro3m")
+theme_override_font_sizes/font_size = 16
+text = "-                  Esteban to a
+"
+vertical_alignment = 1
+
+[node name="Panel2" type="PanelContainer" parent="." unique_id=1283660460]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 29.000002
+offset_top = 35.0
+offset_right = 108.0
+offset_bottom = 58.0
+scale = Vector2(1.1599997, 1.5199997)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sro3m")
+script = ExtResource("3_jih1c")
+
+[node name="Panel3" type="PanelContainer" parent="." unique_id=1415121174]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 129.0
+offset_top = 34.0
+offset_right = 208.0
+offset_bottom = 57.0
+scale = Vector2(1.1599997, 1.5199997)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_sro3m")
+script = ExtResource("3_jih1c")
+
+[node name="Panel7" type="PanelContainer" parent="." unique_id=816296357]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 30.0
+offset_top = 170.0
+offset_right = 109.0
+offset_bottom = 193.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o4dp4")
+script = ExtResource("3_jih1c")
+
+[node name="Panel8" type="PanelContainer" parent="." unique_id=1858048467]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 170.0
+offset_top = 242.0
+offset_right = 249.0
+offset_bottom = 265.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o4dp4")
+script = ExtResource("3_jih1c")
+
+[node name="Panel9" type="PanelContainer" parent="." unique_id=39004896]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 30.0
+offset_top = 274.0
+offset_right = 109.0
+offset_bottom = 297.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o4dp4")
+script = ExtResource("3_jih1c")
+
+[node name="Panel10" type="PanelContainer" parent="." unique_id=42062030]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 30.0
+offset_top = 307.0
+offset_right = 109.0
+offset_bottom = 330.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_o4dp4")
+script = ExtResource("3_jih1c")

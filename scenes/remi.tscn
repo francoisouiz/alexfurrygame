@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://chi7o6bsi1do"]
+
+[ext_resource type="Texture2D" uid="uid://c1iyh0movc1pq" path="res://assets/character_sprites/remi.png" id="1_7qjon"]
+[ext_resource type="Script" uid="uid://c5mlp6r4mts0r" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd" id="2_3hm84"]
+[ext_resource type="Resource" uid="uid://cu3ax2ifmvp86" path="res://dialogue/remi.dialogue" id="3_7qjon"]
+[ext_resource type="Script" uid="uid://bb636aic4yoo6" path="res://addons/dialogue_manager/nodes/marker/dialogue_marker_3d.gd" id="4_fkwlg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekbbv"]
+atlas = ExtResource("1_7qjon")
+region = Rect2(0, 0, 50.01065, 70)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s3x7s"]
+size = Vector3(0.4333496, 0.6452637, 0.5739746)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3q5lw"]
+size = Vector3(0.640625, 0.6767578, 0.71118164)
+
+[node name="Remi" type="StaticBody3D" unique_id=358442570]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1155866945]
+texture_filter = 0
+texture = SubResource("AtlasTexture_ekbbv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1935138076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.020019531, 0)
+shape = SubResource("BoxShape3D_s3x7s")
+
+[node name="DialogueActionable3D" type="Area3D" parent="." unique_id=77638918]
+script = ExtResource("2_3hm84")
+dialogue_resource = ExtResource("3_7qjon")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueActionable3D" unique_id=1126160661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0078125, 0)
+shape = SubResource("BoxShape3D_3q5lw")
+
+[node name="DialogueMarker3D" type="Marker3D" parent="." unique_id=1527246055]
+script = ExtResource("4_fkwlg")
+character_name = "Remi"
+metadata/_custom_type_script = "uid://bb636aic4yoo6"

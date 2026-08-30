@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cbcv2kxq0rtu0"]
 
-[ext_resource type="ArrayMesh" uid="uid://dl1xh5vbla338" path="res://assets/places/mafia/mafia_Cube.res" id="1_mhhn0"]
-[ext_resource type="ArrayMesh" uid="uid://xwiijaybvac4" path="res://assets/places/mafia/mafia_Cube_002.res" id="2_538ka"]
-[ext_resource type="ArrayMesh" uid="uid://c8v1ajist8tug" path="res://assets/places/mafia/mafia_Cube_001.res" id="3_tojal"]
+[ext_resource type="ArrayMesh" uid="uid://bufbk4lq3l1wy" path="res://assets/places/mafia/mafia_Cube.res" id="1_mhhn0"]
+[ext_resource type="ArrayMesh" uid="uid://cwaqv62b6a356" path="res://assets/places/mafia/mafia_Cube_002.res" id="2_538ka"]
+[ext_resource type="ArrayMesh" uid="uid://cw5r55nma7sgk" path="res://assets/places/mafia/mafia_Cube_001.res" id="3_tojal"]
+[ext_resource type="PackedScene" uid="uid://chi7o6bsi1do" path="res://scenes/remi.tscn" id="4_s1hff"]
+[ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/player.tscn" id="5_lirgy"]
+[ext_resource type="PackedScene" uid="uid://cjp78nssn4xlx" path="res://scenes/gabriel.tscn" id="6_ofg7a"]
 
 [sub_resource type="Environment" id="Environment_tojal"]
 background_mode = 1
@@ -18,6 +21,9 @@ volumetric_fog_gi_inject = 5.7
 volumetric_fog_length = 1024.0
 
 [node name="Mafia" type="Node3D" unique_id=69312209]
+
+[node name="Remi" parent="." unique_id=358442570 instance=ExtResource("4_s1hff")]
+transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, -21.23534, 1.2651701, -10.391006)
 
 [node name="Environment" type="Node3D" parent="." unique_id=432985250]
 
@@ -50,3 +56,9 @@ mesh = ExtResource("2_538ka")
 [node name="MafiaCube001" type="MeshInstance3D" parent="Meshes" unique_id=1851428370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.25, 0, 0)
 mesh = ExtResource("3_tojal")
+
+[node name="Player" parent="." unique_id=392277457 instance=ExtResource("5_lirgy")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.55228, 2.1367512, -7.294258)
+
+[node name="Gabriel" parent="." unique_id=1218963668 instance=ExtResource("6_ofg7a")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.401396, 2.14782, -13.220376)

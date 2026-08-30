@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://blsn1es3tp7kf"]
+
+[ext_resource type="Texture2D" uid="uid://dcpfjb7ugvri2" path="res://assets/resources/left_next.tres" id="1_75x2j"]
+[ext_resource type="FontFile" uid="uid://dr80jfvwrqij4" path="res://assets/fonts/the-lowly-scribe.ttf" id="2_858ny"]
+[ext_resource type="Texture2D" uid="uid://sffqq786ef75" path="res://assets/portraits/FELICIA_default.png" id="3_858ny"]
+
+[node name="Page2" type="Control" unique_id=1454747359]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 380.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=394516674]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_75x2j")
+
+[node name="Label2" type="Label" parent="." unique_id=474242504]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -121.0
+offset_top = 41.0
+offset_right = 41.0
+offset_bottom = 71.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_858ny")
+theme_override_font_sizes/font_size = 28
+text = "Felicia Hei"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=652276417]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 23.0
+offset_right = 274.0
+offset_bottom = 87.0
+texture = ExtResource("3_858ny")
+
+[node name="Label4" type="Label" parent="." unique_id=385502361]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 102.0
+offset_right = 120.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_858ny")
+theme_override_font_sizes/font_size = 16
+text = "- Mr Esteban's Secretary"
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="." unique_id=1265659679]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 137.0
+offset_right = 121.0
+offset_bottom = 167.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_858ny")
+theme_override_font_sizes/font_size = 16
+text = "- Found the body"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=1990442929]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 166.0
+offset_right = 240.0
+offset_bottom = 196.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_858ny")
+theme_override_font_sizes/font_size = 16
+text = "- Treated with prejudice"
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="." unique_id=1122518194]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 189.0
+offset_right = 256.0
+offset_bottom = 219.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_858ny")
+theme_override_font_sizes/font_size = 16
+text = "because of speciesism"
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="." unique_id=1504526168]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 291.0
+offset_right = 120.0
+offset_bottom = 321.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_858ny")
+theme_override_font_sizes/font_size = 16
+text = "- Hates the Esteban Family"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="." unique_id=1340424519]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 222.0
+offset_right = 122.0
+offset_bottom = 252.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_858ny")
+theme_override_font_sizes/font_size = 16
+text = "- Appears in scandal documents"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="." unique_id=1617144687]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 258.0
+offset_right = 122.0
+offset_bottom = 288.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_858ny")
+theme_override_font_sizes/font_size = 16
+text = "- Dating Mr. Villalobos"
+vertical_alignment = 1

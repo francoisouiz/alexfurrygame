@@ -15,8 +15,14 @@ var preview_layer: Control
 
 var page_answers: Dictionary = {
 	0: ["Lucius", "Solano", "Gabriel", "John", "Utrera", "Benjamin", "Esteban"],
-	1: ["test"],
-	2: ["Bryan", "Daza", "killed", "Errol", "Bayubay"]
+	1: ["Felicia", "Hei", "Arthur", "Villalobos", "Gary", "Ortolano", "Francesca", "Esteban", "Remi", "Corleón"],
+	2: ["Benjamin", "Esteban", "floor", "blood", "vomit", "mouth", "poison"],
+	3: ["Documents", "Homecooked Meal", "Family", "Wife", "Kid", "Birthdays"],
+	4: ["Felicia", "Hei", "Secretary", "Prejudice", "Speciesism", "Scandal", "Hates", "Esteban"],
+	5: ["Arthur", "Villalobos", "Journalist", "Hei", "Ortolano", "11:00 AM"],
+	6: ["Francesca", "Esteban", "Wife", "Drew", "Sangster", "Extrajudicial Killings"],
+	7: ["Gary", "Ortolano", "Colleague", "Invited", "Gathering"],
+	8: ["Remi", "Corleon", "Los Fuertes", "Contacted", "Esteban", "Ortolano"]
 }
 
 var verified_correct_pages: Dictionary = {}
