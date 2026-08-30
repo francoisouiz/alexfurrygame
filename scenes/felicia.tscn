@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b45cmvcr4iie7"]
+
+[ext_resource type="Texture2D" uid="uid://cik5nb31osq4x" path="res://assets/sprites/FELICIA_sprite.png" id="1_h65kn"]
+[ext_resource type="Script" uid="uid://c5mlp6r4mts0r" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd" id="2_r4dyb"]
+[ext_resource type="Resource" uid="uid://bvweybspw188c" path="res://dialogue/felicia.dialogue" id="3_lj8s5"]
+[ext_resource type="Script" uid="uid://bb636aic4yoo6" path="res://addons/dialogue_manager/nodes/marker/dialogue_marker_3d.gd" id="3_mvjki"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s3x7s"]
+size = Vector3(0.4333496, 1.0549316, 0.5739746)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3q5lw"]
+size = Vector3(0.640625, 1.0322266, 0.71118164)
+
+[node name="Felicia" type="StaticBody3D" unique_id=358442570]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1155866945]
+texture_filter = 0
+texture = ExtResource("1_h65kn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1935138076]
+shape = SubResource("BoxShape3D_s3x7s")
+
+[node name="DialogueActionable3D" type="Area3D" parent="." unique_id=77638918]
+script = ExtResource("2_r4dyb")
+dialogue_resource = ExtResource("3_lj8s5")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueActionable3D" unique_id=1126160661]
+shape = SubResource("BoxShape3D_3q5lw")
+
+[node name="DialogueMarker3D" type="Marker3D" parent="." unique_id=1527246055]
+script = ExtResource("3_mvjki")
+character_name = "Felicia"
+metadata/_custom_type_script = "uid://bb636aic4yoo6"

@@ -1,3 +1,6 @@
 ~ start
-do Constants.open_map.emit()
+if Constants.current_level == "lucius_room" and not Constants.has_opened_journal:
+	Lucius: I need to prepare my journal first.
+else:
+	do Constants.open_map.emit()
 => END
