@@ -23,10 +23,10 @@ Felicia: -
 	do unlock_keyword("11:00 AM", "noun")
 	do unlock_keyword("coughing", "verb")
 	Felicia: I think it was around 11:00 AM? He started coughing loudly at his desk. I thought it was another fit over his food, so I hauled ass outside into my office.
-	do ProgressMarkers.has_asked.Coughing_Fits = true
+	do ProgressMarkers.has_learned.Coughing_Fits = true
 	=> questions
 
-- [if ProgressMarkers.has_asked.Coughing_Fits == true /] What do you mean by fits?
+- [if ProgressMarkers.has_learned.Coughing_Fits == true /] What do you mean by fits?
 	Felicia: Mr. Esteban never liked me. Whenever I did anything, he would nitpick me to hell.
 	Felicia: He asked me to prepare his lunch this morning, so when he started coughing after eating the food, I was ready for him to stop and hit me with a “How could you mess up heating rice?” bit.
 	=> questions
@@ -35,7 +35,7 @@ Felicia: -
 - Do you know if he’s eaten anything weird recently?
 	do unlock_keyword("Homecooked meal", "noun")
 	Felicia: Hmm, now that I think about it, today was probably the first time he brought food from his house. He usually orders food and eats it in his office.
-	do ProgressMarkers.has_asked.Homecooking = true
+	do ProgressMarkers.has_learned.Homecooking = true
 	Felicia: Though honestly, I doubt his “homecooked” meal is actually homecooked. His good-for-nothing wife probably can’t even boil an egg.
 	=> questions
 
@@ -46,11 +46,11 @@ Felicia: -
 	Felicia: I was with Mr. Esteban’s wife, Francesca. We were dropping off Anna at school and came back to the office at 10:00 AM.
 	Lucius: And after that?
 	do unlock_keyword("Working in Office", "verb")
-	do ProgressMarkers.has_asked.Felicia_Morning = true
+	do ProgressMarkers.has_learned.Felicia_Morning = true
 	Felicia: I was simply working in my office here sorting out Mr. Esteban’s documents.
 	=> questions
 
-- Arthur said you guys were on a date. What happened to working in the office? [if ProgressMarkers.has_asked.Cafe_Date == true and ProgressMarkers.has_asked.Felicia_Morning /]
+- Arthur said you guys were on a date. What happened to working in the office? [if ProgressMarkers.has_learned.Cafe_Date == true and ProgressMarkers.has_learned.Felicia_Morning /]
 	do set_expression("lookaway")
 	Felicia: He… told you about that?
 	do set_expression("angry")
@@ -66,7 +66,7 @@ Felicia: -
 	Lucius: However, I hope you’ll be more honest with me. I need as much information as I can get to solve this case.
 	do unlock_keyword("hanging out", "noun")
 	do unlock_keyword("cafe”, “noun")
-	do ProgressMarkers.has_asked.Drew_Date == true
+	do ProgressMarkers.has_learned.Drew_Date == true
 	Felicia: Ah, well, I did see something interesting while I was in the cafe. I think I saw someone who looked like Mrs. Esteban. She was hanging out with someone.
 	Felicia: I recognize him from somewhere, but I just can’t remember.
 	Lucius: She was outside at lunchtime? Interesting. Thank you.

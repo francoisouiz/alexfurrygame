@@ -1,6 +1,6 @@
 extends Node
 
-var has_asked: Dictionary = {
+var has_learned_about: Dictionary = {
 	"Coughing_Fits": false,
 	"Cafe_Date": false,
 	"Felicia_Morning": false,
@@ -11,6 +11,11 @@ var has_asked: Dictionary = {
 	"Gary_Interview": false,
 	"Parent_Colleague": false,
 	"Child_Colleague": false,
+	"Sindikato_Ties": false,
+	"No_Sindikato_Ties": false,
+	"Mafia_Colleague": false,
+	"Fake_Documents": false,
+	"Not_Roped_In": false,
 }
 
 var has_found: Dictionary = {
