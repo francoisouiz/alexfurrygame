@@ -1,11 +1,11 @@
 ~ start
-if Constants.has_met.Gary == false
+if ProgressMarkers.has_met.Gary == false
 	Lucius: Good afternoon, Mr. Ortolano.
 	Gary: Please, just call me Gary. Adding unnecessary formality will just delay the case.
 	Lucius: In that case, thank you for coming here, Gary.
 	Lucius: As you know, as part of the Benjamin Esteban case, we would like to ask you a couple of questions.
 	Gary: Go right ahead.
-	do Constants.has_met.Gary = true
+	do ProgressMarkers.has_met.Gary = true
 else
 	Gary: What’s the matter?
 => questions
@@ -21,14 +21,14 @@ Gary: -
 	Gary: I had an interview with a journalist, Mr. Arthur Villalobos. Afterwards, I had lunch with a colleague of mine.
 	=> questions
 
-- What specifically did you two talk about last night? [if Constants.has_asked.Night_Call /]
+- What specifically did you two talk about last night? [if ProgressMarkers.has_asked.Night_Call /]
 	Gary: I actually wanted to invite him to the lunch with my colleague today. They have similar mindsets, so I was hoping they could get along.
-	do Constants.has_asked.Parent_Colleague = true
+	do ProgressMarkers.has_asked.Parent_Colleague = true
 	Lucius: In that case, why did Mr Esteban say that you "brought this on yourself"? What makes this lunch so special?
 	Gary: Ah, well, my colleague can be pretty imposing. It’s like eating with your parents after you made a mistake. You can feel them staring you down, waiting for you to say something. Even though nothing you say will help.
 	=> questions
 
-- Why did you cut the interview short? [if Constants.has_asked.Gary_Interview == true /]
+- Why did you cut the interview short? [if ProgressMarkers.has_asked.Gary_Interview == true /]
 	Gary: Oh, did you interview Mr. Villalobos too?
 	Lucius: Yup, he was waiting for you to come back for a while.
 	Gary: Ah. I should probably apologize to him. I didn’t mean to just leave him waiting.
@@ -36,19 +36,19 @@ Gary: -
 	Gary: Yeah, the colleague I was having lunch with can be a bit… impatient
 	Gary: I can’t leave him waiting for too long, or he’ll get mad. As long as he’s happy, I’m happy.
 	Lucius: Are you meeting up with a kid?
-	do Constants.has_asked.Child_Colleague = true
+	do ProgressMarkers.has_asked.Child_Colleague = true
 	do unlock_keyword("Kid", "noun")
 	Gary: A kid? Yeah, a kid.
 	=> questions
 
-- So what kind of person is your colleague? [if Constants.has_asked.Parent_Colleague and Constants.has_asked.Child_Colleague /]
+- So what kind of person is your colleague? [if ProgressMarkers.has_asked.Parent_Colleague and ProgressMarkers.has_asked.Child_Colleague /]
 	Lucius: You’ve described him both as an impatient child and an imposing parent. So which one is it?
 	Gary: Look, those are just descriptions I made on the spot.
 	do unlock_keyword("colleague", "noun")
 	Gary: All you need to know is that my colleague is someone I don’t want to make angry.
 	=> questions
 
-- Do you recognize these documents? [if Constants.has_found.Planted_evidence /]
+- Do you recognize these documents? [if ProgressMarkers.has_found.Planted_evidence /]
 	do unlock_keyword("Los Fuertes", "name")
 	Gary: The Los Fuertes? How did you get these?
 	Lucius: We found them in his office.
@@ -70,7 +70,7 @@ Gary: -
 	Lucius: Yeah, I remember that being pretty big news.
 	Gary: "The Knight Who Never Reached His Happily Ever After". A little verbose for my taste, but the people loved it.
 	Gary: Drew didn’t seem to mind, though. "My true love will one day find me," or something.
-	do Constants.has_asked.Drew_Relationship = true
+	do ProgressMarkers.has_asked.Drew_Relationship = true
 	Gary: Since then, Francesca’s made fewer public appearances. When she does, she’s mostly quietly following her husband around.
 	=> questions
 

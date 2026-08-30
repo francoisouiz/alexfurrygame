@@ -1,11 +1,11 @@
 ~ start
-if Constants.has_met.Francesca == false
+if ProgressMarkers.has_met.Francesca == false
 	Lucius: Mrs. Esteban, how are you feeling?
 	Francesca: You’d like to ask me some questions, I suppose. Please Just give me a moment. 
 	Lucius: Of course. Take your time.
 	Francesca: …
 	Francesca: Alright. What would you like to know, detective?
-	do Constants.has_met.Francesca = true
+	do ProgressMarkers.has_met.Francesca = true
 else
 	Francesca: Detective? Is everything alright?
 	Lucius: I’d just like to ask you a few more things.
@@ -16,7 +16,7 @@ Francesca: -
 	Francesca: Let’s see. I prepared his lunch, made sure he was dressed properly, prepared Anna for school, dropped her off with that anthrocat, then went home.
 	=> questions
 
-- How did you prepare his food today? [if Constants.has_asked.Homecooking /]
+- How did you prepare his food today? [if ProgressMarkers.has_asked.Homecooking /]
 	Francesca: Ah well. I must confess that I’m not really a good cook. I wanted to prepare something for him, but I just couldn’t figure it out.
 	do unlock_keyword("Delivery", "noun")
 	Francesca: I kind of panicked and just ordered chicken from Min’s Restaurant and called it my own.
@@ -29,7 +29,7 @@ Francesca: -
 	do unlock_keyword("Ortolano", "name")
 	Francesca: Hmm. He did often bring up that Secretary Ortolano. They had different opinions about how to handle their work.
 	do unlock_keyword("call", "verb")
-	do Constants.has_asked.Night_Call = true
+	do ProgressMarkers.has_asked.Night_Call = true
 	Francesca: He actually called last night. I don’t know what they talked about, but at one point, Benjamin started laughing and said something like, "You really are thickheaded. You brought this on yourself. Don’t bring me into it."
 	Francesca: He then hung up. He seemed pretty happy after that.
 	Lucius: So Secretary Ortolano. Anyone else come to mind?
@@ -39,7 +39,7 @@ Francesca: -
 	Francesca: And to think I let her drive me and my daughter to her school. She really is bad luck.
 	=> questions
 
-- Can you tell us anything about these documents? [if Constants.has_found.Vault_Documents /]
+- Can you tell us anything about these documents? [if ProgressMarkers.has_found.Vault_Documents /]
 	Francesca: How did you-
 	Francesca: Listen. I did not partake in the COCHE scandal in any way, do you understand?
 	Lucius: Of course. Of course.
@@ -52,7 +52,7 @@ Francesca: -
 	Francesca: If one of the events caused his death, it’s most likely that one.
 	=> questions
 
-- So, how’s Drew these days? [if Constants.has_asked.Drew_Relationship and Constants.has_asked.Drew_Date /]
+- So, how’s Drew these days? [if ProgressMarkers.has_asked.Drew_Relationship and ProgressMarkers.has_asked.Drew_Date /]
 	Francesca: Wha- why are you bringing him up all of a sudden?
 	Lucius: Just my curiosity. As a detective, I just like knowing things.
 	Francesca: He’s doing well. He’s landed a big role in a new movie, and he plans on running for the Senate in the next election.

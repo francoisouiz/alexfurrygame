@@ -1,5 +1,5 @@
 ~ start
-if Constants.has_met.Arthur == false
+if ProgressMarkers.has_met.Arthur == false
 	Arthur: Hey! Are you the one in charge? You can’t keep me here for no reason, you know.
 	Lucius: Sorry, but things are very hectic in here right now. We’re questioning almost everyone, but if you work with us, we can quickly let you go.
 	Arthur: Hang on, I know you.
@@ -17,7 +17,7 @@ if Constants.has_met.Arthur == false
 	do unlock_keyword("Arthur", "name")
 	do unlock_keyword("Villalobos", "name")
 	Arthur: My name is Arthur Villalobos.
-	do Constants.has_met.Arthur = true
+	do ProgressMarkers.has_met.Arthur = true
 else
 	Lucius: I have a few more questions for you.
 	Arthur: Fire away.
@@ -30,7 +30,7 @@ Arthur: -
 	do unlock_keyword("Interviewed", "verb")
 	do unlock_keyword("11:00 AM", "noun")
 	Arthur: I had an interview with Senator Gary Ortolano this morning. It was going well, but at around 11, he cut the interview short, said he needed to do something, and hurriedly left.
-	do Constants.has_asked.Gary_Interview = true
+	do ProgressMarkers.has_asked.Gary_Interview = true
 	Lucius: What brought you here at this time?
 	Arthur: I’m here to see, well, "her". My girlfriend. We just went on a lunch date earlier but she left her phone with me. 
 	Lucius: And who might that be?
@@ -38,7 +38,7 @@ Arthur: -
 	Lucius: [i](The secretary earlier… could this man be related to the case?)[/i]
 	Lucius: [i](Felicia also said she was working during the time. Did she just lie to me?)[/i]
 	Lucius: [i](I need to confront her about this afterward.)[/i]
-	do Constants.has_asked.Cafe_Date = true
+	do ProgressMarkers.has_asked.Cafe_Date = true
 	=> questions
 
 - What do you do for a living?
@@ -50,7 +50,7 @@ Arthur: -
 	Lucius: He’s… doing fine. Don’t worry about him
 	=> questions
 
-- Have you ever met your girlfriend’s boss? [if Constants.has_asked.Cafe_Date == true /]
+- Have you ever met your girlfriend’s boss? [if ProgressMarkers.has_asked.Cafe_Date == true /]
 	Arthur: Nope. But I hear a lot of complaints about him from her.
 	Lucius: What kind of complaints?
 	do unlock_keyword("hates", "verb")

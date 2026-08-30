@@ -21,6 +21,7 @@ Constants="*uid://dgxncmmd3c3py"
 SceneLoader="*uid://dl7i7cdpqh6pv"
 Variables="*uid://chq575pl2ackp"
 DialogueManager="*uid://c3rodes2l3gxb"
+ProgressMarkers="*uid://btk5xoijcg7cc"
 
 [debug]
 
