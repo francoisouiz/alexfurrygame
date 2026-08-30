@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bvweybspw188c"
+path="res://.godot/imported/felicia.dialogue-0729aae1607074c0c84e24894998f285.tres"
+
+[deps]
+
+source_file="res://dialogue/felicia.dialogue"
+dest_files=["res://.godot/imported/felicia.dialogue-0729aae1607074c0c84e24894998f285.tres"]
+
+[params]
+
+defaults=true

@@ -5,13 +5,41 @@ var current_level: String
 var has_opened_journal: bool = false
 var first_time_filled: bool = true
 
+var has_asked: Dictionary = {
+	"Coughing_Fits": false,
+	"Cafe_Date": false,
+	"Felicia_Morning": false,
+	"Homecooking": false,
+	"Drew_Relationship": false,
+	"Drew_Date": false,
+	"Night_Call": false,
+	"Gary_Interview": false,
+	"Parent_Colleague": false,
+	"Child_Colleague": false,
+}
+
+var has_found: Dictionary = {
+	"Vault_Documents": true,
+	"Planted_Documents": false,
+	"Journal": false,
+}
+
+var has_met: Dictionary = {
+	"Felicia": false,
+	"Arthur": false,
+	"Gary": false,
+	"Francesca": false,
+	"Remi": false,
+}
+
 signal open_map
 signal journal_prompt
 signal first_time_signal
 
 const SCENE_PATHS: Dictionary = {
 	"loading_screen": "uid://dks2u6hsx0uwt",
-	"bahay": "uid://b4rcaktogxosx"
+	"bahay": "uid://b4rcaktogxosx",
+	"dialogue_testing": "uid://bajvpq71v7u04"
 }
 
 const PAGE_PATHS: Array[Dictionary] = [

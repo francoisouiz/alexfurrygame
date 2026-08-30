@@ -1,0 +1,66 @@
+~ start
+if Constants.has_met.Arthur == false
+	Arthur: Hey! Are you the one in charge? You can’t keep me here for no reason, you know.
+	Lucius: Sorry, but things are very hectic in here right now. We’re questioning almost everyone, but if you work with us, we can quickly let you go.
+	Arthur: Hang on, I know you.
+	Lucius: Lucius Solano. Private Investigator.
+	Arthur: Ohh yeahh, you were that notorious detective from a few years ago.
+	Lucius: So you do know me. Good. That makes things a bit easier.
+	Lucius: I’ll cut straight to the point.
+	Lucius: Unfortunately, there’s been a murder in the building. Thus, it is on lockdown. You don’t seem to work here so-
+	Arthur: A murder!? Who? Who died? Oh God, please don’t be her. I can’t imagine a world without her!
+	Lucius: Calm down, take a deep breath. I can’t disclose much, but I can tell you that the victim is a male, so it’s not "her", whoever she may be.
+	Arthur: Oh thank god. I was so scared.
+	Arthur: …
+	Arthur: I’m a suspect now, right? Feel free to ask me anything.
+	Lucius: For custom’s sake, please state your name.
+	do unlock_keyword("Arthur", "name")
+	do unlock_keyword("Villalobos", "name")
+	Arthur: My name is Arthur Villalobos.
+	do Constants.has_met.Arthur = true
+else
+	Lucius: I have a few more questions for you.
+	Arthur: Fire away.
+=> questions
+~ questions
+Arthur: -
+- What are you doing here?
+	do unlock_keyword("Gary", "name")
+	do unlock_keyword("Ortolano", "name")
+	do unlock_keyword("Interviewed", "verb")
+	do unlock_keyword("11:00 AM", "noun")
+	Arthur: I had an interview with Senator Gary Ortolano this morning. It was going well, but at around 11, he cut the interview short, said he needed to do something, and hurriedly left.
+	do Constants.has_asked.Gary_Interview = true
+	Lucius: What brought you here at this time?
+	Arthur: I’m here to see, well, "her". My girlfriend. We just went on a lunch date earlier but she left her phone with me. 
+	Lucius: And who might that be?
+	Arthur: Felicia. Felicia Hei. She works here as Senator Esteban’s secretary.
+	Lucius: [i](The secretary earlier… could this man be related to the case?)[/i]
+	Lucius: [i](Felicia also said she was working during the time. Did she just lie to me?)[/i]
+	Lucius: [i](I need to confront her about this afterward.)[/i]
+	do Constants.has_asked.Cafe_Date = true
+	=> questions
+
+- What do you do for a living?
+	do unlock_keyword("journalist", "noun")
+	Arthur: You don’t remember? I’m a freelance journalist. I interviewed you a few years back about the Peyton case.
+	Lucius: Ah, apologies. It’s been a long time since I’ve had an EJK case like that one.
+	Arthur: You know, how is Esteban doing, actually?
+	Arthur: I’m worried that he might have finally gotten to Felicia; they’ve never been on good terms.
+	Lucius: He’s… doing fine. Don’t worry about him
+	=> questions
+
+- Have you ever met your girlfriend’s boss? [if Constants.has_asked.Cafe_Date == true /]
+	Arthur: Nope. But I hear a lot of complaints about him from her.
+	Lucius: What kind of complaints?
+	do unlock_keyword("hates", "verb")
+	Arthur: Oh you know, the usual. Bosses her around a lot. Treats her like shit. The works. She really does hate him. I tried to get an interview with him once but he refused to interact with me.
+	do unlock_keyword("speciesism", "noun")
+	Arthur: He’s probably a speciesist. Acting all high and mighty just because my breed is aspin.
+	Arthur: I guess that bled into his security as well. I'm a journalist for God’s sake I have the right to be in this building. Yet here I am, detained.
+	=> questions
+
+- Thank you for your time.
+	Arthur: Is that it? Am I free to go now?
+	Lucius: Sorry, but not yet. Just relax for now.
+	=> END
