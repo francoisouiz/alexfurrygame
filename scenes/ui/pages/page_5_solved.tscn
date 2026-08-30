@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://cacfbnn5ynpfx"]
+
+[ext_resource type="Texture2D" uid="uid://xxrdxvi3bygk" path="res://assets/resources/right_next.tres" id="1_wkmat"]
+[ext_resource type="FontFile" uid="uid://dr80jfvwrqij4" path="res://assets/fonts/the-lowly-scribe.ttf" id="2_nip76"]
+[ext_resource type="Texture2D" uid="uid://c2ffts5dbi7qh" path="res://assets/portraits/ARTHUR_default.png" id="3_nip76"]
+
+[node name="Page" type="Control" unique_id=1454747359]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = -10.0
+offset_right = 300.0
+offset_bottom = 370.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=394516674]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wkmat")
+
+[node name="Label2" type="Label" parent="." unique_id=34155497]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 38.0
+offset_right = 108.0
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nip76")
+theme_override_font_sizes/font_size = 28
+text = "Arthur Villalobos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=58536428]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 74.0
+offset_right = 281.0
+offset_bottom = 138.0
+texture = ExtResource("3_nip76")
+
+[node name="Label4" type="Label" parent="." unique_id=174742845]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -137.0
+offset_top = 84.0
+offset_right = 48.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nip76")
+theme_override_font_sizes/font_size = 16
+text = "- Works as a Journalist
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=1700781339]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -163.0
+offset_top = 115.0
+offset_right = 22.0
+offset_bottom = 145.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nip76")
+theme_override_font_sizes/font_size = 16
+text = "- Dating Ms. Hei
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Label5" unique_id=20317025]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.5
+offset_top = 32.0
+offset_right = 255.5
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nip76")
+theme_override_font_sizes/font_size = 16
+text = "- Interviewed Mr. Ortolano
+"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="Label5" unique_id=209744768]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.5
+offset_top = 61.0
+offset_right = 267.5
+offset_bottom = 91.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nip76")
+theme_override_font_sizes/font_size = 16
+text = " in the morning
+"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="." unique_id=2121400511]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -143.0
+offset_top = 210.0
+offset_right = 42.0
+offset_bottom = 240.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nip76")
+theme_override_font_sizes/font_size = 16
+text = "- Had lunch with his
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="." unique_id=1411540781]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -145.0
+offset_top = 238.0
+offset_right = 40.0
+offset_bottom = 268.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_nip76")
+theme_override_font_sizes/font_size = 16
+text = "girlfriend at 11:00
+"
+horizontal_alignment = 1
+vertical_alignment = 1

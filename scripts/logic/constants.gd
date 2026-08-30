@@ -31,8 +31,32 @@ const PAGE_PATHS: Array[Dictionary] = [
 	},
 	{
 		"default": preload("uid://debf1s6jtimho"),
-		"solved": preload("uid://debf1s6jtimho")
-	}
+		"solved": preload("uid://2scoswsi4hmb")
+	},
+	{
+		"default": preload("uid://6po6dqwddc4a"),
+		"solved": preload("uid://007pke7yh81t")
+	},
+	{
+		"default": preload("uid://b46mnc3246bew"),
+		"solved": preload("uid://blsn1es3tp7kf")
+	},
+	{
+		"default": preload("uid://b8wjxi7c4lb14"),
+		"solved": preload("uid://cacfbnn5ynpfx")
+	},
+	{
+		"default": preload("uid://cxfoo7fj3dflv"),
+		"solved": preload("uid://caooyi17bj55y")
+	},
+	{
+		"default": preload("uid://p2avyshl0jal"),
+		"solved": preload("uid://75csbte781yx")
+	},
+	{
+		"default": preload("uid://cdftv20nri8vs"),
+		"solved": preload("uid://bovsvg3nfdxhe")
+	},
 ]
 
 const SECTION_PAGES: Dictionary = {

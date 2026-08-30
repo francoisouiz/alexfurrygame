@@ -3,53 +3,9 @@
 [ext_resource type="Script" uid="uid://bfdwmf7nl7olt" path="res://scripts/ui/slots.gd" id="1_cwht6"]
 [ext_resource type="Texture2D" uid="uid://dcpfjb7ugvri2" path="res://assets/resources/left_next.tres" id="1_vp5ba"]
 [ext_resource type="FontFile" uid="uid://dr80jfvwrqij4" path="res://assets/fonts/the-lowly-scribe.ttf" id="2_4rnrf"]
-[ext_resource type="Texture2D" uid="uid://dndrq8ewqk3bp" path="res://assets/portraits/LUCIUS_default.png" id="3_rmu8k"]
-[ext_resource type="Texture2D" uid="uid://dau5qp3v3v3f7" path="res://assets/portraits/GABRIEL_default.png" id="5_ivjcq"]
-[ext_resource type="Texture2D" uid="uid://djo6s4rkfwdri" path="res://assets/portraits/BENJAMIN_dead.png" id="6_cbmdo"]
+[ext_resource type="Texture2D" uid="uid://cgs2vqbu22c0x" path="res://assets/character_sprites/BENJAMIN_sprite.png" id="3_6udys"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f34rh"]
-bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8pydb"]
-bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqit0"]
-bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h12yp"]
-bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_660xb"]
-bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1c1a"]
-bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldo7u"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6udys"]
 bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -63,7 +19,7 @@ anchors_preset = 0
 offset_right = 300.0
 offset_bottom = 380.0
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=394516674]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1761234557]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
@@ -73,7 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_vp5ba")
 
-[node name="Label2" type="Label" parent="." unique_id=474242504]
+[node name="Label2" type="Label" parent="." unique_id=444226374]
 texture_filter = 1
 custom_minimum_size = Vector2(-1, 30)
 custom_maximum_size = Vector2(-1, 30)
@@ -89,147 +45,290 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_4rnrf")
 theme_override_font_sizes/font_size = 28
-text = "Detectives"
+text = "The Office"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=965140671]
-texture_filter = 1
-layout_mode = 0
-offset_left = 46.0
-offset_top = 56.0
-offset_right = 116.0
-offset_bottom = 126.0
-texture = ExtResource("3_rmu8k")
-
-[node name="Panel2" type="PanelContainer" parent="." unique_id=1509236722]
-texture_filter = 1
-custom_minimum_size = Vector2(79, 23)
-custom_maximum_size = Vector2(79, 23)
-layout_mode = 0
-offset_left = 40.0
-offset_top = 128.0
-offset_right = 119.0
-offset_bottom = 151.0
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_f34rh")
-script = ExtResource("1_cwht6")
-
-[node name="Panel3" type="PanelContainer" parent="." unique_id=775127797]
-texture_filter = 1
-custom_minimum_size = Vector2(79, 23)
-custom_maximum_size = Vector2(79, 23)
-layout_mode = 0
-offset_left = 40.0
-offset_top = 152.0
-offset_right = 119.0
-offset_bottom = 175.0
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_8pydb")
-script = ExtResource("1_cwht6")
-
-[node name="Panel4" type="PanelContainer" parent="." unique_id=1846704922]
-texture_filter = 1
-custom_minimum_size = Vector2(63, 23)
-custom_maximum_size = Vector2(63, 23)
-layout_mode = 0
-offset_left = 144.0
-offset_top = 128.0
-offset_right = 207.0
-offset_bottom = 151.0
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_bqit0")
-script = ExtResource("1_cwht6")
-
-[node name="Panel6" type="PanelContainer" parent="." unique_id=605676643]
-texture_filter = 1
-custom_minimum_size = Vector2(64, 23)
-custom_maximum_size = Vector2(64, 23)
-layout_mode = 0
-offset_left = 208.0
-offset_top = 128.0
-offset_right = 272.0
-offset_bottom = 151.0
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_h12yp")
-script = ExtResource("1_cwht6")
-
-[node name="Panel5" type="PanelContainer" parent="." unique_id=138816198]
-texture_filter = 1
-custom_minimum_size = Vector2(79, 23)
-custom_maximum_size = Vector2(79, 23)
-layout_mode = 0
-offset_left = 168.0
-offset_top = 152.0
-offset_right = 247.0
-offset_bottom = 175.0
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_660xb")
-script = ExtResource("1_cwht6")
-
-[node name="TextureRect3" type="TextureRect" parent="." unique_id=1420244622]
-texture_filter = 1
-layout_mode = 0
-offset_left = 168.0
-offset_top = 56.0
-offset_right = 238.0
-offset_bottom = 126.0
-texture = ExtResource("5_ivjcq")
-
-[node name="Label3" type="Label" parent="." unique_id=1837526080]
+[node name="Label4" type="Label" parent="." unique_id=875811756]
 texture_filter = 1
 custom_minimum_size = Vector2(-1, 30)
 custom_maximum_size = Vector2(-1, 30)
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -81.0
-offset_top = -188.0
-offset_right = 81.0
-offset_bottom = -158.0
+offset_left = -203.0
+offset_top = 65.0
+offset_right = 43.0
+offset_bottom = 95.0
 grow_horizontal = 2
-grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_4rnrf")
-theme_override_font_sizes/font_size = 28
-text = "Victim"
+theme_override_font_sizes/font_size = 16
+text = "The diseased,"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect4" type="TextureRect" parent="." unique_id=594340952]
-texture_filter = 1
-layout_mode = 0
-offset_left = 112.0
-offset_top = 224.0
-offset_right = 182.0
-offset_bottom = 294.0
-texture = ExtResource("6_cbmdo")
-
-[node name="Panel7" type="PanelContainer" parent="." unique_id=1465581645]
+[node name="Panel2" type="PanelContainer" parent="." unique_id=1753681597]
 texture_filter = 1
 custom_minimum_size = Vector2(79, 23)
 custom_maximum_size = Vector2(79, 23)
 layout_mode = 0
-offset_left = 112.0
-offset_top = 296.0
-offset_right = 191.0
-offset_bottom = 319.0
+offset_left = 129.0
+offset_top = 66.0
+offset_right = 208.0
+offset_bottom = 89.0
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_b1c1a")
+theme_override_styles/panel = SubResource("StyleBoxFlat_6udys")
 script = ExtResource("1_cwht6")
 
-[node name="Panel8" type="PanelContainer" parent="." unique_id=1020403075]
+[node name="Panel3" type="PanelContainer" parent="." unique_id=971380346]
 texture_filter = 1
 custom_minimum_size = Vector2(79, 23)
 custom_maximum_size = Vector2(79, 23)
 layout_mode = 0
-offset_left = 112.0
-offset_top = 320.0
-offset_right = 191.0
-offset_bottom = 343.0
+offset_left = 212.0
+offset_top = 65.0
+offset_right = 291.0
+offset_bottom = 88.0
 size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_ldo7u")
+theme_override_styles/panel = SubResource("StyleBoxFlat_6udys")
 script = ExtResource("1_cwht6")
+
+[node name="Label5" type="Label" parent="." unique_id=996927633]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 96.0
+offset_right = 70.0
+offset_bottom = 126.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4rnrf")
+theme_override_font_sizes/font_size = 16
+text = "was found dead on the "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel4" type="PanelContainer" parent="." unique_id=1695138351]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 206.0
+offset_top = 97.0
+offset_right = 285.0
+offset_bottom = 120.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6udys")
+script = ExtResource("1_cwht6")
+
+[node name="Label8" type="Label" parent="." unique_id=1698381759]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = 123.0
+offset_right = -26.0
+offset_bottom = 153.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4rnrf")
+theme_override_font_sizes/font_size = 16
+text = "in his office."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="." unique_id=250635246]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -188.0
+offset_top = 165.0
+offset_right = -29.0
+offset_bottom = 195.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4rnrf")
+theme_override_font_sizes/font_size = 16
+text = "The"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel5" type="PanelContainer" parent="." unique_id=1024464891]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 63.0
+offset_top = 166.0
+offset_right = 142.0
+offset_bottom = 189.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6udys")
+script = ExtResource("1_cwht6")
+
+[node name="Label11" type="Label" parent="." unique_id=1922513873]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 164.0
+offset_right = 97.0
+offset_bottom = 194.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4rnrf")
+theme_override_font_sizes/font_size = 16
+text = "and"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel6" type="PanelContainer" parent="." unique_id=1760573110]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 189.0
+offset_top = 166.0
+offset_right = 268.0
+offset_bottom = 189.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6udys")
+script = ExtResource("1_cwht6")
+
+[node name="Label9" type="Label" parent="." unique_id=1241739719]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -205.0
+offset_top = 194.0
+offset_right = 44.0
+offset_bottom = 224.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4rnrf")
+theme_override_font_sizes/font_size = 16
+text = "around his"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel7" type="PanelContainer" parent="." unique_id=1489298867]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 116.0
+offset_top = 195.0
+offset_right = 195.0
+offset_bottom = 218.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6udys")
+script = ExtResource("1_cwht6")
+
+[node name="Label12" type="Label" parent="." unique_id=1031810]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -41.0
+offset_top = 193.0
+offset_right = 208.0
+offset_bottom = 223.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4rnrf")
+theme_override_font_sizes/font_size = 16
+text = "implies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="." unique_id=418415793]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -209.0
+offset_top = 222.0
+offset_right = 40.0
+offset_bottom = 252.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4rnrf")
+theme_override_font_sizes/font_size = 16
+text = "a death by"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel8" type="PanelContainer" parent="." unique_id=1782650461]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 117.0
+offset_top = 225.0
+offset_right = 196.0
+offset_bottom = 248.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6udys")
+script = ExtResource("1_cwht6")
+
+[node name="Photo" type="Control" parent="." unique_id=615624304]
+anchors_preset = 0
+offset_left = 117.0
+offset_top = 251.0
+offset_right = 157.0
+offset_bottom = 291.0
+
+[node name="ColorRect2" type="ColorRect" parent="Photo" unique_id=2123426304]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 49.0
+offset_bottom = 46.0
+scale = Vector2(3.8, 2.505)
+
+[node name="ColorRect" type="ColorRect" parent="Photo" unique_id=1236132229]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 55.0
+offset_bottom = 50.0
+scale = Vector2(3.52, 2.3200002)
+color = Color(0.76156104, 0.76156086, 0.761561, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="Photo" unique_id=1407110154]
+layout_mode = 0
+offset_left = 26.000008
+offset_top = 17.00003
+offset_right = 176.0
+offset_bottom = 117.00003
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_6udys")

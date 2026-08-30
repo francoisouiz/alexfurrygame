@@ -1,0 +1,301 @@
+[gd_scene format=3 uid="uid://b46mnc3246bew"]
+
+[ext_resource type="Texture2D" uid="uid://dcpfjb7ugvri2" path="res://assets/resources/left_next.tres" id="1_r5mwg"]
+[ext_resource type="FontFile" uid="uid://dr80jfvwrqij4" path="res://assets/fonts/the-lowly-scribe.ttf" id="2_myvjt"]
+[ext_resource type="Script" uid="uid://bfdwmf7nl7olt" path="res://scripts/ui/slots.gd" id="2_r5mwg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myvjt"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5mwg"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Page2" type="Control" unique_id=1454747359]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 380.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=394516674]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_r5mwg")
+
+[node name="Panel2" type="PanelContainer" parent="." unique_id=904738795]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 28.000004
+offset_top = 35.0
+offset_right = 107.0
+offset_bottom = 58.0
+scale = Vector2(1.1599997, 1.5199997)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_myvjt")
+script = ExtResource("2_r5mwg")
+
+[node name="Panel3" type="PanelContainer" parent="." unique_id=1738031509]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 133.0
+offset_top = 36.0
+offset_right = 212.0
+offset_bottom = 59.0
+scale = Vector2(1.1599997, 1.5199997)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_myvjt")
+script = ExtResource("2_r5mwg")
+
+[node name="Label10" type="Label" parent="." unique_id=989968548]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 102.0
+offset_right = 120.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_myvjt")
+theme_override_font_sizes/font_size = 16
+text = "- Mr Esteban's"
+vertical_alignment = 1
+
+[node name="Panel4" type="PanelContainer" parent="." unique_id=1768442692]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 145.0
+offset_top = 103.0
+offset_right = 224.0
+offset_bottom = 126.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_r5mwg")
+script = ExtResource("2_r5mwg")
+
+[node name="Label11" type="Label" parent="." unique_id=1975248422]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 137.0
+offset_right = 121.0
+offset_bottom = 167.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_myvjt")
+theme_override_font_sizes/font_size = 16
+text = "- Found the body"
+vertical_alignment = 1
+
+[node name="Label12" type="Label" parent="." unique_id=215191684]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 166.0
+offset_right = 240.0
+offset_bottom = 196.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_myvjt")
+theme_override_font_sizes/font_size = 16
+text = "- Treated with "
+vertical_alignment = 1
+
+[node name="Panel5" type="PanelContainer" parent="." unique_id=1454239998]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 168.0
+offset_right = 229.0
+offset_bottom = 191.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_r5mwg")
+script = ExtResource("2_r5mwg")
+
+[node name="Panel6" type="PanelContainer" parent="." unique_id=1650773858]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 132.0
+offset_top = 193.0
+offset_right = 211.0
+offset_bottom = 216.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_r5mwg")
+script = ExtResource("2_r5mwg")
+
+[node name="Label13" type="Label" parent="." unique_id=1928662821]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 189.0
+offset_right = 256.0
+offset_bottom = 219.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_myvjt")
+theme_override_font_sizes/font_size = 16
+text = "because of "
+vertical_alignment = 1
+
+[node name="Panel7" type="PanelContainer" parent="." unique_id=719945345]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 124.0
+offset_top = 226.0
+offset_right = 203.0
+offset_bottom = 249.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_r5mwg")
+script = ExtResource("2_r5mwg")
+
+[node name="Panel9" type="PanelContainer" parent="." unique_id=1767977101]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 38.0
+offset_top = 260.0
+offset_right = 117.0
+offset_bottom = 283.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_r5mwg")
+script = ExtResource("2_r5mwg")
+
+[node name="Panel10" type="PanelContainer" parent="." unique_id=1602639120]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 126.0
+offset_top = 260.0
+offset_right = 205.0
+offset_bottom = 283.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_r5mwg")
+script = ExtResource("2_r5mwg")
+
+[node name="Panel11" type="PanelContainer" parent="." unique_id=1469562227]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 293.0
+offset_right = 111.0
+offset_bottom = 316.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_r5mwg")
+script = ExtResource("2_r5mwg")
+
+[node name="Panel12" type="PanelContainer" parent="." unique_id=874947225]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 144.0
+offset_top = 293.0
+offset_right = 223.0
+offset_bottom = 316.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_r5mwg")
+script = ExtResource("2_r5mwg")
+
+[node name="Label15" type="Label" parent="." unique_id=1979071531]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -126.0
+offset_top = 222.0
+offset_right = 150.0
+offset_bottom = 252.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_myvjt")
+theme_override_font_sizes/font_size = 16
+text = "- Appears in                  Documents"
+vertical_alignment = 1
+
+[node name="Label16" type="Label" parent="." unique_id=1191911119]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 258.0
+offset_right = 122.0
+offset_bottom = 288.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_myvjt")
+theme_override_font_sizes/font_size = 16
+text = "- "
+vertical_alignment = 1
+
+[node name="Label14" type="Label" parent="." unique_id=1954514604]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 292.0
+offset_right = 130.0
+offset_bottom = 322.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_myvjt")
+theme_override_font_sizes/font_size = 16
+text = "-                the                  Family"
+vertical_alignment = 1
