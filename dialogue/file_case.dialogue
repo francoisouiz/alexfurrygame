@@ -1,0 +1,14 @@
+~ start
+do Constants.file_case.emit()
+do wait_file()
+do unlock_keyword("Benjamin", "name")
+do unlock_keyword("Esteban", "name")
+do unlock_keyword("Lucius", "name")
+do unlock_keyword("Solano", "name")
+do unlock_keyword("Gabriel", "name")
+do unlock_keyword("John", "name")
+do unlock_keyword("Utreta", "name")
+do unlock_keyword("his office", "noun")
+Lucius: Benjamin Esteban, huh...
+Lucius: How desparate must the government be to hire private investigators for this case...
+=> END

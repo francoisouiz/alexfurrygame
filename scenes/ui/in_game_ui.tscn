@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://c86amsjmwydsj" path="res://assets/sounds/book_open_new.mp3" id="7_spc33"]
 [ext_resource type="Shader" uid="uid://c2un6243ma6b4" path="res://shaders/spotlight_mask.gdshader" id="8_8o238"]
 [ext_resource type="Script" uid="uid://d38j8vxxrpsc3" path="res://scripts/logic/tutorial_manager.gd" id="8_s3j3l"]
+[ext_resource type="PackedScene" uid="uid://debnkf652sc7e" path="res://scenes/ui/file_case.tscn" id="10_ulc1b"]
 [ext_resource type="Script" uid="uid://bwg3vg7l8lqqn" path="res://scripts/ui/grid_slots.gd" id="10_wccuv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8pydb"]
@@ -139,6 +140,43 @@ shader_parameter/hole_size = Vector2(0.1, 0.1)
 shader_parameter/corner_radius = 0.02
 shader_parameter/feather = 0.05
 shader_parameter/overlay_color = Color(0, 0, 0, 0.85)
+
+[sub_resource type="Animation" id="Animation_lywma"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -701)]
+}
+
+[sub_resource type="Animation" id="Animation_vhre1"]
+resource_name = "file_animation"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4, -701), Vector2(4, -259.00006), Vector2(4, -16.99997)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qyg60"]
+_data = {
+&"RESET": SubResource("Animation_lywma"),
+&"file_animation": SubResource("Animation_vhre1")
+}
 
 [node name="InGameUI" type="CanvasLayer" unique_id=20912192]
 script = ExtResource("1_8o238")
@@ -350,6 +388,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="FileCase" parent="." unique_id=2057192948 instance=ExtResource("10_ulc1b")]
+offset_top = -701.0
+offset_bottom = -701.0
+
+[node name="FileAnimation" type="AnimationPlayer" parent="FileCase" unique_id=1320361938]
+libraries/ = SubResource("AnimationLibrary_qyg60")
 
 [connection signal="pressed" from="SideBar/VBoxContainer/KeywordClasses/Names" to="." method="_on_names_pressed"]
 [connection signal="pressed" from="SideBar/VBoxContainer/KeywordClasses/Nouns" to="." method="_on_nouns_pressed"]

@@ -115,6 +115,10 @@ func unlock_keyword(keyword_text: String, category: String) -> void:
 	if not _is_processing_keywords:
 		_process_keyword_queue()
 		
+func wait_file() -> void:
+	await get_tree().create_timer(0.4).timeout
+	print("done")
+		
 func _process_keyword_queue() -> void:
 	_is_processing_keywords = true
 	
