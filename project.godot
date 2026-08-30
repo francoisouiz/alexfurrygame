@@ -91,7 +91,7 @@ exit_map={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/calim.dialogue", "res://dialogue/remi.dialogue", "res://dialogue/bryan.dialogue", "res://dialogue/map_prompt.dialogue", "res://dialogue/journal_prompt.dialogue", "res://dialogue/felicia.dialogue", "res://dialogue/arthur.dialogue", "res://dialogue/gary.dialogue", "res://dialogue/francesca.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/calim.dialogue", "res://dialogue/remi.dialogue", "res://dialogue/bryan.dialogue", "res://dialogue/map_prompt.dialogue", "res://dialogue/journal_prompt.dialogue", "res://dialogue/felicia.dialogue", "res://dialogue/arthur.dialogue", "res://dialogue/gary.dialogue", "res://dialogue/francesca.dialogue", "res://dialogue/endings.dialogue", "res://dialogue/file_case.dialogue", "res://dialogue/lucius_room_start.dialogue", "res://dialogue/intro_scene.dialogue", "res://dialogue/office_scene.dialogue")
 
 [physics]
 

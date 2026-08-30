@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cjp78nssn4xlx"]
+
+[ext_resource type="Script" uid="uid://bb636aic4yoo6" path="res://addons/dialogue_manager/nodes/marker/dialogue_marker_3d.gd" id="1_21uit"]
+[ext_resource type="Texture2D" uid="uid://cg1e4l0w8i1mp" path="res://assets/temp/icon.svg" id="2_6v806"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k6xse"]
+size = Vector3(1.7207031, 3.90625, 0.35546875)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f2ysh"]
+size = Vector3(1.4521484, 4.054077, 0.62475586)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsdal"]
+atlas = ExtResource("2_6v806")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twq67"]
+atlas = ExtResource("2_6v806")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh4fc"]
+atlas = ExtResource("2_6v806")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25qnp"]
+atlas = ExtResource("2_6v806")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mfjo2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsdal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twq67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lh4fc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25qnp")
+}],
+"loop": 1,
+"name": &"temp",
+"speed": 5.0
+}]
+
+[node name="Gabriel" type="AnimatableBody3D" unique_id=1218963668]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1979039694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006697893, 0.024463654, 0.0031086206)
+shape = SubResource("BoxShape3D_k6xse")
+
+[node name="InteractionArea" type="Area3D" parent="." unique_id=312386076]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=1725464156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.035949707, 0)
+shape = SubResource("BoxShape3D_f2ysh")
+
+[node name="DialogueMarker3D" type="Marker3D" parent="." unique_id=127739414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012173951, 1.8741847, 0)
+script = ExtResource("1_21uit")
+character_name = "Gabriel"
+metadata/_custom_type_script = "uid://bb636aic4yoo6"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1900465356]
+pixel_size = 0.03125
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_mfjo2")
+animation = &"temp"
+frame = 3
+frame_progress = 0.82540244

@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://b4rcaktogxosx"]
 
+[ext_resource type="Script" uid="uid://5dr1groc8qys" path="res://scripts/levels/room_1.gd" id="1_4vxfb"]
 [ext_resource type="ArrayMesh" uid="uid://cjogphxukp4g6" path="res://assets/blender/Room1_Cube_001.res" id="1_sdorp"]
 [ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/player.tscn" id="2_g1qh7"]
 [ext_resource type="ArrayMesh" uid="uid://bvfxrr22hooka" path="res://assets/blender/Room1_Cube_002.res" id="3_g1qh7"]
 [ext_resource type="PackedScene" uid="uid://bpfgughq4aext" path="res://scenes/ui/in_game_ui.tscn" id="4_btv68"]
+[ext_resource type="PackedScene" uid="uid://cjp78nssn4xlx" path="res://scenes/gabriel.tscn" id="5_d4yrl"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_g1qh7"]
 data = PackedVector3Array(-11, -3, 6, -11, 3, -6, -11, -3, -6, -11, -3, 6, -11, 3, 6, -11, 3, -6, -11, -3, -6, 11, 3, -6, 11, -3, -6, -11, -3, -6, -11, 3, -6, 11, 3, -6, 11, -3, -6, 11, 3, 6, 11, -3, 6, 11, -3, -6, 11, 3, -6, 11, 3, 6, -11, -3, -6, 11, -3, 6, -11, -3, 6, -11, -3, -6, 11, -3, -6, 11, -3, 6, 11, 3, -6, -11, 3, 6, 11, 3, 6, 11, 3, -6, -11, 3, -6, -11, 3, 6)
@@ -12,8 +14,12 @@ data = PackedVector3Array(-11, -3, 6, -11, 3, -6, -11, -3, -6, -11, -3, 6, -11, 
 data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1)
 
 [node name="Room1" type="Node3D" unique_id=1664854428]
+script = ExtResource("1_4vxfb")
 
 [node name="Player" parent="." unique_id=392277457 instance=ExtResource("2_g1qh7")]
+
+[node name="Gabriel" parent="." unique_id=1218963668 instance=ExtResource("5_d4yrl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.020465, 1.0266972, 0.28640985)
 
 [node name="Cube1" type="MeshInstance3D" parent="." unique_id=760468206]
 visible = false
