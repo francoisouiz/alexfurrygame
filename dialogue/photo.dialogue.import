@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dslgpivv3p64a"
+path="res://.godot/imported/photo.dialogue-ede8b026c5b003aac6cd6d37d9e18e0f.tres"
+
+[deps]
+
+source_file="res://dialogue/photo.dialogue"
+dest_files=["res://.godot/imported/photo.dialogue-ede8b026c5b003aac6cd6d37d9e18e0f.tres"]
+
+[params]
+
+defaults=true

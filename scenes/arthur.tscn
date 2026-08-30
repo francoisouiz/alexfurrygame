@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dor1ukpxdtxd7"]
+
+[ext_resource type="Texture2D" uid="uid://brcxt1g5c8hiu" path="res://assets/sprites/final_arthur.png" id="1_1ttuq"]
+[ext_resource type="Script" uid="uid://c5mlp6r4mts0r" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd" id="2_4xh5k"]
+[ext_resource type="Resource" uid="uid://c27b3pm2fjwog" path="res://dialogue/arthur.dialogue" id="3_4xh5k"]
+[ext_resource type="Script" uid="uid://bb636aic4yoo6" path="res://addons/dialogue_manager/nodes/marker/dialogue_marker_3d.gd" id="3_qewry"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s3x7s"]
+size = Vector3(0.9033203, 1.3657227, 0.7285156)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1460663369]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1633347705]
+texture_filter = 0
+texture = ExtResource("1_1ttuq")
+
+[node name="DialogueActionable3D" type="Area3D" parent="." unique_id=63693572]
+script = ExtResource("2_4xh5k")
+dialogue_resource = ExtResource("3_4xh5k")
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueActionable3D" unique_id=841457335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18286133, 0)
+shape = SubResource("BoxShape3D_s3x7s")
+
+[node name="DialogueMarker3D" type="Marker3D" parent="." unique_id=1355328329]
+script = ExtResource("3_qewry")
+character_name = "Arthur"
+metadata/_custom_type_script = "uid://bb636aic4yoo6"

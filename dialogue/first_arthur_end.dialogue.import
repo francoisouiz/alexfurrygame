@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://32gg1vy24cek"
+path="res://.godot/imported/first_arthur_end.dialogue-0a486a3b5de6900ddec6937e84743e6a.tres"
+
+[deps]
+
+source_file="res://dialogue/first_arthur_end.dialogue"
+dest_files=["res://.godot/imported/first_arthur_end.dialogue-0a486a3b5de6900ddec6937e84743e6a.tres"]
+
+[params]
+
+defaults=true

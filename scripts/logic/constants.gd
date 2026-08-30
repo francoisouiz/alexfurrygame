@@ -6,11 +6,25 @@ var has_opened_journal: bool = false
 var first_time_filled: bool = true
 var first_filled_checker: bool = false
 var in_dialogue: bool = false
+var first_time_playing: bool = true
+var body_inter: bool = false
+var table_inter: bool = false
+var photo_inter: bool = false
+var calendar_inter: bool = false
+var interacted_everything: bool = false
+var first_office_end: bool = false
+var arthur_end: bool = false
+var has_found_birthdays: bool = false
+var can_question_felicia: bool = false
 
 signal open_map
 signal journal_prompt
 signal first_time_signal
 signal file_case
+signal go_lucius_room
+signal go_benjamin_office
+signal go_benjamin_house
+signal go_remi
 
 const SCENE_PATHS: Dictionary = {
 	"loading_screen": "uid://dks2u6hsx0uwt",

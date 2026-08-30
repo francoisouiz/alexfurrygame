@@ -9,6 +9,18 @@
 [ext_resource type="ArrayMesh" uid="uid://b0l8nd0vf36dj" path="res://assets/places/office/office_Cube_007.res" id="7_plrxv"]
 [ext_resource type="PackedScene" uid="uid://b45cmvcr4iie7" path="res://scenes/felicia.tscn" id="8_d8enh"]
 [ext_resource type="ArrayMesh" uid="uid://bvvxtydfwjhii" path="res://assets/places/office/office_Cube_008.res" id="8_lhj6m"]
+[ext_resource type="AudioStream" uid="uid://bjcdpnhgfviq4" path="res://assets/sounds/Who Did It.wav" id="10_lmbnh"]
+[ext_resource type="PackedScene" uid="uid://cjp78nssn4xlx" path="res://scenes/gabriel.tscn" id="11_c3exj"]
+[ext_resource type="PackedScene" uid="uid://dq0v66ssvkgqi" path="res://scenes/benjamin.tscn" id="12_7max3"]
+[ext_resource type="Texture2D" uid="uid://b7tjmxrtf0jyq" path="res://assets/sprites/sprite_sheets.png" id="13_cjmb4"]
+[ext_resource type="Script" uid="uid://c5mlp6r4mts0r" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd" id="14_63rx2"]
+[ext_resource type="Resource" uid="uid://d1pylpw5bh6ti" path="res://dialogue/table.dialogue" id="15_63rx2"]
+[ext_resource type="PackedScene" uid="uid://bpfgughq4aext" path="res://scenes/ui/in_game_ui.tscn" id="17_0m3ay"]
+[ext_resource type="Resource" uid="uid://b13fndgo8buhq" path="res://dialogue/calendar.dialogue" id="17_7wa01"]
+[ext_resource type="PackedScene" uid="uid://c1yc40ko7ainc" path="res://scenes/animated_sprite_3d.tscn" id="17_pjvr4"]
+[ext_resource type="Texture2D" uid="uid://dfglpk7dx6oav" path="res://assets/sprites/PHOTO.png" id="18_7wa01"]
+[ext_resource type="Resource" uid="uid://dslgpivv3p64a" path="res://dialogue/photo.dialogue" id="19_v8cji"]
+[ext_resource type="PackedScene" uid="uid://dor1ukpxdtxd7" path="res://scenes/arthur.tscn" id="21_lxcdk"]
 
 [sub_resource type="Environment" id="Environment_lhj6m"]
 background_mode = 1
@@ -40,6 +52,38 @@ data = PackedVector3Array(-0.125, 0, 0, -0.125, 5.5, -4.5002, -0.125, 5.5, 0, -0
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_c3exj"]
 data = PackedVector3Array(-5.0000997, 0, 0, -5.0000997, 5.5, -0.125, -5.0000997, 5.5, 0, -5.0000997, 0, 0, -5.0000997, 0, -0.125, -5.0000997, 5.5, -0.125, -5.0000997, 0, -0.125, 0, 5.5, -0.125, -5.0000997, 5.5, -0.125, -5.0000997, 0, -0.125, 0, 0, -0.125, 0, 5.5, -0.125, 0, 0, -0.125, 0, 5.5, 0, 0, 5.5, -0.125, 0, 0, -0.125, 0, 0, 0, 0, 5.5, 0, 0, 0, 0, -5.0000997, 5.5, 0, 0, 5.5, 0, 0, 0, 0, -5.0000997, 0, 0, -5.0000997, 5.5, 0, -5.0000997, 0, -0.125, 0, 0, 0, 0, 0, -0.125, -5.0000997, 0, -0.125, -5.0000997, 0, 0, 0, 0, 0, 0, 5.5, -0.125, -5.0000997, 5.5, 0, -5.0000997, 5.5, -0.125, 0, 5.5, -0.125, 0, 5.5, 0, -5.0000997, 5.5, 0, -10.500199, 0, 0, -10.500199, 5.5, -0.125, -10.500199, 5.5, 0, -10.500199, 0, 0, -10.500199, 0, -0.125, -10.500199, 5.5, -0.125, -10.500199, 0, -0.125, -5.5000997, 5.5, -0.125, -10.500199, 5.5, -0.125, -10.500199, 0, -0.125, -5.5000997, 0, -0.125, -5.5000997, 5.5, -0.125, -5.5000997, 0, -0.125, -5.5000997, 5.5, 0, -5.5000997, 5.5, -0.125, -5.5000997, 0, -0.125, -5.5000997, 0, 0, -5.5000997, 5.5, 0, -5.5000997, 0, 0, -10.500199, 5.5, 0, -5.5000997, 5.5, 0, -5.5000997, 0, 0, -10.500199, 0, 0, -10.500199, 5.5, 0, -10.500199, 0, -0.125, -5.5000997, 0, 0, -5.5000997, 0, -0.125, -10.500199, 0, -0.125, -10.500199, 0, 0, -5.5000997, 0, 0, -5.5000997, 5.5, -0.125, -10.500199, 5.5, 0, -10.500199, 5.5, -0.125, -5.5000997, 5.5, -0.125, -5.5000997, 5.5, 0, -10.500199, 5.5, 0, -16.0003, 0, 0, -16.0003, 5.5, -0.125, -16.0003, 5.5, 0, -16.0003, 0, 0, -16.0003, 0, -0.125, -16.0003, 5.5, -0.125, -16.0003, 0, -0.125, -11.000199, 5.5, -0.125, -16.0003, 5.5, -0.125, -16.0003, 0, -0.125, -11.000199, 0, -0.125, -11.000199, 5.5, -0.125, -11.000199, 0, -0.125, -11.000199, 5.5, 0, -11.000199, 5.5, -0.125, -11.000199, 0, -0.125, -11.000199, 0, 0, -11.000199, 5.5, 0, -11.000199, 0, 0, -16.0003, 5.5, 0, -11.000199, 5.5, 0, -11.000199, 0, 0, -16.0003, 0, 0, -16.0003, 5.5, 0, -16.0003, 0, -0.125, -11.000199, 0, 0, -11.000199, 0, -0.125, -16.0003, 0, -0.125, -16.0003, 0, 0, -11.000199, 0, 0, -11.000199, 5.5, -0.125, -16.0003, 5.5, 0, -16.0003, 5.5, -0.125, -11.000199, 5.5, -0.125, -11.000199, 5.5, 0, -16.0003, 5.5, 0, -21.5, 0, 0, -21.5, 5.5, -0.125, -21.5, 5.5, 0, -21.5, 0, 0, -21.5, 0, -0.125, -21.5, 5.5, -0.125, -21.5, 0, -0.125, -16.5002, 5.5, -0.125, -21.5, 5.5, -0.125, -21.5, 0, -0.125, -16.5002, 0, -0.125, -16.5002, 5.5, -0.125, -16.5002, 0, -0.125, -16.5002, 5.5, 0, -16.5002, 5.5, -0.125, -16.5002, 0, -0.125, -16.5002, 0, 0, -16.5002, 5.5, 0, -16.5002, 0, 0, -21.5, 5.5, 0, -16.5002, 5.5, 0, -16.5002, 0, 0, -21.5, 0, 0, -21.5, 5.5, 0, -21.5, 0, -0.125, -16.5002, 0, 0, -16.5002, 0, -0.125, -21.5, 0, -0.125, -21.5, 0, 0, -16.5002, 0, 0, -16.5002, 5.5, -0.125, -21.5, 5.5, 0, -21.5, 5.5, -0.125, -16.5002, 5.5, -0.125, -16.5002, 5.5, 0, -21.5, 5.5, 0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3cp21"]
+size = Vector3(4.7441406, 1.8834229, 0.5454712)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0m3ay"]
+atlas = ExtResource("13_cjmb4")
+region = Rect2(9, 62, 108, 59)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjvr4"]
+size = Vector3(5.164673, 2.2561035, 0.85253906)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3x7s"]
+atlas = ExtResource("13_cjmb4")
+region = Rect2(101, 52, 14, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wa01"]
+atlas = ExtResource("13_cjmb4")
+region = Rect2(73, 41, 29, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q5lw"]
+atlas = ExtResource("13_cjmb4")
+region = Rect2(17, 11, 46, 40)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s3x7s"]
+size = Vector3(0.982666, 1.4111328, 0.7060547)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l78km"]
+atlas = ExtResource("18_7wa01")
+region = Rect2(119, 14, 53, 32)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3q5lw"]
+size = Vector3(0.8430176, 1.5629883, 1)
 
 [node name="Office" type="Node3D" unique_id=730785995]
 script = ExtResource("1_d8enh")
@@ -121,3 +165,119 @@ transform = Transform3D(-4.3711385e-08, 0, 1, 0, 1.0000001, 0, -0.99999994, 0, -
 
 [node name="Felicia" parent="." unique_id=358442570 instance=ExtResource("8_d8enh")]
 transform = Transform3D(-1.5298986e-07, 0, 3.5, 0, 3.5, 0, -3.5, 0, -1.5298986e-07, -19.655134, 2.0395205, -24.586708)
+
+[node name="AnimatedSprite3D" parent="Felicia" unique_id=1130821520 instance=ExtResource("17_pjvr4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.05769968, 0.6172917, 0.01965046)
+frame_progress = 0.21855175
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1307595895]
+stream = ExtResource("10_lmbnh")
+autoplay = true
+
+[node name="Gabriel" parent="." unique_id=1218963668 instance=ExtResource("11_c3exj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.009506, 2.1251776, -16.132904)
+
+[node name="AnimatedSprite3D2" parent="Gabriel" unique_id=1741276788 instance=ExtResource("17_pjvr4")]
+transform = Transform3D(3, 2.6645353e-15, 5.3216364e-31, -2.6645353e-15, 3, 2.9958145e-16, -2.6608187e-31, -2.9958145e-16, 3, 0.07222557, 2.2301242, 0.26862717)
+frame_progress = 0.5051516
+
+[node name="Benjamin" parent="." unique_id=90127565 instance=ExtResource("12_7max3")]
+transform = Transform3D(-1.7484555e-07, -0.20934384, 3.994518, 0, 3.994518, 0.20934384, -4, 9.1507095e-09, -1.7460593e-07, -15.88057, 0.5286262, -4.830928)
+
+[node name="AnimatedSprite3D" parent="Benjamin" unique_id=869085098 instance=ExtResource("17_pjvr4")]
+transform = Transform3D(2, 8.881784e-16, 1.4210855e-14, -1.7763568e-15, 2, -1.9972104e-16, 0, -1.9972096e-16, 2, -0.13011694, 0.40206766, 0.26862717)
+frame_progress = 0.5051516
+
+[node name="Props" type="Node3D" parent="." unique_id=1172238022]
+
+[node name="Table" type="StaticBody3D" parent="Props" unique_id=688319270]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.805828, 0.43876743, -10.053898)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Table" unique_id=1981119699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3825059, 0.9418764, -16.84639)
+shape = SubResource("BoxShape3D_3cp21")
+
+[node name="Sprite3D" type="Sprite3D" parent="Props/Table" unique_id=917212753]
+transform = Transform3D(4.44, 0, 0, 0, 4.44, 0, 0, 0, 4.44, 1.366054, 0.6076287, -16.81848)
+texture_filter = 0
+texture = SubResource("AtlasTexture_0m3ay")
+
+[node name="DialogueActionable3D" type="Area3D" parent="Props/Table" unique_id=858722971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.536743e-07, 1.3550327, -20.150175)
+script = ExtResource("14_63rx2")
+dialogue_resource = ExtResource("15_63rx2")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Table/DialogueActionable3D" unique_id=234677083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7662678, -0.13083053, 4.2080135)
+shape = SubResource("BoxShape3D_pjvr4")
+
+[node name="AnimatedSprite3D" parent="Props/Table" unique_id=519117486 instance=ExtResource("17_pjvr4")]
+transform = Transform3D(4.4, 0, 0, 0, 4.4, 0, 0, 0, 4.4, 1.3138447, 2.3807914, -16.236403)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Props" unique_id=313545828]
+
+[node name="Sprite3D" type="Sprite3D" parent="Props/StaticBody3D" unique_id=1166147447]
+transform = Transform3D(-1.923301e-07, 0, 4.4, 0, 4.4, 0, -4.4, 0, -1.923301e-07, -19.667301, 2.5696871, -12.765513)
+texture_filter = 0
+texture = SubResource("AtlasTexture_s3x7s")
+
+[node name="FileCase" type="StaticBody3D" parent="Props" unique_id=953467295]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.04223, 2.5515049, -10.398651)
+
+[node name="Sprite3D" type="Sprite3D" parent="Props/FileCase" unique_id=1488636996]
+transform = Transform3D(4.44, 0, 0, 0, 4.44, 0, 0, 0, 4.44, 0, 0, -0.17957306)
+texture_filter = 0
+texture = SubResource("AtlasTexture_7wa01")
+
+[node name="Calendar" type="StaticBody3D" parent="Props" unique_id=1392234741]
+transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, -21.955753, 3.8396738, -2.5173168)
+
+[node name="Sprite3D" type="Sprite3D" parent="Props/Calendar" unique_id=1380150931]
+texture_filter = 0
+texture = SubResource("AtlasTexture_3q5lw")
+
+[node name="AnimatedSprite3D" parent="Props/Calendar" unique_id=1805615650 instance=ExtResource("17_pjvr4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.004419565, 0.20860642, 0.0034894943)
+frame_progress = 0.21855175
+
+[node name="DialogueActionable3D" type="Area3D" parent="Props/Calendar" unique_id=159300754]
+script = ExtResource("14_63rx2")
+dialogue_resource = ExtResource("17_7wa01")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Calendar/DialogueActionable3D" unique_id=464037079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2055664, 0)
+shape = SubResource("BoxShape3D_s3x7s")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Props" unique_id=26408202]
+transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, -21.953913, 3.9791265, -6.68119)
+
+[node name="Sprite3D" type="Sprite3D" parent="Props/StaticBody3D2" unique_id=2144319149]
+texture_filter = 0
+texture = SubResource("AtlasTexture_l78km")
+
+[node name="AnimatedSprite3D" parent="Props/StaticBody3D2" unique_id=2043312800 instance=ExtResource("17_pjvr4")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.004419565, 0.20860636, -0.012870312)
+frame_progress = 0.21855175
+
+[node name="DialogueActionable3D" type="Area3D" parent="Props/StaticBody3D2" unique_id=329447077]
+script = ExtResource("14_63rx2")
+dialogue_resource = ExtResource("19_v8cji")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/StaticBody3D2/DialogueActionable3D" unique_id=1841060782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05871582, -0.28149414, 0)
+shape = SubResource("BoxShape3D_3q5lw")
+
+[node name="InGameUI" parent="." unique_id=20912192 instance=ExtResource("17_0m3ay")]
+
+[node name="StaticBody3D" parent="." unique_id=1460663369 instance=ExtResource("21_lxcdk")]
+transform = Transform3D(-1.09278474e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278474e-07, -16.931526, 1.9508078, -38.959373)
+
+[node name="AnimatedSprite3D" parent="StaticBody3D" unique_id=1552551021 instance=ExtResource("17_pjvr4")]
+transform = Transform3D(2, 8.881784e-16, 1.4210855e-14, -1.7763568e-15, 2, -1.9972104e-16, -7.1054274e-15, -1.9972097e-16, 2, -0.046507835, 0.8540256, 0.26862717)
+frame_progress = 0.5051516

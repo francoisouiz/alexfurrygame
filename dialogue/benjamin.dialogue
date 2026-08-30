@@ -1,0 +1,7 @@
+~ start
+do unlock_keyword("bruised neck", "noun")
+Lucius: [i](Senator Esteban’s body lies coldly on the floor. His body lacks any wounds, other than bruises on his neck)[/i]
+do unlock_keyword("strangled", "verb")
+Lucius: No blood stains, but bruises. Was he strangled? There’s not many signs of struggle nearby though.
+do Constants.body_inter = true
+=> END

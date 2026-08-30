@@ -2,12 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bb636aic4yoo6" path="res://addons/dialogue_manager/nodes/marker/dialogue_marker_3d.gd" id="1_21uit"]
 [ext_resource type="Texture2D" uid="uid://bhm2mjnj01jup" path="res://assets/sprites/GABRIEL.png" id="2_21uit"]
+[ext_resource type="Script" uid="uid://c5mlp6r4mts0r" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd" id="3_6v806"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k6xse"]
 size = Vector3(1.7207031, 3.90625, 0.35546875)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_f2ysh"]
-size = Vector3(1.4521484, 4.054077, 0.62475586)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6v806"]
 atlas = ExtResource("2_21uit")
@@ -20,10 +18,10 @@ region = Rect2(74, 0, 44, 142)
 [sub_resource type="SpriteFrames" id="SpriteFrames_mfjo2"]
 animations = [{
 "frames": [{
-"duration": 0.3,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_6v806")
 }, {
-"duration": 0.3,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_k6xse")
 }],
 "loop": 1,
@@ -31,17 +29,14 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_s3x7s"]
+size = Vector3(2.3476563, 3.8632813, 1)
+
 [node name="Gabriel" type="AnimatableBody3D" unique_id=1218963668]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1979039694]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006697893, 0.024463654, 0.0031086206)
 shape = SubResource("BoxShape3D_k6xse")
-
-[node name="InteractionArea" type="Area3D" parent="." unique_id=312386076]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=1725464156]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.035949707, 0)
-shape = SubResource("BoxShape3D_f2ysh")
 
 [node name="DialogueMarker3D" type="Marker3D" parent="." unique_id=127739414]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012173951, 1.8741847, 0)
@@ -57,3 +52,11 @@ sprite_frames = SubResource("SpriteFrames_mfjo2")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.07832758
+
+[node name="DialogueActionable3D" type="Area3D" parent="." unique_id=76764457]
+script = ExtResource("3_6v806")
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueActionable3D" unique_id=1570987303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07080078, 0)
+shape = SubResource("BoxShape3D_s3x7s")

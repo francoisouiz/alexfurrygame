@@ -1,0 +1,4 @@
+~ start
+Lucius: I think that's everything. I should talk to Gabriel now.
+do Constants.interacted_everything = true
+=> END
