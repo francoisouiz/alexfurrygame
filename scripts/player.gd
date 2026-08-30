@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @export var speed: float = 7.0
 @onready var interaction_area: Area3D = $InteractionArea
+@onready var animated_sprite: AnimatedSprite3D = $AnimatedSprite3D
 
 var current_actionable: DialogueActionable3D = null
 
@@ -45,4 +46,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
 	
+	if input_dir.x < 0:
+		animated_sprite.flip_h = true
+	elif input_dir.x > 0:
+		animated_sprite.flip_h = false
+	
+	if input_dir != Vector2.ZERO:
+		animated_sprite.play("walk")
+	else:
+		animated_sprite.play("idle")
 	move_and_slide()

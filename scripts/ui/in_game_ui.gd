@@ -23,11 +23,13 @@ extends CanvasLayer
 @onready var side_bar: Panel = $SideBar
 @onready var spot_light: CanvasLayer = $SpotLight
 @onready var texture_rect: TextureRect = $SideBar/TextureRect
+@onready var file_animation: AnimationPlayer = $FileCase/FileAnimation
 
 
 var KEYWORD_TEXTS: PackedScene = preload("uid://2e02bl5vknkv")
 var is_journalling: bool = false
 var on_map: bool = false
+var on_file: bool = false
 var unlocked_words: Array[String] = []
 
 func _ready() -> void:
@@ -40,8 +42,14 @@ func _ready() -> void:
 	Constants.open_map.connect(_on_open_map)
 	Constants.journal_prompt.connect(_on_journal_prompt)
 	Constants.first_time_signal.connect(_on_first_time)
+	Constants.file_case.connect(_on_file_case)
 	if not Constants.has_opened_journal:
 		disable_node(journal_button)
+		
+func _on_file_case() -> void:
+	file_animation.play("file_animation")
+	await file_animation.animation_finished
+	on_file = true
 
 func _on_open_map() -> void:
 	map_animation.play("map_animation")
@@ -107,6 +115,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		map_animation.play_backwards("map_animation")
 		await map_animation.animation_finished
 		on_map = false
+	if event.is_action_pressed("exit_map") and on_file:
+		file_animation.play_backwards("file_animation")
+		await file_animation.animation_finished
+		on_file = false
 
 
 func _on_journal_button_pressed() -> void:

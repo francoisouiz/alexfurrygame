@@ -1,14 +1,50 @@
 [gd_scene format=3 uid="uid://g77fwioa2yhl"]
 
 [ext_resource type="Script" uid="uid://726uk1ww7ncc" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://cg1e4l0w8i1mp" path="res://assets/temp/icon.svg" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://525txwtty45y" path="res://assets/character_sprites/LUCIUS_idle_frame_0000.png" id="3_dqkch"]
 [ext_resource type="Script" uid="uid://bb636aic4yoo6" path="res://addons/dialogue_manager/nodes/marker/dialogue_marker_3d.gd" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://dinmiwxvulxi1" path="res://assets/character_sprites/LUCIUS_idle_frame_0001.png" id="4_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://dqyk6lulkl2ip" path="res://assets/character_sprites/LUCIUS_walk_frame_0000.png" id="5_smehm"]
+[ext_resource type="Texture2D" uid="uid://l81b1e76ef4o" path="res://assets/character_sprites/LUCIUS_walk_frame_0001.png" id="6_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://d1sjy5o5g0fta" path="res://assets/character_sprites/LUCIUS_walk_frame_0002.png" id="7_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://b1wgsr2gg6kwo" path="res://assets/character_sprites/LUCIUS_walk_frame_0003.png" id="8_d2wvv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s3x7s"]
-size = Vector3(1.3330078, 1.2321777, 0.35546875)
+size = Vector3(1.7207031, 3.90625, 0.35546875)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3q5lw"]
-size = Vector3(1.4521484, 1.4333496, 0.62475586)
+size = Vector3(1.4521484, 4.054077, 0.62475586)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tuyoq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dqkch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qlg0r")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": ExtResource("5_smehm")
+}, {
+"duration": 0.3,
+"texture": ExtResource("6_ur7pv")
+}, {
+"duration": 0.3,
+"texture": ExtResource("7_y4r1p")
+}, {
+"duration": 0.3,
+"texture": ExtResource("8_d2wvv")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 1.0
+}]
 
 [node name="Player" type="CharacterBody3D" unique_id=392277457]
 script = ExtResource("1_g2els")
@@ -17,19 +53,25 @@ script = ExtResource("1_g2els")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1375164, 0.9046021, 5.718478)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=961870845]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006697893, 0.024463654, 0.0031086206)
 shape = SubResource("BoxShape3D_s3x7s")
-
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1533276229]
-texture = ExtResource("2_g2els")
 
 [node name="InteractionArea" type="Area3D" parent="." unique_id=684145319]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea" unique_id=1302204738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.035949707, 0)
 shape = SubResource("BoxShape3D_3q5lw")
 
 [node name="DialogueMarker3D" type="Marker3D" parent="." unique_id=69242782]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012173951, 0.7565762, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012173951, 1.8741847, 0)
 script = ExtResource("3_qhqgy")
 character_name = "Lucius"
 metadata/_custom_type_script = "uid://bb636aic4yoo6"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=2061348628]
+pixel_size = 0.03125
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_tuyoq")
+animation = &"walk"
+autoplay = "idle"

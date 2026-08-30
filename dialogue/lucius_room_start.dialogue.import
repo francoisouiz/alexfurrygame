@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://c32jbmk105hqs"
+path="res://.godot/imported/lucius_room_start.dialogue-effba695b238d2df0ac3c376b45552f9.tres"
+
+[deps]
+
+source_file="res://dialogue/lucius_room_start.dialogue"
+dest_files=["res://.godot/imported/lucius_room_start.dialogue-effba695b238d2df0ac3c376b45552f9.tres"]
+
+[params]
+
+defaults=true

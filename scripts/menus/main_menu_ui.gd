@@ -6,7 +6,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _on_start_pressed() -> void:
-	SceneLoader.load_scene("uid://cnsfsr6ks51e8")
+	SceneLoader.load_scene(Constants.SCENE_PATHS.lucius_room)
+	Constants.current_level = "lucius_room"
 
 
 func _on_quit_pressed() -> void:
