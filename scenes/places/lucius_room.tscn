@@ -15,6 +15,7 @@
 [ext_resource type="Resource" uid="uid://cykptmq3hbond" path="res://dialogue/map_prompt.dialogue" id="10_tagal"]
 [ext_resource type="PackedScene" uid="uid://cjp78nssn4xlx" path="res://scenes/gabriel.tscn" id="12_tagal"]
 [ext_resource type="AudioStream" uid="uid://mher3chwpvsk" path="res://assets/audio/universfield-fast-knocking-on-door-352704.mp3" id="14_yhy7l"]
+[ext_resource type="AudioStream" uid="uid://bbqpkiu3wm1uq" path="res://assets/sounds/Investigate.wav" id="16_gn0st"]
 
 [sub_resource type="Animation" id="Animation_x2dmv"]
 length = 0.001
@@ -304,3 +305,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=10681733]
 stream = ExtResource("14_yhy7l")
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="." unique_id=538704454]
+stream = ExtResource("16_gn0st")

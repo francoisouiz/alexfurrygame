@@ -9,6 +9,7 @@ var current_actionable: DialogueActionable3D = null
 func _ready() -> void:
 	interaction_area.area_entered.connect(_on_interaction_area_entered)
 	interaction_area.area_exited.connect(_on_interaction_area_exited)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and is_instance_valid(current_actionable):
@@ -39,12 +40,16 @@ func _physics_process(delta: float) -> void:
 	var input_dir: Vector2 = Input.get_vector("left", "right", "up", "down")
 	var direction: Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
-	if direction:
+	if direction and not Constants.in_dialogue:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
+		
+	if Constants.in_dialogue:
+		velocity = Vector3.ZERO
+		input_dir = Vector2.ZERO
 	
 	if input_dir.x < 0:
 		animated_sprite.flip_h = true
@@ -56,3 +61,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		animated_sprite.play("idle")
 	move_and_slide()
+	
+func _on_dialogue_ended(dialogue: DialogueResource) -> void:
+	Constants.in_dialogue = false
+	
