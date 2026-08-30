@@ -63,4 +63,5 @@ Arthur: -
 - Thank you for your time.
 	Arthur: Is that it? Am I free to go now?
 	Lucius: Sorry, but not yet. Just relax for now.
+	do Constants.arthur_end = true
 	=> END

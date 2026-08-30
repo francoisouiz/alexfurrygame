@@ -1,0 +1,31 @@
+~ start
+if ProgressMarkers.has_met.Arthur and not ProgressMarkers.has_met.Francesca and not ProgressMarkers.has_met.Remi:
+	Lucius: Let's head out already.
+	Gabriel: You're the boss.
+	- Go to Lucius's room
+		do Constants.go_lucius_room.emit()
+	- Go to Benjamin's house
+		do Constants.go_benjamin_house.emit()
+elif ProgressMarkers.has_met.Arthur:
+	Lucius: Let's head out already.
+	Gabriel: You're the boss.
+	- Go to Lucius's room
+		do Constants.go_lucius_room.emit()
+	- Go to Benjamin's house
+		do Constants.go_benjamin_house.emit()
+	- Go to Remi's hideout
+		do Constants.gp_remi.emit()
+elif Constants.current_level == "office" and Constants.interacted_everything:
+	Gabriel: So, found anything, Lucius?
+	Lucius: No signs of struggle, but vomit and blood all over the table. Though his neck and only his neck is bruised. 
+	Lucius: My guess is poison. The bruising might be from him grabbing his neck as he was choking.
+	Gabriel: Who would want to kill him? You don’t think it has something to do with those documents, right?
+	Lucius: That’s one option. But either way, if anyone could kill him, it would be someone close to him. Let’s go, we have everything we need from here.
+	Gabriel: Where to next?
+	Lucius: Just outside. It’s time to have a talk with that secretary.
+	Gabriel: Aright, I'm ready when you are.
+	do Constants.can_question_felicia = true
+elif Constants.current_level == "office" and not Constants.interacted_everything:
+	Gabriel: So, found anything, Lucius?
+	Lucius: Not yet, I'm still looking.
+=> END

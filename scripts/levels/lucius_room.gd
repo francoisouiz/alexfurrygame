@@ -9,7 +9,11 @@ extends Node3D
 func _ready() -> void:
 	await get_tree().create_timer(1.0).timeout
 	anim.flip_h = true
-	DialogueManager.show_dialogue_balloon(ResourceLoader.load("uid://h4l1qwlxcu25"), "start")
+	if Constants.first_time_playing:
+		DialogueManager.show_dialogue_balloon(ResourceLoader.load("uid://h4l1qwlxcu25"), "start")
+		Constants.first_time_playing = false
+	else:
+		remove_black_screen()
 
 func knock() -> void:
 	animation_player.play("knock")

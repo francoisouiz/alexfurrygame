@@ -1,0 +1,10 @@
+~ start
+do unlock_keyword("coffee", "noun")
+do unlock_keyword("blood", "noun")
+do unlock_keyword("vomit", "noun")
+Lucius: [i](Senator Esteban’s table. An ordinary table, save for the blood coming from his mouth and vomit dripping onto the floor.)[/i]
+Lucius: [i](On it are a few documents and a cup of coffee.)[/i]
+do unlock_keyword("poisoned", "verb")
+Lucius: Blood and vomit. Common sign of poisoning. From what though?
+do Constants.table_inter = true
+=> END

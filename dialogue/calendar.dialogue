@@ -1,0 +1,9 @@
+~ start
+do Constants.has_found_birthdays = true
+Lucius: [i](A calendar listing important dates and deadlines.)[/i]
+Lucius: [i](While most of it is written in black ink, a few days are marked using red.)[/i]
+Lucius: [i](February 19 | Francesca’s Birthday)[/i]
+Lucius: [i](May 25 | Anna’s Birthday)[/i]
+Lucius: [i](July 27 | Annual Senate Session)[/i]
+do Constants.calendar_inter = true
+=> END

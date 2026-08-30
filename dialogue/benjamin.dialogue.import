@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cqrqqq5m17tj7"
+path="res://.godot/imported/benjamin.dialogue-19797f0c5300190ea3b1ada8124cbf70.tres"
+
+[deps]
+
+source_file="res://dialogue/benjamin.dialogue"
+dest_files=["res://.godot/imported/benjamin.dialogue-19797f0c5300190ea3b1ada8124cbf70.tres"]
+
+[params]
+
+defaults=true

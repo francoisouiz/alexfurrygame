@@ -1,6 +1,7 @@
 ~ start
 Felicia: If there’s anything you’d like to know, feel free to ask.
-=> questions
+if Constants.can_question_felicia:
+	=> questions
 ~ questions
 Felicia: -
 - When did you find out about the body?
@@ -100,3 +101,4 @@ Felicia: -
 
 - Thank you for your time.
 	Felicia: Of course. If you need anything else, I'll be waiting nearby. => END
+	do Constants.first_office_end = true

@@ -2,6 +2,11 @@
 
 [ext_resource type="ArrayMesh" uid="uid://d143vqm14bs5m" path="res://assets/places/house/house_Cube.res" id="1_0qdqe"]
 [ext_resource type="ArrayMesh" uid="uid://dm00wm87s0n6p" path="res://assets/places/house/house_Cube_001.res" id="2_s0wxo"]
+[ext_resource type="PackedScene" uid="uid://bpfgughq4aext" path="res://scenes/ui/in_game_ui.tscn" id="3_mdvoa"]
+[ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/player.tscn" id="4_l8av4"]
+[ext_resource type="PackedScene" uid="uid://cjp78nssn4xlx" path="res://scenes/gabriel.tscn" id="5_l8av4"]
+[ext_resource type="Script" uid="uid://c5mlp6r4mts0r" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd" id="6_tpxrr"]
+[ext_resource type="Texture2D" uid="uid://bb4u2uyd4m66q" path="res://assets/sprites/FRANCESCA_sprite.png" id="7_sauk6"]
 
 [sub_resource type="Environment" id="Environment_s0wxo"]
 background_mode = 1
@@ -45,3 +50,27 @@ mesh = ExtResource("1_0qdqe")
 [node name="HouseCube001" type="MeshInstance3D" parent="Meshes" unique_id=392028358]
 transform = Transform3D(0.8110638, 0, 0.58495766, 0, 1, 0, -0.58495766, 0, 0.8110638, -14.25, 0, -20)
 mesh = ExtResource("2_s0wxo")
+
+[node name="InGameUI" parent="." unique_id=20912192 instance=ExtResource("3_mdvoa")]
+
+[node name="Player" parent="." unique_id=392277457 instance=ExtResource("4_l8av4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.046438, 1.9092839, -4.8970594)
+
+[node name="Gabriel" parent="." unique_id=1218963668 instance=ExtResource("5_l8av4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.794075, 2.0356574, -8.900138)
+
+[node name="Francesca" type="StaticBody3D" parent="." unique_id=356800460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.634101, 2.3089604, -12.358912)
+
+[node name="DialogueActionable3D" type="Area3D" parent="Francesca" unique_id=401632310]
+script = ExtResource("6_tpxrr")
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Francesca/DialogueActionable3D" unique_id=951379392]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Francesca" unique_id=546065450]
+
+[node name="Sprite3D" type="Sprite3D" parent="Francesca" unique_id=1631562898]
+transform = Transform3D(-1.3987645e-07, 0, 3.2, 0, 3.2, 0, -3.2, 0, -1.3987645e-07, -0.031474113, -0.33694363, 0.083992004)
+texture_filter = 0
+texture = ExtResource("7_sauk6")

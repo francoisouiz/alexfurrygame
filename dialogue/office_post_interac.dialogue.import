@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bkgdy3p7ctli2"
+path="res://.godot/imported/office_post_interac.dialogue-f7b8c7fe3896bd39201858b5f1ca3475.tres"
+
+[deps]
+
+source_file="res://dialogue/office_post_interac.dialogue"
+dest_files=["res://.godot/imported/office_post_interac.dialogue-f7b8c7fe3896bd39201858b5f1ca3475.tres"]
+
+[params]
+
+defaults=true

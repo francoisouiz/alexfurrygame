@@ -1,0 +1,6 @@
+~ start
+do unlock_keyword("wife", "noun")
+Lucius: [i](A formal picture of the senator and his family in their living room. His wife is seated to his left while their daughter awkwardly stands between them.)[/i]
+Lucius: I wonder if his family knows already… I don’t think I can break it to them.
+do Constants.photo_inter = true
+=> END

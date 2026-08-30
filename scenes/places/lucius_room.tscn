@@ -11,6 +11,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bcvu0ci2r5des" path="res://assets/places/lucius_room/lucius_room_Cube.res" id="4_tkitk"]
 [ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/player.tscn" id="5_018sd"]
 [ext_resource type="Resource" uid="uid://u7l0vyewpsad" path="res://dialogue/journal_prompt.dialogue" id="5_f2y13"]
+[ext_resource type="PackedScene" uid="uid://c1yc40ko7ainc" path="res://scenes/animated_sprite_3d.tscn" id="7_mmsxt"]
 [ext_resource type="PackedScene" uid="uid://bpfgughq4aext" path="res://scenes/ui/in_game_ui.tscn" id="9_pijg8"]
 [ext_resource type="Resource" uid="uid://cykptmq3hbond" path="res://dialogue/map_prompt.dialogue" id="10_tagal"]
 [ext_resource type="PackedScene" uid="uid://cjp78nssn4xlx" path="res://scenes/gabriel.tscn" id="12_tagal"]
@@ -219,6 +220,9 @@ metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20770264, 0.01965332, 0)
 shape = SubResource("BoxShape3D_l78km")
 
+[node name="AnimatedSprite3D" parent="Props/FileCase" unique_id=1130821520 instance=ExtResource("7_mmsxt")]
+transform = Transform3D(4.4, 0, 0, 0, 4.4, 0, 0, 0, 4.4, 0.19345808, 0.268054, 0)
+
 [node name="Journal" type="StaticBody3D" parent="Props" unique_id=1629691075]
 transform = Transform3D(4.44, 0, 0, 0, 4.44, 0, 0, 0, 4.44, 5.322463, 2.2139769, -19.790043)
 
@@ -237,6 +241,9 @@ metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Journal/DialogueActionable3D" unique_id=598836394]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.079711914, -0.008544952, 0)
 shape = SubResource("BoxShape3D_5as1l")
+
+[node name="AnimatedSprite3D" parent="Props/Journal" unique_id=1040552261 instance=ExtResource("7_mmsxt")]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.99999964, 0, 0, 0, 0.99999964, 0.9890387, 0.05686122, 0.47155595)
 
 [node name="Meshes" type="Node3D" parent="." unique_id=1783841126]
 
@@ -275,6 +282,10 @@ metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Meshes/LuciusRoomCube/DialogueActionable3D" unique_id=625465035]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1444092e-05, 2.2094116, 1.2108755)
 shape = SubResource("BoxShape3D_1kqjw")
+
+[node name="AnimatedSprite3D" parent="Meshes/LuciusRoomCube" unique_id=1034065884 instance=ExtResource("7_mmsxt")]
+transform = Transform3D(4.4, 0, 0, 0, 4.4, 0, 0, 0, 4.4, -1.240099, 2.9041483, -0.30784798)
+frame_progress = 0.11758458
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Meshes" unique_id=632832181]
 

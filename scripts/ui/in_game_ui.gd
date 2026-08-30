@@ -43,6 +43,10 @@ func _ready() -> void:
 	Constants.journal_prompt.connect(_on_journal_prompt)
 	Constants.first_time_signal.connect(_on_first_time)
 	Constants.file_case.connect(_on_file_case)
+	Constants.go_lucius_room.connect(_on_lucius_pressed)
+	Constants.go_benjamin_office.connect(_on_benjamin_pressed)
+	Constants.go_benjamin_house.connect(house)
+	Constants.go_remi.connect(remi)
 	if not Constants.has_opened_journal:
 		disable_node(journal_button)
 		disable_node(journal_sprite)
@@ -242,6 +246,14 @@ func _on_dialogues_pressed() -> void:
 func _on_lucius_pressed() -> void:
 	Constants.current_level = "lucius_room"
 	SceneLoader.load_scene(Constants.SCENE_PATHS.lucius_room)
+
+func house() -> void:
+	Constants.current_level = "house"
+	SceneLoader.load_scene(Constants.SCENE_PATHS.house)
+
+func remi() -> void:
+	Constants.current_level = "remi"
+	SceneLoader.load_scene(Constants.SCENE_PATHS.remi)
 
 
 func _on_benjamin_pressed() -> void:

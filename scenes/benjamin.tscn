@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dq0v66ssvkgqi"]
+
+[ext_resource type="Script" uid="uid://c5mlp6r4mts0r" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd" id="1_7y6ao"]
+[ext_resource type="Texture2D" uid="uid://cfebmluu7u4m7" path="res://assets/sprites/BENJAMIN_sprite.png" id="2_82c0r"]
+[ext_resource type="Resource" uid="uid://cqrqqq5m17tj7" path="res://dialogue/benjamin.dialogue" id="2_yg4mn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s3x7s"]
+size = Vector3(0.9980469, 0.60095215, 0.4217224)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3q5lw"]
+size = Vector3(1.4521484, 0.5675049, 0.77734375)
+
+[node name="Benjamin" type="StaticBody3D" unique_id=90127565]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1370724163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0009765625, 0.11248779, 0.09849548)
+shape = SubResource("BoxShape3D_s3x7s")
+
+[node name="DialogueActionable3D" type="Area3D" parent="." unique_id=1576198174]
+script = ExtResource("1_7y6ao")
+dialogue_resource = ExtResource("2_yg4mn")
+dialogue_cue = "start"
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogueActionable3D" unique_id=1369946344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04937744, 0.111328125)
+shape = SubResource("BoxShape3D_3q5lw")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=687034048]
+texture_filter = 0
+texture = ExtResource("2_82c0r")

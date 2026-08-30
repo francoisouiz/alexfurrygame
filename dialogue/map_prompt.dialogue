@@ -1,6 +1,22 @@
 ~ start
 if Constants.current_level == "lucius_room" and not Constants.has_opened_journal:
 	Lucius: I need to prepare my journal first.
+elif not ProgressMarkers.has_met.Arthur:
+	- Go to Benjamin's office
+		do Constants.go_benjamin_office.emit()
+elif ProgressMarkers.has_met.Arthur and not ProgressMarkers.has_met.Francesca:
+	- Go to Benjamin's office
+		do Constants.go_benjamin_office.emit()
+elif ProgressMarkers.has_met.Arthur and ProgressMarkers.has_met.Francesca and not ProgressMarkers.has_met.Arthur and not ProgressMarkers.has_met.Remi:
+	- Go to Benjamin's office
+		do Constants.go_benjamin_office.emit()
+	- Go to Benjamin's house
+		do Constants.go_benjamin_house.emit()
 else:
-	do Constants.open_map.emit()
+	- Go to Benjamin's office
+		do Constants.go_benjamin_office.emit()
+	- Go to Benjamin's house
+		do Constants.go_benjamin_house.emit()
+	- Go to Remi's hideout
+		do Constants.go_remi.emit()
 => END
