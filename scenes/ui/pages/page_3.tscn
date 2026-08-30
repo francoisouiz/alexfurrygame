@@ -1,0 +1,284 @@
+[gd_scene format=3 uid="uid://6po6dqwddc4a"]
+
+[ext_resource type="Texture2D" uid="uid://xxrdxvi3bygk" path="res://assets/resources/right_next.tres" id="1_pvjhw"]
+[ext_resource type="FontFile" uid="uid://dr80jfvwrqij4" path="res://assets/fonts/the-lowly-scribe.ttf" id="2_lqyge"]
+[ext_resource type="Script" uid="uid://bfdwmf7nl7olt" path="res://scripts/ui/slots.gd" id="3_lqyge"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q76bp"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Page" type="Control" unique_id=1454747359]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = -10.0
+offset_right = 300.0
+offset_bottom = 370.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=394516674]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pvjhw")
+
+[node name="Label4" type="Label" parent="." unique_id=174742845]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 30.0
+offset_right = -50.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lqyge")
+theme_override_font_sizes/font_size = 16
+text = "The Table
+"
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="." unique_id=1046849165]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 57.0
+offset_right = 161.0
+offset_bottom = 87.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lqyge")
+theme_override_font_sizes/font_size = 16
+text = "- Full of all kinds of"
+vertical_alignment = 1
+
+[node name="Panel2" type="PanelContainer" parent="." unique_id=1261345480]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 200.0
+offset_top = 58.0
+offset_right = 279.0
+offset_bottom = 81.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_q76bp")
+script = ExtResource("3_lqyge")
+
+[node name="Label8" type="Label" parent="." unique_id=448441806]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -122.0
+offset_top = 84.0
+offset_right = 186.0
+offset_bottom = 114.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lqyge")
+theme_override_font_sizes/font_size = 16
+text = "- Has a half-finished"
+vertical_alignment = 1
+
+[node name="Panel3" type="PanelContainer" parent="." unique_id=1236954346]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 44.0
+offset_top = 111.0
+offset_right = 123.0
+offset_bottom = 134.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_q76bp")
+script = ExtResource("3_lqyge")
+
+[node name="Label5" type="Label" parent="." unique_id=1119441752]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.0
+offset_top = 144.0
+offset_right = -55.0
+offset_bottom = 174.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lqyge")
+theme_override_font_sizes/font_size = 16
+text = "The Photo
+"
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="." unique_id=1969667929]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 172.0
+offset_right = 193.0
+offset_bottom = 202.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lqyge")
+theme_override_font_sizes/font_size = 16
+text = "- A                 picture with
+"
+vertical_alignment = 1
+
+[node name="Panel4" type="PanelContainer" parent="." unique_id=512813196]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 49.0
+offset_top = 174.0
+offset_right = 128.0
+offset_bottom = 197.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_q76bp")
+script = ExtResource("3_lqyge")
+
+[node name="Label11" type="Label" parent="." unique_id=835209306]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.0
+offset_top = 200.0
+offset_right = 294.0
+offset_bottom = 230.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lqyge")
+theme_override_font_sizes/font_size = 16
+text = "and
+"
+vertical_alignment = 1
+
+[node name="Panel5" type="PanelContainer" parent="." unique_id=457631885]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 36.0
+offset_top = 202.0
+offset_right = 115.0
+offset_bottom = 225.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_q76bp")
+script = ExtResource("3_lqyge")
+
+[node name="Panel6" type="PanelContainer" parent="." unique_id=1905708829]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 159.0
+offset_top = 203.0
+offset_right = 238.0
+offset_bottom = 226.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_q76bp")
+script = ExtResource("3_lqyge")
+
+[node name="Label6" type="Label" parent="." unique_id=955553431]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -135.0
+offset_top = 231.0
+offset_right = -32.0
+offset_bottom = 261.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lqyge")
+theme_override_font_sizes/font_size = 16
+text = "The Calendar
+"
+vertical_alignment = 1
+
+[node name="Label12" type="Label" parent="." unique_id=1660367749]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 259.0
+offset_right = 192.0
+offset_bottom = 289.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lqyge")
+theme_override_font_sizes/font_size = 16
+text = "- Highlights"
+vertical_alignment = 1
+
+[node name="Panel7" type="PanelContainer" parent="." unique_id=1668905075]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 124.0
+offset_top = 260.0
+offset_right = 203.0
+offset_bottom = 283.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_q76bp")
+script = ExtResource("3_lqyge")
+
+[node name="Label14" type="Label" parent="." unique_id=1396823717]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -114.0
+offset_top = 286.0
+offset_right = 206.0
+offset_bottom = 316.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lqyge")
+theme_override_font_sizes/font_size = 16
+text = "and other major events"
+vertical_alignment = 1

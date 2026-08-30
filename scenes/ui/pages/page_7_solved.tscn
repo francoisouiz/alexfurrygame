@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://75csbte781yx"]
+
+[ext_resource type="Texture2D" uid="uid://xxrdxvi3bygk" path="res://assets/resources/right_next.tres" id="1_0yr8b"]
+[ext_resource type="FontFile" uid="uid://dr80jfvwrqij4" path="res://assets/fonts/the-lowly-scribe.ttf" id="2_f5je7"]
+[ext_resource type="Texture2D" uid="uid://b4p7vi3hnjxlv" path="res://assets/portraits/GARY_default.png" id="3_4g25u"]
+
+[node name="Page" type="Control" unique_id=1454747359]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = -10.0
+offset_right = 300.0
+offset_bottom = 370.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=394516674]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0yr8b")
+
+[node name="Label2" type="Label" parent="." unique_id=34155497]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -121.0
+offset_top = 39.0
+offset_right = 115.0
+offset_bottom = 69.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f5je7")
+theme_override_font_sizes/font_size = 28
+text = "Gary Ortolona"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=58536428]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 74.0
+offset_right = 173.0
+offset_bottom = 138.0
+texture = ExtResource("3_4g25u")
+
+[node name="Label4" type="Label" parent="." unique_id=174742845]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -176.0
+offset_top = 145.0
+offset_right = 138.0
+offset_bottom = 175.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f5je7")
+theme_override_font_sizes/font_size = 16
+text = "- One of Mr Esteban's fellow
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=1436952632]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.0
+offset_top = 169.0
+offset_right = 195.0
+offset_bottom = 199.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f5je7")
+theme_override_font_sizes/font_size = 16
+text = "politicians
+"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="." unique_id=1487319710]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -135.0
+offset_top = 203.0
+offset_right = 179.0
+offset_bottom = 233.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f5je7")
+theme_override_font_sizes/font_size = 16
+text = "- Never got along with him
+"
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="." unique_id=1762824367]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.0
+offset_top = 239.0
+offset_right = 181.0
+offset_bottom = 269.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f5je7")
+theme_override_font_sizes/font_size = 16
+text = "- Has a mysterious colleague
+"
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="." unique_id=1134459478]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.0
+offset_top = 272.0
+offset_right = 181.0
+offset_bottom = 302.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f5je7")
+theme_override_font_sizes/font_size = 16
+text = "- Invited Esteban to a
+"
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="." unique_id=977469529]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.0
+offset_top = 300.0
+offset_right = 195.0
+offset_bottom = 330.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_f5je7")
+theme_override_font_sizes/font_size = 16
+text = "gathering"
+vertical_alignment = 1

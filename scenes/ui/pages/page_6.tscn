@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://cxfoo7fj3dflv"]
+
+[ext_resource type="Texture2D" uid="uid://dcpfjb7ugvri2" path="res://assets/resources/left_next.tres" id="1_fe0w8"]
+[ext_resource type="Script" uid="uid://bfdwmf7nl7olt" path="res://scripts/ui/slots.gd" id="2_fe0w8"]
+[ext_resource type="FontFile" uid="uid://dr80jfvwrqij4" path="res://assets/fonts/the-lowly-scribe.ttf" id="3_r8ted"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kstpb"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe0w8"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Page2" type="Control" unique_id=1454747359]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 380.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=394516674]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fe0w8")
+
+[node name="Panel2" type="PanelContainer" parent="." unique_id=253636938]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 118.0
+offset_top = 17.000002
+offset_right = 197.0
+offset_bottom = 40.0
+scale = Vector2(1.1599997, 1.5199997)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_kstpb")
+script = ExtResource("2_fe0w8")
+
+[node name="Panel3" type="PanelContainer" parent="." unique_id=1415291250]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 119.00001
+offset_top = 57.0
+offset_right = 198.0
+offset_bottom = 80.0
+scale = Vector2(1.1599997, 1.5199997)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_kstpb")
+script = ExtResource("2_fe0w8")
+
+[node name="Label4" type="Label" parent="." unique_id=385502361]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 102.0
+offset_right = 120.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_r8ted")
+theme_override_font_sizes/font_size = 16
+text = "- Mr Esteban's"
+vertical_alignment = 1
+
+[node name="Panel4" type="PanelContainer" parent="." unique_id=252703802]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 141.0
+offset_top = 103.0
+offset_right = 220.0
+offset_bottom = 126.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_fe0w8")
+script = ExtResource("2_fe0w8")
+
+[node name="Label5" type="Label" parent="." unique_id=285664050]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -129.0
+offset_top = 133.0
+offset_right = 152.0
+offset_bottom = 163.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_r8ted")
+theme_override_font_sizes/font_size = 16
+text = "- Recently seen with
+"
+vertical_alignment = 1
+
+[node name="Panel5" type="PanelContainer" parent="." unique_id=1438768597]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 33.0
+offset_top = 160.0
+offset_right = 112.0
+offset_bottom = 183.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_fe0w8")
+script = ExtResource("2_fe0w8")
+
+[node name="Panel6" type="PanelContainer" parent="." unique_id=69500196]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 119.0
+offset_top = 160.0
+offset_right = 198.0
+offset_bottom = 183.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_fe0w8")
+script = ExtResource("2_fe0w8")
+
+[node name="Label7" type="Label" parent="." unique_id=354092021]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 189.0
+offset_right = 319.0
+offset_bottom = 219.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_r8ted")
+theme_override_font_sizes/font_size = 16
+text = "- Admits to Benjamin's work in
+"
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="." unique_id=1778163237]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -115.0
+offset_top = 216.0
+offset_right = 332.0
+offset_bottom = 246.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_r8ted")
+theme_override_font_sizes/font_size = 16
+text = "the
+"
+vertical_alignment = 1
+
+[node name="Panel7" type="PanelContainer" parent="." unique_id=661701728]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 68.0
+offset_top = 216.0
+offset_right = 147.0
+offset_bottom = 239.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_fe0w8")
+script = ExtResource("2_fe0w8")

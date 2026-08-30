@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://cdftv20nri8vs"]
+
+[ext_resource type="Texture2D" uid="uid://dcpfjb7ugvri2" path="res://assets/resources/left_next.tres" id="1_pm6hb"]
+[ext_resource type="Script" uid="uid://bfdwmf7nl7olt" path="res://scripts/ui/slots.gd" id="3_i7hwo"]
+[ext_resource type="FontFile" uid="uid://dr80jfvwrqij4" path="res://assets/fonts/the-lowly-scribe.ttf" id="3_nq0gq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nq0gq"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7hwo"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Page2" type="Control" unique_id=1454747359]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 380.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=394516674]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pm6hb")
+
+[node name="Panel2" type="PanelContainer" parent="." unique_id=989627561]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 139.0
+offset_top = 17.0
+offset_right = 218.0
+offset_bottom = 40.0
+scale = Vector2(1.1599997, 1.5199997)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nq0gq")
+script = ExtResource("3_i7hwo")
+
+[node name="Panel3" type="PanelContainer" parent="." unique_id=320568261]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 140.0
+offset_top = 57.0
+offset_right = 219.0
+offset_bottom = 80.0
+scale = Vector2(1.1599997, 1.5199997)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nq0gq")
+script = ExtResource("3_i7hwo")
+
+[node name="Label4" type="Label" parent="." unique_id=385502361]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 102.0
+offset_right = 120.0
+offset_bottom = 132.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_nq0gq")
+theme_override_font_sizes/font_size = 16
+text = "- Head of the"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=285664050]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.0
+offset_top = 135.0
+offset_right = 154.0
+offset_bottom = 165.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_nq0gq")
+theme_override_font_sizes/font_size = 16
+text = "- Has never
+"
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="." unique_id=354092021]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.0
+offset_top = 171.0
+offset_right = 317.0
+offset_bottom = 201.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_nq0gq")
+theme_override_font_sizes/font_size = 16
+text = "- Met with 
+"
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="." unique_id=1778163237]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.0
+offset_top = 198.0
+offset_right = 331.0
+offset_bottom = 228.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_nq0gq")
+theme_override_font_sizes/font_size = 16
+text = "earlier
+"
+vertical_alignment = 1
+
+[node name="Panel7" type="PanelContainer" parent="." unique_id=126268625]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 135.0
+offset_top = 105.0
+offset_right = 214.0
+offset_bottom = 128.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_i7hwo")
+script = ExtResource("3_i7hwo")
+
+[node name="Panel4" type="PanelContainer" parent="." unique_id=1276163506]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 115.0
+offset_top = 137.0
+offset_right = 194.0
+offset_bottom = 160.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_i7hwo")
+script = ExtResource("3_i7hwo")
+
+[node name="Panel5" type="PanelContainer" parent="." unique_id=285904417]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 199.0
+offset_top = 137.0
+offset_right = 278.0
+offset_bottom = 160.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_i7hwo")
+script = ExtResource("3_i7hwo")
+
+[node name="Panel6" type="PanelContainer" parent="." unique_id=319418260]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 115.0
+offset_top = 174.0
+offset_right = 194.0
+offset_bottom = 197.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_i7hwo")
+script = ExtResource("3_i7hwo")
