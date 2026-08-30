@@ -1,0 +1,27 @@
+~ start
+do unlock_keyword("Felicia", "name")
+do unlock_keyword("Hei", "name")
+Felicia: Good evening gentlemen. Felicia Hei, secretary of Mr. Esteban at your service. 
+do unlock_keyword("boss", "noun")
+Gabriel: You seem rather relaxed for someone whose boss just died.
+do unlock_keyword("COCHE Mining", "noun")
+Felicia: I mean, being a senator who backs up that COCHE mining company?
+Felicia: He was practically asking to get murdered.
+Lucius: Well that’s one hell of a way to talk to your detectives as a potential suspect.
+Felicia: I’m just relieved that I didn’t see the killer myself. Who knows what might have happened.
+Felicia: Anyway, here’s his office. No one has touched anything since I found him this morning. If there’s anything else you need, I’ll be waiting nearby.
+Lucius: Thank you. We’ll take it from here.
+=> END
+
+~ office_enter
+Gabriel: You know, this is a really nice office. I mean, except for the… you know.
+Lucius: Focus on the job, Gabriel. See anything of note?
+Gabriel: Hm, I’ll go check the shelves. You should probably take a look at that body first.
+=> END
+
+~ arthur_caught
+Lucius: No signs of struggle, but vomit and blood all over the table. Though his neck and only his neck is bruised. My guess is poison. The bruising might be from him grabbing his neck as he was choking.
+Gabriel: Who would want to kill him? You don’t think it has something to do with those documents, right?
+Lucius: That’s one option. But either way, if anyone could kill him, it would be someone close to him. Let’s go, we have everything we need from here.
+Gabriel: Where to next?
+Lucius: Just outside. It’s time to have a talk with that secretary.
