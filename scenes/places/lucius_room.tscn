@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c5mlp6r4mts0r" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd" id="1_bw3fr"]
 [ext_resource type="ArrayMesh" uid="uid://daysp83uefrcc" path="res://assets/places/lucius_room/lucius_room_Outside.res" id="1_uj43g"]
+[ext_resource type="Script" uid="uid://d286uf2crcebg" path="res://scripts/levels/lucius_room.gd" id="1_x2dmv"]
 [ext_resource type="ArrayMesh" uid="uid://csdwp7v15oo72" path="res://assets/places/lucius_room/lucius_room_Plane.res" id="2_6exg1"]
 [ext_resource type="Texture2D" uid="uid://b7tjmxrtf0jyq" path="res://assets/sprites/sprite_sheets.png" id="2_i2h6x"]
 [ext_resource type="ArrayMesh" uid="uid://bsjeyk2it7dpq" path="res://assets/places/lucius_room/lucius_room_Plane_001.res" id="3_abkhd"]
@@ -11,6 +12,103 @@
 [ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/player.tscn" id="5_018sd"]
 [ext_resource type="Resource" uid="uid://u7l0vyewpsad" path="res://dialogue/journal_prompt.dialogue" id="5_f2y13"]
 [ext_resource type="PackedScene" uid="uid://bpfgughq4aext" path="res://scenes/ui/in_game_ui.tscn" id="9_pijg8"]
+[ext_resource type="PackedScene" uid="uid://cjp78nssn4xlx" path="res://scenes/gabriel.tscn" id="12_tagal"]
+[ext_resource type="AudioStream" uid="uid://mher3chwpvsk" path="res://assets/audio/universfield-fast-knocking-on-door-352704.mp3" id="14_yhy7l"]
+
+[sub_resource type="Animation" id="Animation_x2dmv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Gabriel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(10.546468, 1.3813376, -15.435836)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioStreamPlayer3D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_yhy7l"]
+resource_name = "fadeout"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_shng6"]
+resource_name = "gab_walk"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Gabriel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(10.546468, 1.3813376, -15.435836), Vector3(19.957603, 1.3813376, -15.435836)]
+}
+
+[sub_resource type="Animation" id="Animation_gn0st"]
+resource_name = "knock"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AudioStreamPlayer3D:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_shng6"]
+_data = {
+&"RESET": SubResource("Animation_x2dmv"),
+&"fadeout": SubResource("Animation_yhy7l"),
+&"gab_walk": SubResource("Animation_shng6"),
+&"knock": SubResource("Animation_gn0st")
+}
 
 [sub_resource type="Environment" id="Environment_tkitk"]
 background_mode = 1
@@ -59,6 +157,11 @@ size = Vector3(17.96875, 5.9558105, 6.5)
 size = Vector3(1.0087891, 2.8452148, 14.441162)
 
 [node name="LuciusRoom" type="Node3D" unique_id=2055072534]
+script = ExtResource("1_x2dmv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1898837099]
+root_node = NodePath("../ColorRect")
+libraries/ = SubResource("AnimationLibrary_shng6")
 
 [node name="Environment" type="Node3D" parent="." unique_id=894665606]
 
@@ -171,6 +274,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.112566, 1.294704, -6.72058
 shape = SubResource("BoxShape3D_3q5lw")
 
 [node name="Player" parent="." unique_id=392277457 instance=ExtResource("5_018sd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5406642, 1.9678771, -15.537203)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2883415, 1.9678771, -15.21626)
+
+[node name="Gabriel" parent="." unique_id=1218963668 instance=ExtResource("12_tagal")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.546468, 1.3813376, -15.435836)
 
 [node name="InGameUI" parent="." unique_id=20912192 instance=ExtResource("9_pijg8")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1887800685]
+offset_left = -27.0
+offset_top = -19.0
+offset_right = 1166.0
+offset_bottom = 662.0
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=10681733]
+stream = ExtResource("14_yhy7l")

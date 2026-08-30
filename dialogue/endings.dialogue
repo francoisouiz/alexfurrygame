@@ -1,0 +1,60 @@
+~ start
+if ProgressMarkers.culprit == "Remi"
+	=> remi_ending
+else
+	=> generic_ending
+	
+~ remi_ending
+Lucius: With our culprit identified. I contacted the police, and they made their move.
+Lucius: Unfortunately, the head of the Los Fuertes was bound to be hard to catch.
+Lucius: Then again, this isn’t the first time I’ve taken down a sindikato.
+Lucius: It took a few months, but we finally caught him.
+Lucius: While we did arrest Remi, I can’t shake the feeling that I’m missing something.
+Lucius: Unfortunately, the exhaustion is starting to creep in. I might fall asleep for a couple of days again.
+Lucius: Thus, I hereby close the Case of Benjamin Esteban.
+
+Gabriel: Hey, boss. How are you feeling?
+Lucius: Exhausted. Then again, I’m always exhausted.
+Lucius: What’s up? Another case?
+Gabriel: Actually, I’m quitting.
+Lucius: What, why?
+Gabriel: To tell you the truth, the whole reason I worked with you is that I thought you’d help me bring justice to my brothers.
+Lucius: Ah, a personal grudge. No wonder why you were so committed to finding Remi. 
+Gabriel: That’s exactly why I can’t work with you anymore.
+Gabriel: On one hand, I owe you so much for helping me take down Remi.
+Gabriel: On the other hand…
+Gabriel: You’re the reason Remi took down the Homens Mortos in the first place.
+Lucius: !!!
+Gabriel: You started this whole mess, but no matter how much I thought of dealing with you, I just couldn’t bring myself to do it.
+Gabriel: So instead, I’ll be leaving.
+Lucius: Gabriel
+Gabriel: Farewell, Lucius. May we never see each other again.
+=> END
+
+~ generic_ending
+Lucius: With our culprit identified. I contacted the police, and they made their move.
+Lucius: {{ProgressMarkers.culprit}}'s arrest was successful, but it wasn’t exactly smooth.
+match ProgressMarkers.culprit
+	when "Felicia"
+		Lucius: Arthur refused to believe that his girlfriend could be the killer.
+		Arthur: Lucius! She’s innocent, I swear! Please, stop them! You know what’ll happen if they take her!
+		Arthur: Lucius!
+	when "Arthur"
+		Lucius: Felicia silently watched it all happen. But I could tell that it was eating at her.
+		Lucius: Unfortunately, I couldn’t offer my condolences. She probably didn’t want to see me ever again.
+		Gary: All of his efforts to promote aspin rights, gone. We’ve lost a young man with incredible potential.
+		Gary: Lucius, I’ll make sure Ms. Felicia is okay. Thank you for your hard work.
+	when "Gary"
+		Lucius: With so many supporters. Mr. Ortolano’s arrest was bound to start things.
+		Lucius: Gabriel and I might have been attacked if it weren’t for Mrs. Francesca.
+		Francesca: It’s the least I can do for the ones who brought my husband’s murderer to justice.
+		Francesca: I should have known. My husband was right not to trust that anthrocarabao.
+	when "Francesca"
+		Lucius: After all, Anna was still a child, and with both of her parents gone, she needed a guardian until we could find her a permanent home.
+		Felicia: Looks like the Estebans left me one final thing.
+		Felicia: How am I supposed to find a new job while taking care of someone else’s kid?
+		Lucius: My advice? You may be able to convince Drew Sangster. Hopefully, he’ll step up to honor his past love.
+Lucius: While we did arrest {{ProgressMarkers.culprit}}, I can’t shake the feeling that I’m missing something.
+Lucius: Unfortunately, the exhaustion is starting to creep in. I might fall asleep for a couple of days again.
+Lucius: Thus, I hereby close the Case of Benjamin Esteban.
+=> END

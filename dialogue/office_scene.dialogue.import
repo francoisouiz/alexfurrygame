@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://c1fglrv2nb00j"
+path="res://.godot/imported/office_scene.dialogue-b00f4c9e71371b8b99fcbaf80839b28f.tres"
+
+[deps]
+
+source_file="res://dialogue/office_scene.dialogue"
+dest_files=["res://.godot/imported/office_scene.dialogue-b00f4c9e71371b8b99fcbaf80839b28f.tres"]
+
+[params]
+
+defaults=true
