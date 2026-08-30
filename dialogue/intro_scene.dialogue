@@ -1,0 +1,32 @@
+~ start
+do knock()
+
+Gabriel: Hey, Lucius? ‘You there?
+Lucius: Yeah, I’m here. Come in.
+
+do remove_black_screen()
+
+#do set_expression(“confused”)
+Gabriel: Are you alright?
+Gabriel: You seem a little out of it lately.
+Lucius: Just a bit more… tired than normal. That last case took a lot out of me.
+Gabriel: Well, sorry to break it to you. We’ve got another case, and it’s a big one.
+#do set_expression(“glassesshine”)
+Lucius: Hm? What are we looking at?
+#do set_expression(“frown”)
+Gabriel: A murder. Benjamin Esteban.
+Lucius: Esteban… familiar name…
+Lucius: Wait, the senator? Benjamin Esteban?
+Gabriel: Yup. Found dead in his office just a few hours ago. Hasn’t reached the news yet, and they’re hoping to keep it that way.
+Lucius: All right. Go start the car. I just need to get a few things. 
+do kill_gab()
+=> END
+
+~ incomplete_journal
+Lucius: I can't leave before I prepare my journal.
+=> END
+
+~ leave
+Lucius: Everything's ready. Let's get going.
+
+=> END

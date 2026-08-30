@@ -31,3 +31,5 @@ var has_met: Dictionary = {
 	"Francesca": false,
 	"Remi": false,
 }
+
+var culprit: String = ""
