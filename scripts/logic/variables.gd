@@ -5,8 +5,8 @@ signal keyword_unlocked(keyword_text: String, category: String, start_global_pos
 var active_first_button: String
 var active_second_button: String
 var name_keywords: Array = ["Lucius", "Solano", "Gabriel", "John", "Utrera", "Benjamin", "Esteban", "test"]
-var noun_keywords: Array = []
-var verb_keywords: Array = []
+var noun_keywords: Array = ["Noun"]
+var verb_keywords: Array = ["Verb"]
 var evidence: Array = []
 var keywordNames: GridContainer
 var keywordNouns: GridContainer

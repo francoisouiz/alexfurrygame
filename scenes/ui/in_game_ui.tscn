@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://hcqdn1ltvb38" path="res://scripts/ui/in_game_ui.gd" id="1_8o238"]
 [ext_resource type="PackedScene" uid="uid://cfqtm57jlm07w" path="res://scenes/ui/journal.tscn" id="2_3nhwc"]
 [ext_resource type="Texture2D" uid="uid://0trht77eu2ix" path="res://assets/sprites/elements-Recovered.png" id="2_spc33"]
-[ext_resource type="Script" uid="uid://bfr06ddrii2hb" path="res://scripts/ui/tween_component.gd" id="4_3nhwc"]
+[ext_resource type="Texture2D" uid="uid://dlp7cs4x8dk2t" path="res://assets/resources/names_tab.tres" id="3_s3j3l"]
 [ext_resource type="AudioStream" uid="uid://cdxtjbeqtocta" path="res://assets/sounds/book_close_new.mp3" id="6_spc33"]
 [ext_resource type="AudioStream" uid="uid://c86amsjmwydsj" path="res://assets/sounds/book_open_new.mp3" id="7_spc33"]
 [ext_resource type="Shader" uid="uid://c2un6243ma6b4" path="res://shaders/spotlight_mask.gdshader" id="8_8o238"]
@@ -17,12 +17,15 @@ region = Rect2(626, 39, 145, 251)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h12yp"]
 texture = SubResource("AtlasTexture_8pydb")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3x7s"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3q5lw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l78km"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s3j3l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1kqjw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5as1l"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pwpia"]
 
@@ -152,6 +155,18 @@ grow_horizontal = 0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_h12yp")
 
+[node name="TextureRect" type="TextureRect" parent="SideBar" unique_id=1886906977]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_top = 17.0
+offset_right = -32.005127
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_s3j3l")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="SideBar" unique_id=1456129062]
 layout_mode = 1
 anchors_preset = 11
@@ -163,7 +178,7 @@ offset_right = -38.999756
 offset_bottom = 159.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_constants/separation = 2
+theme_override_constants/separation = 17
 
 [node name="KeywordClasses" type="HBoxContainer" parent="SideBar/VBoxContainer" unique_id=1024149628]
 custom_minimum_size = Vector2(0, 70)
@@ -175,14 +190,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3q5lw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l78km")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s3j3l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1kqjw")
 text = "Names"
-
-[node name="TweenComponent" type="Node" parent="SideBar/VBoxContainer/KeywordClasses/Names" unique_id=2072980846 node_paths=PackedStringArray("parent")]
-script = ExtResource("4_3nhwc")
-hover_addon = 15.0
-orig_custom = 50.0
-parent = NodePath("..")
 
 [node name="Nouns" type="Button" parent="SideBar/VBoxContainer/KeywordClasses" unique_id=781050183]
 custom_minimum_size = Vector2(0, 50)
@@ -190,14 +202,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3q5lw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l78km")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5as1l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1kqjw")
 text = "Nouns"
-
-[node name="TweenComponent" type="Node" parent="SideBar/VBoxContainer/KeywordClasses/Nouns" unique_id=293934391 node_paths=PackedStringArray("parent")]
-script = ExtResource("4_3nhwc")
-hover_addon = 15.0
-orig_custom = 50.0
-parent = NodePath("..")
 
 [node name="Verbs" type="Button" parent="SideBar/VBoxContainer/KeywordClasses" unique_id=1152384284]
 custom_minimum_size = Vector2(0, 50)
@@ -205,14 +214,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3q5lw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_l78km")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5as1l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_1kqjw")
 text = "Verbs"
-
-[node name="TweenComponent" type="Node" parent="SideBar/VBoxContainer/KeywordClasses/Verbs" unique_id=955908595 node_paths=PackedStringArray("parent")]
-script = ExtResource("4_3nhwc")
-hover_addon = 15.0
-orig_custom = 50.0
-parent = NodePath("..")
 
 [node name="KeywordNames" type="GridContainer" parent="SideBar/VBoxContainer" unique_id=976645366 node_paths=PackedStringArray("name_container", "noun_container", "verb_container")]
 custom_minimum_size = Vector2(-1, -1)
@@ -271,6 +277,10 @@ icon_alignment = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -1.0
+offset_right = -7.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2

@@ -8,15 +8,23 @@ func _ready() -> void:
 func _gui_input(event: InputEvent) -> void:
 	if is_locked:
 		return
-		
+			
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if Variables.selected_sidebar_button != null:
 			Variables.selected_slot = self
 			Variables.try_click_placement()
+			var temp_player: AudioStreamPlayer = AudioStreamPlayer.new()
+			temp_player.stream = preload("uid://b0esxmrowxv4q")
+			get_tree().root.add_child(temp_player)
+			temp_player.play()
 			return
 			
 		if Variables.selected_slot != null and Variables.selected_slot != self:
 			Variables.try_slot_to_slot_transfer(self)
+			var temp_player: AudioStreamPlayer = AudioStreamPlayer.new()
+			temp_player.stream = preload("uid://b0esxmrowxv4q")
+			get_tree().root.add_child(temp_player)
+			temp_player.play()
 			return
 			
 		if Variables.selected_slot != null:
@@ -73,6 +81,11 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	var journal: Node = get_tree().get_first_node_in_group("journal")
 	if journal and journal.has_method("check_and_trigger_pair_cutscene"):
 		journal.check_and_trigger_pair_cutscene()
+	
+	var temp_player: AudioStreamPlayer = AudioStreamPlayer.new()
+	temp_player.stream = preload("uid://2qwvc4i3y1wd")
+	get_tree().root.add_child(temp_player)
+	temp_player.play()
 		
 func _get_slot_button(slot: PanelContainer) -> Button:
 	for child: Node in slot.get_children():

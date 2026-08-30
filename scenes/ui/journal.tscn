@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://bx37tyv7uljgk" path="res://shaders/pageflip.gdshader" id="2_gs82g"]
 [ext_resource type="Texture2D" uid="uid://0trht77eu2ix" path="res://assets/sprites/elements-Recovered.png" id="2_yv8vu"]
 [ext_resource type="Script" uid="uid://bfr06ddrii2hb" path="res://scripts/ui/tween_component.gd" id="3_gs82g"]
+[ext_resource type="Texture2D" uid="uid://dws4iecg0j4n1" path="res://assets/resources/red_tab.tres" id="4_n1n8h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ul30f"]
 atlas = ExtResource("2_yv8vu")
@@ -24,10 +25,15 @@ gradient = SubResource("Gradient_gs82g")
 width = 560
 height = 360
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3x7s"]
-content_margin_left = 10.0
-content_margin_right = 10.0
-bg_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pacny"]
+content_margin_top = 6.0
+texture = ExtResource("4_n1n8h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5j75o"]
+texture = ExtResource("4_n1n8h")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_56g0h"]
+texture = ExtResource("4_n1n8h")
 
 [node name="Journal" type="Control" unique_id=1058316455]
 layout_mode = 3
@@ -146,35 +152,21 @@ offset_left = 17.616589
 offset_top = -49.740936
 offset_right = 131.6166
 offset_bottom = 0.25906372
+theme_override_constants/separation = 4
 
 [node name="Tab1" type="Button" parent="EdgeTabs" unique_id=286094970]
 custom_minimum_size = Vector2(55, 30)
-custom_maximum_size = Vector2(55, -1)
+custom_maximum_size = Vector2(45, -1)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
-text = "Tab 1"
+theme_override_styles/normal = SubResource("StyleBoxTexture_pacny")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5j75o")
+theme_override_styles/hover = SubResource("StyleBoxTexture_56g0h")
+text = "p. 1"
 
 [node name="TweenComponent" type="Node" parent="EdgeTabs/Tab1" unique_id=649466548 node_paths=PackedStringArray("parent")]
-script = ExtResource("3_gs82g")
-hover_addon = 10.0
-orig_custom = 30.0
-parent = NodePath("..")
-
-[node name="Tab2" type="Button" parent="EdgeTabs" unique_id=1854572009]
-custom_minimum_size = Vector2(55, 30)
-custom_maximum_size = Vector2(55, -1)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_s3x7s")
-text = "Tab 2
-"
-
-[node name="TweenComponent" type="Node" parent="EdgeTabs/Tab2" unique_id=493222364 node_paths=PackedStringArray("parent")]
 script = ExtResource("3_gs82g")
 hover_addon = 10.0
 orig_custom = 30.0
@@ -185,4 +177,3 @@ parent = NodePath("..")
 [connection signal="pressed" from="PageStack/PrevCorner" to="." method="_on_prev_corner_pressed"]
 [connection signal="pressed" from="PageStack/NextCorner" to="." method="_on_next_corner_pressed"]
 [connection signal="pressed" from="EdgeTabs/Tab1" to="." method="_on_tab_1_pressed"]
-[connection signal="pressed" from="EdgeTabs/Tab2" to="." method="_on_tab_2_pressed"]

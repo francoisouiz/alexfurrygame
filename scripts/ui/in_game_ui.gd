@@ -22,6 +22,7 @@ extends CanvasLayer
 @onready var dim_overlay: ColorRect = $DimOverlay
 @onready var side_bar: Panel = $SideBar
 @onready var spot_light: CanvasLayer = $SpotLight
+@onready var texture_rect: TextureRect = $SideBar/TextureRect
 
 
 var KEYWORD_TEXTS: PackedScene = preload("uid://2e02bl5vknkv")
@@ -156,6 +157,7 @@ func add_keyword(keyword: String, temp: Array, type: String, color: Color) -> vo
 
 func _on_names_pressed() -> void:
 	Variables.active_second_button = "names"
+	texture_rect.texture = preload("uid://dlp7cs4x8dk2t")
 	enable_node(keyword_names)
 	nouns.custom_minimum_size.y = 50
 	disable_node(keyword_nouns)
@@ -167,11 +169,12 @@ func _on_names_pressed() -> void:
 	for node: Node in node_names:
 		temp.append(node.text)
 	for keyword: String in Variables.name_keywords:
-		add_keyword(keyword, temp, "name", Color.DARK_GREEN)
+		add_keyword(keyword, temp, "name", Color("ac3232"))
 
 
 func _on_nouns_pressed() -> void:
 	Variables.active_second_button = "nouns"
+	texture_rect.texture = preload("uid://djfs1xld2p25p")
 	enable_node(keyword_nouns)
 	
 	names.custom_minimum_size.y = 50
@@ -184,11 +187,12 @@ func _on_nouns_pressed() -> void:
 	for node: Node in node_nouns:
 		temp.append(node.text)
 	for keyword: String in Variables.noun_keywords:
-		add_keyword(keyword, temp, "noun", Color.DARK_BLUE)
+		add_keyword(keyword, temp, "noun", Color("df7126"))
 
 
 func _on_verbs_pressed() -> void:
 	Variables.active_second_button = "verbs"
+	texture_rect.texture = preload("uid://dq8s0ka8rsymg")
 	enable_node(keyword_verbs)
 	
 	names.custom_minimum_size.y = 50
@@ -201,7 +205,7 @@ func _on_verbs_pressed() -> void:
 	for node: Node in node_verbs:
 		temp.append(node.text)
 	for keyword: String in Variables.verb_keywords:
-		add_keyword(keyword, temp, "verb", Color.DARK_RED)
+		add_keyword(keyword, temp, "verb", Color("37946e"))
 
 
 func _on_bahay_pressed() -> void:
