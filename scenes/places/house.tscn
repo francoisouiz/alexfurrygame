@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://boufoxu8x3hbw"]
 
-[ext_resource type="ArrayMesh" uid="uid://jaj52akler74" path="res://assets/places/house/house_Cube.res" id="1_0qdqe"]
-[ext_resource type="ArrayMesh" uid="uid://buwxxvt4oy6oq" path="res://assets/places/house/house_Cube_001.res" id="2_s0wxo"]
+[ext_resource type="ArrayMesh" uid="uid://d143vqm14bs5m" path="res://assets/places/house/house_Cube.res" id="1_0qdqe"]
+[ext_resource type="ArrayMesh" uid="uid://dm00wm87s0n6p" path="res://assets/places/house/house_Cube_001.res" id="2_s0wxo"]
 
 [sub_resource type="Environment" id="Environment_s0wxo"]
 background_mode = 1

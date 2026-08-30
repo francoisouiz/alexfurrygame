@@ -4,6 +4,8 @@ var current_level: String
 
 var has_opened_journal: bool = false
 var first_time_filled: bool = true
+var first_filled_checker: bool = false
+var in_dialogue: bool = false
 
 signal open_map
 signal journal_prompt

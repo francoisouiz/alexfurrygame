@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjp78nssn4xlx"]
 
 [ext_resource type="Script" uid="uid://bb636aic4yoo6" path="res://addons/dialogue_manager/nodes/marker/dialogue_marker_3d.gd" id="1_21uit"]
-[ext_resource type="Texture2D" uid="uid://cg1e4l0w8i1mp" path="res://assets/temp/icon.svg" id="2_6v806"]
+[ext_resource type="Texture2D" uid="uid://bhm2mjnj01jup" path="res://assets/sprites/GABRIEL.png" id="2_21uit"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k6xse"]
 size = Vector3(1.7207031, 3.90625, 0.35546875)
@@ -9,40 +9,26 @@ size = Vector3(1.7207031, 3.90625, 0.35546875)
 [sub_resource type="BoxShape3D" id="BoxShape3D_f2ysh"]
 size = Vector3(1.4521484, 4.054077, 0.62475586)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fsdal"]
-atlas = ExtResource("2_6v806")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v806"]
+atlas = ExtResource("2_21uit")
+region = Rect2(21, 0, 44, 142)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_twq67"]
-atlas = ExtResource("2_6v806")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lh4fc"]
-atlas = ExtResource("2_6v806")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_25qnp"]
-atlas = ExtResource("2_6v806")
-region = Rect2(64, 64, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6xse"]
+atlas = ExtResource("2_21uit")
+region = Rect2(74, 0, 44, 142)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mfjo2"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fsdal")
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_6v806")
 }, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_twq67")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lh4fc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_25qnp")
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_k6xse")
 }],
 "loop": 1,
-"name": &"temp",
-"speed": 5.0
+"name": &"idle",
+"speed": 1.0
 }]
 
 [node name="Gabriel" type="AnimatableBody3D" unique_id=1218963668]
@@ -68,6 +54,6 @@ pixel_size = 0.03125
 alpha_cut = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_mfjo2")
-animation = &"temp"
-frame = 3
-frame_progress = 0.82540244
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.07832758

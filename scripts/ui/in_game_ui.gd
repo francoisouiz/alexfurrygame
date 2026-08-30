@@ -79,6 +79,7 @@ func _on_first_time() -> void:
 	journal.z_index = 0
 	side_bar.z_index = 0
 	journal_button.z_index = 0
+	Constants.first_filled_checker = true
 	
 func _on_journal_prompt() -> void:
 	if not Constants.has_opened_journal:
@@ -127,6 +128,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_journal_button_pressed() -> void:
 	is_journalling = not is_journalling
+	if Constants.first_filled_checker:
+		DialogueManager.show_dialogue_balloon(ResourceLoader.load("uid://nf02cbl4osx8"), "start")
+		Constants.first_filled_checker = false
 	if is_journalling:
 		match Variables.active_second_button:
 			"names":
