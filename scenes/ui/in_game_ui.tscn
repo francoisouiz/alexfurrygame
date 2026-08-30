@@ -329,6 +329,15 @@ offset_bottom = 149.0
 theme_override_font_sizes/font_size = 25
 text = "bahay ng alumni"
 
+[node name="Dialogues" type="Button" parent="Map" unique_id=861112412]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 186.0
+offset_right = 325.0
+offset_bottom = 254.0
+theme_override_font_sizes/font_size = 25
+text = "Dialogues Land"
+
 [node name="MapAnimation" type="AnimationPlayer" parent="Map" unique_id=743321421]
 libraries/ = SubResource("AnimationLibrary_s3j3l")
 
@@ -356,3 +365,4 @@ grow_vertical = 2
 [connection signal="pressed" from="SideBar/VBoxContainer/KeywordClasses/Verbs" to="." method="_on_verbs_pressed"]
 [connection signal="pressed" from="JournalButton" to="." method="_on_journal_button_pressed"]
 [connection signal="pressed" from="Map/Bahay" to="." method="_on_bahay_pressed"]
+[connection signal="pressed" from="Map/Dialogues" to="." method="_on_dialogues_pressed"]

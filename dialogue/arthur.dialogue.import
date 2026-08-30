@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://c27b3pm2fjwog"
+path="res://.godot/imported/arthur.dialogue-c59fe8341f5e782ecac276133132fcac.tres"
+
+[deps]
+
+source_file="res://dialogue/arthur.dialogue"
+dest_files=["res://.godot/imported/arthur.dialogue-c59fe8341f5e782ecac276133132fcac.tres"]
+
+[params]
+
+defaults=true

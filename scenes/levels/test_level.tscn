@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/player.tscn" id="1_jbqir"]
 [ext_resource type="Script" uid="uid://c5mlp6r4mts0r" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd" id="2_fr1um"]
 [ext_resource type="PackedScene" uid="uid://bpfgughq4aext" path="res://scenes/ui/in_game_ui.tscn" id="2_yautc"]
-[ext_resource type="Resource" uid="uid://dg316fb3576ai" path="res://dialogue/calim.dialogue" id="3_48ne7"]
+[ext_resource type="Resource" uid="uid://c27b3pm2fjwog" path="res://dialogue/arthur.dialogue" id="3_hfwtw"]
 [ext_resource type="Script" uid="uid://bb636aic4yoo6" path="res://addons/dialogue_manager/nodes/marker/dialogue_marker_3d.gd" id="3_v45ci"]
-[ext_resource type="Resource" uid="uid://cu3ax2ifmvp86" path="res://dialogue/remi.dialogue" id="5_6xh4u"]
+[ext_resource type="Resource" uid="uid://bvweybspw188c" path="res://dialogue/felicia.dialogue" id="5_hfwtw"]
 [ext_resource type="Resource" uid="uid://dts3q3dxyo0h0" path="res://dialogue/bryan.dialogue" id="6_cyt5c"]
 [ext_resource type="Resource" uid="uid://cykptmq3hbond" path="res://dialogue/map_prompt.dialogue" id="7_7x1jh"]
 [ext_resource type="Resource" uid="uid://u7l0vyewpsad" path="res://dialogue/journal_prompt.dialogue" id="8_hfwtw"]
@@ -14,12 +14,12 @@
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_yautc"]
+[sub_resource type="Sky" id="Sky_hfwtw"]
 sky_material = SubResource("ProceduralSkyMaterial_jbqir")
 
 [sub_resource type="Environment" id="Environment_fr1um"]
 background_mode = 2
-sky = SubResource("Sky_yautc")
+sky = SubResource("Sky_hfwtw")
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3hp5k"]
@@ -63,7 +63,7 @@ material = SubResource("StandardMaterial3D_3hp5k")
 
 [node name="DialogueActionable3D" type="Area3D" parent="LevelContainer/CSGBox3D2" unique_id=838739436]
 script = ExtResource("2_fr1um")
-dialogue_resource = ExtResource("3_48ne7")
+dialogue_resource = ExtResource("3_hfwtw")
 dialogue_cue = "start"
 metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
 
@@ -73,7 +73,7 @@ shape = SubResource("BoxShape3D_s3x7s")
 [node name="DialogueMarker3D" type="Marker3D" parent="LevelContainer/CSGBox3D2" unique_id=1986783339]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37575018, 0)
 script = ExtResource("3_v45ci")
-character_name = "Calim"
+character_name = "Arthur"
 metadata/_custom_type_script = "uid://bb636aic4yoo6"
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="LevelContainer" unique_id=111132975]
@@ -83,7 +83,7 @@ material = SubResource("StandardMaterial3D_3hp5k")
 
 [node name="DialogueActionable3D" type="Area3D" parent="LevelContainer/CSGBox3D3" unique_id=1939765494]
 script = ExtResource("2_fr1um")
-dialogue_resource = ExtResource("5_6xh4u")
+dialogue_resource = ExtResource("5_hfwtw")
 dialogue_cue = "start"
 metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
 
@@ -93,7 +93,7 @@ shape = SubResource("BoxShape3D_3q5lw")
 [node name="DialogueMarker3D" type="Marker3D" parent="LevelContainer/CSGBox3D3" unique_id=2049073794]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2577045, 0)
 script = ExtResource("3_v45ci")
-character_name = "Remi"
+character_name = "Felicia"
 metadata/_custom_type_script = "uid://bb636aic4yoo6"
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="LevelContainer" unique_id=966404641]

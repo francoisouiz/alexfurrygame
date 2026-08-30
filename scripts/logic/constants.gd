@@ -11,7 +11,8 @@ signal first_time_signal
 
 const SCENE_PATHS: Dictionary = {
 	"loading_screen": "uid://dks2u6hsx0uwt",
-	"bahay": "uid://b4rcaktogxosx"
+	"bahay": "uid://b4rcaktogxosx",
+	"dialogue_testing": "uid://bajvpq71v7u04"
 }
 
 const PAGE_PATHS: Array[Dictionary] = [

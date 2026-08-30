@@ -1,19 +1,63 @@
 ~ start
-Remi: [pulse]default[/pulse]
-- When did you find out about the body?
-- Who else have you contacted about the case?
-- Does anyone else visit him often?
-- When was the last time you saw Mr. Esteban alive?
-- What do you mean by fits?
-- Do you know if he’s eaten anything weird recently?
-- What were you doing this morning?
-- Do you recognize these documents?
-do set_expression("angry")
-Remi: angy
-Remi: default
-do set_expression("smirk")
-Remi: smirk
-Remi: default
-do set_expression("frown")
-Gabriel: test
+if ProgressMarkers.has_met.Remi == false
+	Gab: We went through a whole lot to get here? Where the heck are we?
+	Lucius: Stay calm, alright. He doesn’t like loud noises.
+	Gab: What are yo-
+	Remi: Would ya look at that. The crazy detective is back.
+	Gab: You- you’re-
+	Lucius: Well, this crazy detective is the reason the Homens Mortos gang was shut down, so I think we can be on a bit better terms, Remi.
+	Gab: You know this guy???
+	Remi: Hate to break it to you, but your boss over here ain’t as noble as ya think.
+	Remi: He wanted help with this extrajudicial killing case that he was stuck on. In exchange, he helped us take down a gang trying to mooch into our territory.
+	Remi: So what do you want this time, Lucius? Or are you still stuck on that case?
+	Lucius: Do you remember Senator Esteban? He’s dead. Poisoned.
+	Remi: So? What does that have to do with me?
+	Gab: We have evidence that you were associated with him.
+	Remi: Oh? Interesting…
+	Remi: And so you want me to prove my innocence?
+	Lucius: If you can. If we’re lucky, you might point us in the right direction.
+	Remi: HAH. You know what Lucius, I’ll play your game. For good time’s sake.
+	Gab: Are you sure we can trust this guy, Lucius?
+	Lucius: For the sake of the case, I’ll do anything. You, of all people, should know that.
+	do ProgressMarkers.has_met.Remi = true
+else:
+	Remi: What is it this time?
+=> questions
+~ questions
+Remi: -
+- When was the last time you saw Mr. Esteban?
+	Remi: Never met him.
+	Remi: Although, I did have a colleague who brought him up recently. Seemed more on his side, though.
+	do ProgressMarkers.has_learned.Mafia_Colleague = true
+	=> questions
+
+- What do these letters mean? [if Constants.has_found.Planted_Documents /]
+	Remi: Hmm… Oh? These are…
+	Remi: Well what do you know.
+	Remi: Say, where’d you get these Lucius?
+	Lucius: Found them in his office. Buried under a stack of other papers.
+	Remi: Hmm. I might have another job for ya after this.
+	Lucius: What do you mean?
+	Remi: They’re fakes. Pretty damn good ones.
+	Remi: The problem my friend, is that if fakes like these are going around, it drags my name into the ground.
+	Remi: Maybe I’ll ask you to help find these morons as my reward for playing your game.
+	do ProgressMarkers.has_learned.Fake_Documents = true
+	=> questions
+
+- What did you do during lunch? [if ProgressMarkers.has_learned.Sindikato_Ties and Progress_Markers.has_learned.Mafia_Colleague /]
+	Lucius: I heard that you met with a “colleague” for lunch. What did you guys discuss?
+	Remi: Less of a discussion, really. More of a reminder that my colleague better start pulling his weight.
+	Lucius: …
+	Remi: …
+	Lucius: It’s Ortolona, isn’t it?
+	Remi: Can’t confirm it, but can’t deny it.
+	Lucius: Did he mention anything about Esteban?
+	Remi: I said he’d try roping him in. Help spread our influence. As if giving me another headache will make up for his failure to pay up.
+	do ProgressMarkers.has_learned.Not_Roped_In = true
+	=> questions
+
+- Thanks for the help Remi.
+	if ProgressMarkers.has_learned.Mafia_Colleague and ProgressMarkers.has_learned.Fake_Documents and ProgressMarkers.has_learned.Not_Roped_In
+		do ProgressMarkers.has_learned.No_Sindikato_Ties = true
+	Remi: Remember. You owe me one now.
 => END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://c1y2qqfde0k78"
+path="res://.godot/imported/francesca.dialogue-c86c2d801204ce43e364a9f799464dbc.tres"
+
+[deps]
+
+source_file="res://dialogue/francesca.dialogue"
+dest_files=["res://.godot/imported/francesca.dialogue-c86c2d801204ce43e364a9f799464dbc.tres"]
+
+[params]
+
+defaults=true

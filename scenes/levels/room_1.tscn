@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b4rcaktogxosx"]
 
-[ext_resource type="ArrayMesh" uid="uid://b6w2jjmwms66n" path="res://assets/blender/Room1_Cube_001.res" id="1_sdorp"]
+[ext_resource type="ArrayMesh" uid="uid://cjogphxukp4g6" path="res://assets/blender/Room1_Cube_001.res" id="1_sdorp"]
 [ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/player.tscn" id="2_g1qh7"]
-[ext_resource type="ArrayMesh" uid="uid://d35pexjguttdj" path="res://assets/blender/Room1_Cube_002.res" id="3_g1qh7"]
+[ext_resource type="ArrayMesh" uid="uid://bvfxrr22hooka" path="res://assets/blender/Room1_Cube_002.res" id="3_g1qh7"]
 [ext_resource type="PackedScene" uid="uid://bpfgughq4aext" path="res://scenes/ui/in_game_ui.tscn" id="4_btv68"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_g1qh7"]
@@ -16,6 +16,7 @@ data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1,
 [node name="Player" parent="." unique_id=392277457 instance=ExtResource("2_g1qh7")]
 
 [node name="Cube1" type="MeshInstance3D" parent="." unique_id=760468206]
+visible = false
 mesh = ExtResource("1_sdorp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cube1" unique_id=1457207186]
@@ -33,3 +34,4 @@ mesh = ExtResource("3_g1qh7")
 shape = SubResource("ConcavePolygonShape3D_btv68")
 
 [node name="InGameUI" parent="." unique_id=20912192 instance=ExtResource("4_btv68")]
+visible = false
