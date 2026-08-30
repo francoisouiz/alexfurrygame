@@ -31,6 +31,10 @@ func _gui_input(event: InputEvent) -> void:
 			Variables.selected_slot.set_highlight(false)
 			
 		Variables.selected_slot = self
+		var temp_player: AudioStreamPlayer = AudioStreamPlayer.new()
+		temp_player.stream = preload("uid://b0esxmrowxv4q")
+		get_tree().root.add_child(temp_player)
+		temp_player.play()
 		set_highlight(true)
 		
 func set_highlight(active: bool) -> void:
