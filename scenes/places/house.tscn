@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://g77fwioa2yhl" path="res://scenes/player.tscn" id="4_l8av4"]
 [ext_resource type="PackedScene" uid="uid://cjp78nssn4xlx" path="res://scenes/gabriel.tscn" id="5_l8av4"]
 [ext_resource type="Script" uid="uid://c5mlp6r4mts0r" path="res://addons/dialogue_manager/nodes/actionable/dialogue_actionable_3d.gd" id="6_tpxrr"]
+[ext_resource type="Resource" uid="uid://c1y2qqfde0k78" path="res://dialogue/francesca.dialogue" id="7_idm51"]
 [ext_resource type="Texture2D" uid="uid://bb4u2uyd4m66q" path="res://assets/sprites/FRANCESCA_sprite.png" id="7_sauk6"]
+[ext_resource type="Texture2D" uid="uid://d0stft1jvv5yu" path="res://assets/sprites/divexfre-pixel-art-9794287_1920.png" id="9_idm51"]
 
 [sub_resource type="Environment" id="Environment_s0wxo"]
 background_mode = 1
@@ -20,6 +22,18 @@ glow_bloom = 0.1
 volumetric_fog_density = 0.1
 volumetric_fog_gi_inject = 5.7
 volumetric_fog_length = 1024.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_idm51"]
+size = Vector3(1, 3.5136719, 1.5888672)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tpxrr"]
+size = Vector3(1, 3.7354736, 2.0195313)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mxv64"]
+size = Vector3(7.468506, 7.51001, 7.051758)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bdaxg"]
+size = Vector3(12.674072, 8.708862, 1)
 
 [node name="House" type="Node3D" unique_id=44911573]
 
@@ -64,13 +78,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.634101, 2.3089604, -12.35
 
 [node name="DialogueActionable3D" type="Area3D" parent="Francesca" unique_id=401632310]
 script = ExtResource("6_tpxrr")
+dialogue_resource = ExtResource("7_idm51")
+dialogue_cue = "start"
 metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Francesca/DialogueActionable3D" unique_id=951379392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3154297, 0)
+shape = SubResource("BoxShape3D_idm51")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Francesca" unique_id=546065450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.16351318, 0)
+shape = SubResource("BoxShape3D_tpxrr")
 
 [node name="Sprite3D" type="Sprite3D" parent="Francesca" unique_id=1631562898]
 transform = Transform3D(-1.3987645e-07, 0, 3.2, 0, 3.2, 0, -3.2, 0, -1.3987645e-07, -0.031474113, -0.33694363, 0.083992004)
 texture_filter = 0
 texture = ExtResource("7_sauk6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=219857042]
+transform = Transform3D(-8.742278e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.742278e-09, -10.774773, 0.9744874, -3.3402367)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1715289097]
+shape = SubResource("BoxShape3D_mxv64")
+
+[node name="DialogueActionable3D" type="Area3D" parent="StaticBody3D" unique_id=298981335]
+script = ExtResource("6_tpxrr")
+metadata/_custom_type_script = "uid://c5mlp6r4mts0r"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/DialogueActionable3D" unique_id=323466158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7559204, 0)
+shape = SubResource("BoxShape3D_bdaxg")
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody3D" unique_id=875108218]
+texture = ExtResource("9_idm51")

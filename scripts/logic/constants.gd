@@ -14,6 +14,8 @@ var calendar_inter: bool = false
 var interacted_everything: bool = false
 var first_office_end: bool = false
 var arthur_end: bool = false
+var has_found_birthdays: bool = false
+var can_question_felicia: bool = false
 
 signal open_map
 signal journal_prompt

@@ -7,7 +7,7 @@ func _ready() -> void:
 	await get_tree().create_timer(1.0).timeout
 	DialogueManager.show_dialogue_balloon(ResourceLoader.load("uid://drjr7eklm23gt"), "start")
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
-	if ProgressMarkers.has_met_arthur == false:
+	if ProgressMarkers.has_met.Arthur == false:
 		disable_node(static_body_3d)
 	
 func disable_node(node: Node) -> void:

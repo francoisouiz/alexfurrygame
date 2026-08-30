@@ -1,0 +1,29 @@
+~ start
+Lucius: [i](A 4-digit vault. Perhaps I can find a password somewhere.
+if Constants.has_found_birthdays:
+	Lucius: [i](4 Digits. Could be a date.)[/i]
+	Lucius: [i](Perhaps, Anna's birthday?)[/i]
+	Lucius: [i](...)[/i]
+	Lucius: [i](Alright, that did it. Now let’s see what’s inside.)[/i]
+	do unlock_keyword("EJKs", "noun")
+	Lucius: [i](Documents... on EJK.)[/i]
+	Lucius: [i](So he really was involved with EJK. I’ve had a feeling but I never thought he’d actually be involved in it.)[/i]
+	Lucius: Hey Gabriel, I found something. A couple of documents, letters to a bunch of people, and…
+	Gabriel: And what?
+	Lucius: Esteban’s ties with extrajudicial killings.
+	Gabriel: Oh. Wow. I mean, I can’t say I’m surprised. 
+	Gabriel: Almost every politician currently seated has dipped their toes in it.
+	Gabriel: Just imagine how tempting it is as a person in power.
+	Gabriel: You’re not only able to kill anyone who gets in your way, but you’re even framed as a martyr for it.
+	Lucius: That’s the most annoying part: the public doesn’t even care that human rights are being violated. People suck it up as long as the victim is in the lower classes. As long as it doesn’t involve them.
+	Gabriel: Uhuh…
+	Gabriel: …
+	(pause)
+	Lucius: What? You’re acting like you disagree with me.
+	Gabriel: It’s not that, it’s just that… 
+	Gabriel: …
+	Gabriel: Never mind, it isn’t important to the case anyway. 
+	Gabriel: Seems like we’ve checked everything of note here, let’s go back to the Mrs. Esteban.
+	Lucius: … Okay.
+
+=> END
