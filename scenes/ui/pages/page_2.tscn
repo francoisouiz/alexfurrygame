@@ -1,13 +1,62 @@
 [gd_scene format=3 uid="uid://debf1s6jtimho"]
 
 [ext_resource type="Script" uid="uid://bfdwmf7nl7olt" path="res://scripts/ui/slots.gd" id="1_cwht6"]
-[ext_resource type="Texture2D" uid="uid://0trht77eu2ix" path="res://assets/sprites/elements-Recovered.png" id="1_wg13i"]
+[ext_resource type="Texture2D" uid="uid://dcpfjb7ugvri2" path="res://assets/resources/left_next.tres" id="1_vp5ba"]
+[ext_resource type="FontFile" uid="uid://dr80jfvwrqij4" path="res://assets/fonts/the-lowly-scribe.ttf" id="2_4rnrf"]
+[ext_resource type="Texture2D" uid="uid://dndrq8ewqk3bp" path="res://assets/portraits/LUCIUS_default.png" id="3_rmu8k"]
+[ext_resource type="Texture2D" uid="uid://dau5qp3v3v3f7" path="res://assets/portraits/GABRIEL_default.png" id="5_ivjcq"]
+[ext_resource type="Texture2D" uid="uid://djo6s4rkfwdri" path="res://assets/portraits/BENJAMIN_dead.png" id="6_cbmdo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bku8l"]
-atlas = ExtResource("1_wg13i")
-region = Rect2(114, 150, 191, 237)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f34rh"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
-[node name="Page2" type="Control" unique_id=1454747359]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8pydb"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqit0"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h12yp"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_660xb"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1c1a"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldo7u"]
+bg_color = Color(0.6745098, 0.19607843, 0.19607843, 0.6666667)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Page" type="Control" unique_id=1454747359]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 0
@@ -15,68 +64,172 @@ offset_right = 300.0
 offset_bottom = 380.0
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=394516674]
-texture_filter = 2
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_bku8l")
-
-[node name="HFlowContainer" type="HFlowContainer" parent="." unique_id=1051916903]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 29.0
-offset_top = 22.0
-offset_right = -13.0
-offset_bottom = -22.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("1_vp5ba")
 
-[node name="Panel" type="PanelContainer" parent="HFlowContainer" unique_id=547731979]
-custom_minimum_size = Vector2(90, 30)
-custom_maximum_size = Vector2(110, 30)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("1_cwht6")
-
-[node name="Panel2" type="PanelContainer" parent="HFlowContainer" unique_id=1230443025]
-custom_minimum_size = Vector2(90, 30)
-custom_maximum_size = Vector2(110, 30)
-layout_mode = 2
-size_flags_horizontal = 3
-script = ExtResource("1_cwht6")
-
-[node name="Label2" type="Label" parent="HFlowContainer" unique_id=1926063226]
+[node name="Label2" type="Label" parent="." unique_id=474242504]
+texture_filter = 1
 custom_minimum_size = Vector2(-1, 30)
 custom_maximum_size = Vector2(-1, 30)
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -81.0
+offset_top = 20.0
+offset_right = 81.0
+offset_bottom = 50.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "actually"
+theme_override_fonts/font = ExtResource("2_4rnrf")
+theme_override_font_sizes/font_size = 28
+text = "Detectives"
+horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel3" type="PanelContainer" parent="HFlowContainer" unique_id=42040044]
-custom_minimum_size = Vector2(90, 20)
-custom_maximum_size = Vector2(110, 30)
-layout_mode = 2
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=965140671]
+texture_filter = 1
+layout_mode = 0
+offset_left = 46.0
+offset_top = 56.0
+offset_right = 116.0
+offset_bottom = 126.0
+texture = ExtResource("3_rmu8k")
+
+[node name="Panel2" type="PanelContainer" parent="." unique_id=1509236722]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 128.0
+offset_right = 119.0
+offset_bottom = 151.0
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_f34rh")
 script = ExtResource("1_cwht6")
 
-[node name="Panel4" type="PanelContainer" parent="HFlowContainer" unique_id=975211910]
-custom_minimum_size = Vector2(90, 30)
-custom_maximum_size = Vector2(110, 30)
-layout_mode = 2
+[node name="Panel3" type="PanelContainer" parent="." unique_id=775127797]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 152.0
+offset_right = 119.0
+offset_bottom = 175.0
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_8pydb")
 script = ExtResource("1_cwht6")
 
-[node name="Panel5" type="PanelContainer" parent="HFlowContainer" unique_id=1922121007]
-custom_minimum_size = Vector2(90, 30)
-custom_maximum_size = Vector2(110, 30)
-layout_mode = 2
+[node name="Panel4" type="PanelContainer" parent="." unique_id=1846704922]
+texture_filter = 1
+custom_minimum_size = Vector2(63, 23)
+custom_maximum_size = Vector2(63, 23)
+layout_mode = 0
+offset_left = 144.0
+offset_top = 128.0
+offset_right = 207.0
+offset_bottom = 151.0
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_bqit0")
+script = ExtResource("1_cwht6")
+
+[node name="Panel6" type="PanelContainer" parent="." unique_id=605676643]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 23)
+custom_maximum_size = Vector2(64, 23)
+layout_mode = 0
+offset_left = 208.0
+offset_top = 128.0
+offset_right = 272.0
+offset_bottom = 151.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_h12yp")
+script = ExtResource("1_cwht6")
+
+[node name="Panel5" type="PanelContainer" parent="." unique_id=138816198]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 168.0
+offset_top = 152.0
+offset_right = 247.0
+offset_bottom = 175.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_660xb")
+script = ExtResource("1_cwht6")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1420244622]
+texture_filter = 1
+layout_mode = 0
+offset_left = 168.0
+offset_top = 56.0
+offset_right = 238.0
+offset_bottom = 126.0
+texture = ExtResource("5_ivjcq")
+
+[node name="Label3" type="Label" parent="." unique_id=1837526080]
+texture_filter = 1
+custom_minimum_size = Vector2(-1, 30)
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.0
+offset_top = -188.0
+offset_right = 81.0
+offset_bottom = -158.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4rnrf")
+theme_override_font_sizes/font_size = 28
+text = "Victim"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=594340952]
+texture_filter = 1
+layout_mode = 0
+offset_left = 112.0
+offset_top = 224.0
+offset_right = 182.0
+offset_bottom = 294.0
+texture = ExtResource("6_cbmdo")
+
+[node name="Panel7" type="PanelContainer" parent="." unique_id=1465581645]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 112.0
+offset_top = 296.0
+offset_right = 191.0
+offset_bottom = 319.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_b1c1a")
+script = ExtResource("1_cwht6")
+
+[node name="Panel8" type="PanelContainer" parent="." unique_id=1020403075]
+texture_filter = 1
+custom_minimum_size = Vector2(79, 23)
+custom_maximum_size = Vector2(79, 23)
+layout_mode = 0
+offset_left = 112.0
+offset_top = 320.0
+offset_right = 191.0
+offset_bottom = 343.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ldo7u")
 script = ExtResource("1_cwht6")
