@@ -18,12 +18,12 @@ extends CanvasLayer
 @onready var book_close: AudioStreamPlayer2D = $BookClose
 @onready var book_open: AudioStreamPlayer2D = $BookOpen
 
-@onready var bahay: Button = $Map/Bahay
 @onready var dim_overlay: ColorRect = $DimOverlay
 @onready var side_bar: Panel = $SideBar
 @onready var spot_light: CanvasLayer = $SpotLight
 @onready var texture_rect: TextureRect = $SideBar/TextureRect
 @onready var file_animation: AnimationPlayer = $FileCase/FileAnimation
+@onready var journal_sprite: AnimatedSprite2D = $JournalSprite
 
 
 var KEYWORD_TEXTS: PackedScene = preload("uid://2e02bl5vknkv")
@@ -45,6 +45,7 @@ func _ready() -> void:
 	Constants.file_case.connect(_on_file_case)
 	if not Constants.has_opened_journal:
 		disable_node(journal_button)
+		disable_node(journal_sprite)
 		
 func _on_file_case() -> void:
 	file_animation.play("file_animation")
@@ -82,11 +83,13 @@ func _on_first_time() -> void:
 func _on_journal_prompt() -> void:
 	if not Constants.has_opened_journal:
 		enable_node(journal_button)
+		enable_node(journal_sprite)
 		_on_journal_button_pressed()
 		dim_overlay.mouse_filter = Control.MOUSE_FILTER_STOP
 		journal.z_index = 2
 		side_bar.z_index = 1
 		journal_button.z_index = 2
+		journal_sprite.z_index = 3
 		var fade_tween: Tween = create_tween()
 		fade_tween.tween_property(dim_overlay, "color:a", 0.6, 0.4)
 		await fade_tween.finished
@@ -109,6 +112,7 @@ func _on_journal_prompt() -> void:
 		journal.z_index = 0
 		side_bar.z_index = 0
 		journal_button.z_index = 0
+		journal_sprite.z_index = 0
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit_map") and on_map:
@@ -229,3 +233,13 @@ func _on_test_level_pressed() -> void:
 
 func _on_dialogues_pressed() -> void:
 	SceneLoader.load_scene(Constants.SCENE_PATHS.dialogue_testing)
+
+
+func _on_lucius_pressed() -> void:
+	Constants.current_level = "lucius_room"
+	SceneLoader.load_scene(Constants.SCENE_PATHS.lucius_room)
+
+
+func _on_benjamin_pressed() -> void:
+	Constants.current_level = "office"
+	SceneLoader.load_scene(Constants.SCENE_PATHS.office)

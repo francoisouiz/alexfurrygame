@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cfqtm57jlm07w" path="res://scenes/ui/journal.tscn" id="2_3nhwc"]
 [ext_resource type="Texture2D" uid="uid://0trht77eu2ix" path="res://assets/sprites/elements-Recovered.png" id="2_spc33"]
 [ext_resource type="Texture2D" uid="uid://dlp7cs4x8dk2t" path="res://assets/resources/names_tab.tres" id="3_s3j3l"]
+[ext_resource type="Texture2D" uid="uid://bvhwxb8ou0ypo" path="res://assets/sprites/watch frames.png" id="5_ulc1b"]
+[ext_resource type="Script" uid="uid://2wvkkkp6v177" path="res://scripts/ui/journal_button.gd" id="6_lywma"]
 [ext_resource type="AudioStream" uid="uid://cdxtjbeqtocta" path="res://assets/sounds/book_close_new.mp3" id="6_spc33"]
 [ext_resource type="AudioStream" uid="uid://c86amsjmwydsj" path="res://assets/sounds/book_open_new.mp3" id="7_spc33"]
 [ext_resource type="Shader" uid="uid://c2un6243ma6b4" path="res://shaders/spotlight_mask.gdshader" id="8_8o238"]
@@ -28,10 +30,49 @@ texture = SubResource("AtlasTexture_8pydb")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5as1l"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pwpia"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lywma"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5as1l"]
-texture = SubResource("PlaceholderTexture2D_pwpia")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i8k7l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vhre1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qyg60"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy304"]
+atlas = ExtResource("5_ulc1b")
+region = Rect2(219, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8k7l"]
+atlas = ExtResource("5_ulc1b")
+region = Rect2(327, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyg60"]
+atlas = ExtResource("5_ulc1b")
+region = Rect2(109, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vhre1"]
+atlas = ExtResource("5_ulc1b")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s3x7s"]
+animations = [{
+"frames": [{
+"duration": 0.06,
+"texture": SubResource("AtlasTexture_sy304")
+}, {
+"duration": 0.06,
+"texture": SubResource("AtlasTexture_i8k7l")
+}, {
+"duration": 0.06,
+"texture": SubResource("AtlasTexture_qyg60")
+}, {
+"duration": 0.06,
+"texture": SubResource("AtlasTexture_vhre1")
+}],
+"loop": 0,
+"name": &"watch_anim",
+"speed": 1.0
+}]
 
 [sub_resource type="Animation" id="Animation_3nhwc"]
 length = 0.001
@@ -158,7 +199,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_vhre1"]
 resource_name = "file_animation"
-length = 0.39999999999999997
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -298,7 +339,7 @@ name_container = NodePath("../KeywordNames")
 noun_container = NodePath("../KeywordNouns")
 verb_container = NodePath(".")
 
-[node name="JournalButton" type="Button" parent="." unique_id=1167386118]
+[node name="JournalButton" type="Button" parent="." unique_id=1167386118 node_paths=PackedStringArray("background_sprite")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -308,8 +349,22 @@ offset_left = -140.0
 offset_top = -140.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxTexture_5as1l")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lywma")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_i8k7l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vhre1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qyg60")
 icon_alignment = 2
+script = ExtResource("6_lywma")
+background_sprite = NodePath("../JournalSprite")
+toggle_animation_name = &"watch_anim"
+
+[node name="JournalSprite" type="AnimatedSprite2D" parent="." unique_id=133428358]
+texture_filter = 1
+position = Vector2(1078, 574.00006)
+scale = Vector2(1.48, 1.48)
+sprite_frames = SubResource("SpriteFrames_s3x7s")
+animation = &"watch_anim"
+frame_progress = 0.8932329
 
 [node name="DimOverlay" type="ColorRect" parent="." unique_id=1845720451]
 anchors_preset = 15
@@ -358,23 +413,32 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3q5lw")
 
-[node name="Bahay" type="Button" parent="Map" unique_id=920549023]
+[node name="Lucius" type="Button" parent="Map" unique_id=920549023]
 layout_mode = 0
-offset_left = 74.0
-offset_top = 81.0
-offset_right = 325.0
-offset_bottom = 149.0
+offset_left = 194.0
+offset_top = 114.0
+offset_right = 445.0
+offset_bottom = 182.0
 theme_override_font_sizes/font_size = 25
-text = "bahay ng alumni"
+text = "Lucius's Office"
 
 [node name="Dialogues" type="Button" parent="Map" unique_id=861112412]
 layout_mode = 0
-offset_left = 74.0
-offset_top = 186.0
-offset_right = 325.0
-offset_bottom = 254.0
+offset_left = 693.0
+offset_top = 210.0
+offset_right = 944.0
+offset_bottom = 278.0
 theme_override_font_sizes/font_size = 25
 text = "Dialogues Land"
+
+[node name="Benjamin" type="Button" parent="Map" unique_id=2106884710]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 389.0
+offset_right = 377.0
+offset_bottom = 457.0
+theme_override_font_sizes/font_size = 25
+text = "Benjamin's Office"
 
 [node name="MapAnimation" type="AnimationPlayer" parent="Map" unique_id=743321421]
 libraries/ = SubResource("AnimationLibrary_s3j3l")
@@ -409,5 +473,6 @@ libraries/ = SubResource("AnimationLibrary_qyg60")
 [connection signal="pressed" from="SideBar/VBoxContainer/KeywordClasses/Nouns" to="." method="_on_nouns_pressed"]
 [connection signal="pressed" from="SideBar/VBoxContainer/KeywordClasses/Verbs" to="." method="_on_verbs_pressed"]
 [connection signal="pressed" from="JournalButton" to="." method="_on_journal_button_pressed"]
-[connection signal="pressed" from="Map/Bahay" to="." method="_on_bahay_pressed"]
+[connection signal="pressed" from="Map/Lucius" to="." method="_on_lucius_pressed"]
 [connection signal="pressed" from="Map/Dialogues" to="." method="_on_dialogues_pressed"]
+[connection signal="pressed" from="Map/Benjamin" to="." method="_on_benjamin_pressed"]

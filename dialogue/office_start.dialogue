@@ -1,0 +1,14 @@
+~ start
+do unlock_keyword("Felicia", "name")
+do unlock_keyword("Hei", "name")
+Felicia: Good evening gentlemen. Felicia Hei, secretary of Mr. Esteban at your service. 
+do unlock_keword("boss", "noun")
+Gabriel: You seem rather relaxed for someone whose boss just died.
+do unlock_keyword("COCHE Mining", "noun")
+Felicia: I mean, being a senator who backs up that COCHE mining company?
+Felicia: He was practically asking to get murdered.
+Lucius: Well that’s one hell of a way to talk to your detectives as a potential suspect.
+Felicia: I’m just relieved that I didn’t see the killer myself. Who knows what might have happened.
+(Insert dialogue OR insert a pause before the next dialogue appears)
+Gabriel: Well, let’s going, Lucius.
+=> END
