@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cbcv2kxq0rtu0"]
+
+[ext_resource type="ArrayMesh" uid="uid://dl1xh5vbla338" path="res://assets/places/mafia/mafia_Cube.res" id="1_mhhn0"]
+[ext_resource type="ArrayMesh" uid="uid://xwiijaybvac4" path="res://assets/places/mafia/mafia_Cube_002.res" id="2_538ka"]
+[ext_resource type="ArrayMesh" uid="uid://c8v1ajist8tug" path="res://assets/places/mafia/mafia_Cube_001.res" id="3_tojal"]
+
+[sub_resource type="Environment" id="Environment_tojal"]
+background_mode = 1
+background_color = Color(0.9764706, 0.81960785, 0.6, 1)
+ambient_light_source = 1
+reflected_light_source = 1
+glow_enabled = true
+glow_intensity = 1.21
+glow_strength = 1.31
+glow_bloom = 0.1
+volumetric_fog_density = 0.1
+volumetric_fog_gi_inject = 5.7
+volumetric_fog_length = 1024.0
+
+[node name="Mafia" type="Node3D" unique_id=69312209]
+
+[node name="Environment" type="Node3D" parent="." unique_id=432985250]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=504654589]
+environment = SubResource("Environment_tojal")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=1450586750]
+transform = Transform3D(-1, 6.8130066e-15, -8.7422784e-08, -2.9041445e-08, 0.9432106, 0.33219552, 8.245809e-08, 0.33219552, -0.9432106, -19.605885, 7.4857926, -26.880642)
+light_color = Color(0.9764706, 0.81960785, 0.6, 1)
+shadow_enabled = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Environment" unique_id=346911103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.851929, 4.330951, -10.260252)
+light_color = Color(0.96, 0.85599995, 0.7104, 1)
+light_energy = 5.0
+light_indirect_energy = 2.5
+light_bake_mode = 1
+omni_range = 50.0
+omni_attenuation = 1.5
+
+[node name="Meshes" type="Node3D" parent="." unique_id=1822226940]
+
+[node name="MafiaCube" type="MeshInstance3D" parent="Meshes" unique_id=1554001901]
+mesh = ExtResource("1_mhhn0")
+
+[node name="MafiaCube002" type="MeshInstance3D" parent="Meshes" unique_id=503976902]
+transform = Transform3D(0.44775906, 0, 0.89415425, 0, 1, 0, -0.89415425, 0, 0.44775906, -11.25, 0, -20)
+mesh = ExtResource("2_538ka")
+
+[node name="MafiaCube001" type="MeshInstance3D" parent="Meshes" unique_id=1851428370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.25, 0, 0)
+mesh = ExtResource("3_tojal")

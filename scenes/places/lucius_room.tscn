@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://u4127d6kfxpi"]
+
+[ext_resource type="ArrayMesh" uid="uid://daysp83uefrcc" path="res://assets/places/lucius_room/lucius_room_Outside.res" id="1_uj43g"]
+[ext_resource type="ArrayMesh" uid="uid://csdwp7v15oo72" path="res://assets/places/lucius_room/lucius_room_Plane.res" id="2_6exg1"]
+[ext_resource type="ArrayMesh" uid="uid://bsjeyk2it7dpq" path="res://assets/places/lucius_room/lucius_room_Plane_001.res" id="3_abkhd"]
+[ext_resource type="ArrayMesh" uid="uid://d2p2rkjl4jr0b" path="res://assets/places/lucius_room/lucius_room_Cube.res" id="4_tkitk"]
+[ext_resource type="Texture2D" uid="uid://525txwtty45y" path="res://assets/character_sprites/LUCIUS_idle_frame_0000.png" id="5_ll67q"]
+[ext_resource type="Texture2D" uid="uid://dinmiwxvulxi1" path="res://assets/character_sprites/LUCIUS_idle_frame_0001.png" id="6_bw3fr"]
+[ext_resource type="Texture2D" uid="uid://bujkd6fm8gj0s" path="res://assets/props.png" id="7_bw3fr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2g58"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("5_ll67q")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_bw3fr")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="Environment" id="Environment_tkitk"]
+background_mode = 1
+background_color = Color(0.9764706, 0.81960785, 0.6, 1)
+ambient_light_source = 1
+reflected_light_source = 1
+glow_enabled = true
+glow_intensity = 1.21
+glow_strength = 1.31
+glow_bloom = 0.1
+volumetric_fog_density = 0.1
+volumetric_fog_gi_inject = 5.7
+volumetric_fog_length = 1024.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2g58"]
+atlas = ExtResource("7_bw3fr")
+region = Rect2(0, 64, 64, 32)
+filter_clip = true
+
+[node name="LuciusRoom" type="Node3D" unique_id=2055072534]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=499940398]
+transform = Transform3D(0.99998844, 0.0017677409, 0.004472418, -0.0017677232, 0.99999845, -7.906088e-06, -0.004472425, 0, 0.99999, 9.019532, 3.0100732, 14.367054)
+keep_aspect = 0
+fov = 40.0
+size = 33.197
+near = 0.046
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=967038415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.429067, 2, -11.581619)
+pixel_size = 0.03125
+alpha_cut = 2
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_m2g58")
+autoplay = "default"
+
+[node name="Environment" type="Node3D" parent="." unique_id=894665606]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1372511302]
+environment = SubResource("Environment_tkitk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=1125052539]
+transform = Transform3D(-1, 6.813006e-15, -8.742278e-08, -2.9041445e-08, 0.94321054, 0.3321955, 8.245809e-08, 0.3321955, -0.94321054, 9.667163, 7.4857926, -26.880642)
+light_color = Color(0.9764706, 0.81960785, 0.6, 1)
+shadow_enabled = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Environment" unique_id=1351407399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.92901, 5.5461497, -12.611891)
+light_color = Color(0.96, 0.85599995, 0.7104, 1)
+light_energy = 5.0
+light_indirect_energy = 2.5
+light_bake_mode = 1
+omni_range = 50.0
+omni_attenuation = 1.5
+
+[node name="Props" type="Node3D" parent="." unique_id=1095558602]
+
+[node name="Sprite3D" type="Sprite3D" parent="Props" unique_id=325386942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3811035, 1, -11.504601)
+pixel_size = 0.0625
+alpha_cut = 2
+texture_filter = 0
+texture = SubResource("AtlasTexture_m2g58")
+
+[node name="Meshes" type="Node3D" parent="." unique_id=1783841126]
+
+[node name="LuciusRoomOutside" type="MeshInstance3D" parent="Meshes" unique_id=619319627]
+mesh = ExtResource("1_uj43g")
+
+[node name="LuciusRoomPlane" type="MeshInstance3D" parent="Meshes" unique_id=1798768914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.25, 1.25, -21.75)
+mesh = ExtResource("2_6exg1")
+
+[node name="LuciusRoomPlane001" type="MeshInstance3D" parent="Meshes" unique_id=2135307974]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 1.25, -21.75)
+mesh = ExtResource("3_abkhd")
+
+[node name="LuciusRoomCube" type="MeshInstance3D" parent="Meshes" unique_id=1178112810]
+transform = Transform3D(0.970542, 0, 0.24093191, 0, 1, 0, -0.24093191, 0, 0.970542, 18.003141, 4.7683716e-07, -16.749352)
+mesh = ExtResource("4_tkitk")
