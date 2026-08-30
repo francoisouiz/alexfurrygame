@@ -1,12 +1,19 @@
 extends Button
 
+@export var drag_audio_player: AudioStreamPlayer2D
 var type: String
 
 func _ready() -> void:
 	size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	size_flags_vertical = Control.SIZE_EXPAND_FILL
 	mouse_filter = Control.MOUSE_FILTER_PASS
-	
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		var mouse_event: InputEventMouseButton = event as InputEventMouseButton
+		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.pressed:
+			if is_instance_valid(drag_audio_player):
+				drag_audio_player.play()
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	if mouse_filter == Control.MOUSE_FILTER_IGNORE:

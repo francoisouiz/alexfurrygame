@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://clmyudyyma0h1" path="res://scripts/ui/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Texture2D" uid="uid://ms7lrtqidp1t" path="res://assets/sprites/other_pages.png" id="2_aoxrv"]
 [ext_resource type="Texture2D" uid="uid://cg1e4l0w8i1mp" path="res://assets/temp/icon.svg" id="2_ujumt"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="FontFile" uid="uid://cvepllopksqau" path="res://assets/fonts/Pixelosopher Italic.ttf" id="4_c6pds"]
+[ext_resource type="AudioStream" uid="uid://dpuk2i7h1ms6t" path="res://assets/sounds/swipe.mp3" id="7_5hucb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 content_margin_left = 20.0
@@ -84,6 +86,17 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q5lw"]
+atlas = ExtResource("2_aoxrv")
+region = Rect2(573, 867, 76, 76)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s3x7s"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = SubResource("AtlasTexture_3q5lw")
+
 [sub_resource type="Animation" id="Animation_nlsx6"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -139,6 +152,7 @@ theme = SubResource("Theme_qq3yp")
 
 [node name="PanelContainer" type="PanelContainer" parent="Balloon" unique_id=2145270309]
 clip_children = 2
+texture_filter = 1
 custom_maximum_size = Vector2(450, 120)
 layout_mode = 1
 anchors_preset = 7
@@ -158,13 +172,17 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_c6pds")
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Portrait" type="TextureRect" parent="Balloon/PanelContainer/HBoxContainer" unique_id=1212401028]
+[node name="PanelContainer" type="PanelContainer" parent="Balloon/PanelContainer/HBoxContainer" unique_id=1745813462]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_s3x7s")
+
+[node name="Portrait" type="TextureRect" parent="Balloon/PanelContainer/HBoxContainer/PanelContainer" unique_id=1212401028]
 texture_filter = 1
-custom_minimum_size = Vector2(120.78, 140)
+custom_minimum_size = Vector2(-1, -1)
 layout_mode = 2
 size_flags_horizontal = 0
 texture = ExtResource("2_ujumt")
-expand_mode = 4
+expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Balloon/PanelContainer/HBoxContainer" unique_id=882827001]
 layout_mode = 2
@@ -239,6 +257,9 @@ text = "Response example"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1162558754]
 unique_name_in_owner = true
+
+[node name="Swipe" type="AudioStreamPlayer2D" parent="." unique_id=451827556]
+stream = ExtResource("7_5hucb")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/CenterContainer/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

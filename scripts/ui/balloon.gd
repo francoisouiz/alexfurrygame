@@ -7,6 +7,7 @@ extends CanvasLayer
 @export var will_block_other_input: bool = true
 @export var next_action: StringName = &"ui_accept"
 @export var skip_action: StringName = &"ui_cancel"
+@onready var swipe: AudioStreamPlayer2D = $Swipe
 
 ## The 3D marker/node to follow in world space
 var custom_target: Node3D = null
@@ -48,7 +49,7 @@ var custom_target: Node3D = null
 }
 
 var current_expression: String = ""
-@onready var portrait: TextureRect = $Balloon/PanelContainer/HBoxContainer/Portrait
+@onready var portrait: TextureRect = $Balloon/PanelContainer/HBoxContainer/PanelContainer/Portrait
 
 
 var temporary_game_states: Array = []
@@ -121,7 +122,7 @@ func _process_keyword_queue() -> void:
 		var data: Dictionary = _keyword_queue.pop_front()
 		
 		_animate_keyword_flying_preview(data["text"], data["start_pos"], data["category"])
-		
+		swipe.play()
 		await get_tree().create_timer(0.15).timeout
 		
 	_is_processing_keywords = false
@@ -140,11 +141,11 @@ func _animate_keyword_flying_preview(keyword_text: String, start_pos: Vector2, c
 	var stylebox: StyleBox = StyleBoxFlat.new()
 	match category:
 		"name":
-			stylebox.bg_color = Color.DARK_GREEN
+			stylebox.bg_color = Color("ac3232")
 		"noun":
-			stylebox.bg_color = Color.DARK_BLUE
+			stylebox.bg_color = Color("df7126")
 		"verb":
-			stylebox.bg_color = Color.DARK_RED
+			stylebox.bg_color = Color("37946e")
 	preview_btn.add_theme_stylebox_override("normal", stylebox)
 	preview_btn.add_theme_stylebox_override("hover", stylebox)
 	preview_btn.add_theme_stylebox_override("pressed", stylebox)
