@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cn681kjkbgb1p"
+path="res://.godot/imported/house_scene.dialogue-4f6ba2493002f3e25ec90d9c51ee0e9c.tres"
+
+[deps]
+
+source_file="res://dialogue/house_scene.dialogue"
+dest_files=["res://.godot/imported/house_scene.dialogue-4f6ba2493002f3e25ec90d9c51ee0e9c.tres"]
+
+[params]
+
+defaults=true

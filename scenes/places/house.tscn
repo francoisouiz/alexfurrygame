@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://boufoxu8x3hbw"]
 
-[ext_resource type="ArrayMesh" uid="uid://jaj52akler74" path="res://assets/places/house/house_Cube.res" id="1_0qdqe"]
-[ext_resource type="ArrayMesh" uid="uid://buwxxvt4oy6oq" path="res://assets/places/house/house_Cube_001.res" id="2_s0wxo"]
+[ext_resource type="ArrayMesh" uid="uid://d143vqm14bs5m" path="res://assets/places/house/house_Cube.res" id="1_0qdqe"]
+[ext_resource type="ArrayMesh" uid="uid://dm00wm87s0n6p" path="res://assets/places/house/house_Cube_001.res" id="2_s0wxo"]
+[ext_resource type="PackedScene" uid="uid://buej46ggun4sg" path="res://scenes/francesca.tscn" id="3_0wn57"]
 
 [sub_resource type="Environment" id="Environment_s0wxo"]
 background_mode = 1
@@ -40,8 +41,11 @@ shadow_enabled = true
 [node name="Meshes" type="Node3D" parent="." unique_id=1564043274]
 
 [node name="HouseCube" type="MeshInstance3D" parent="Meshes" unique_id=858293097]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.760504, 0, 0)
 mesh = ExtResource("1_0qdqe")
 
 [node name="HouseCube001" type="MeshInstance3D" parent="Meshes" unique_id=392028358]
-transform = Transform3D(0.8110638, 0, 0.58495766, 0, 1, 0, -0.58495766, 0, 0.8110638, -14.25, 0, -20)
+transform = Transform3D(-0.6673995, 0, 0.7446998, 0, 1, 0, -0.7446998, 0, -0.6673995, 11.518507, 0, -16.815788)
 mesh = ExtResource("2_s0wxo")
+
+[node name="Francesca" parent="." unique_id=121629972 instance=ExtResource("3_0wn57")]
