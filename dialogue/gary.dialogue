@@ -1,0 +1,79 @@
+~ start
+if ProgressMarkers.has_met.Gary == false
+	Lucius: Good afternoon, Mr. Ortolano.
+	Gary: Please, just call me Gary. Adding unnecessary formality will just delay the case.
+	Lucius: In that case, thank you for coming here, Gary.
+	Lucius: As you know, as part of the Benjamin Esteban case, we would like to ask you a couple of questions.
+	Gary: Go right ahead.
+	do ProgressMarkers.has_met.Gary = true
+else
+	Gary: What’s the matter?
+=> questions
+~ questions
+Gary: -
+- When was the last time you saw Mr. Esteban?
+	Gary: Like, actually saw him? A couple of weeks ago now.
+	Gary: Although, I did contact him recently. I wanted to invite him to a sort of gathering, but he turned me down.
+	Gary: The next thing I hear from him is that he’s dead.
+	=> questions
+
+- What did you do this morning?
+	Gary: I had an interview with a journalist, Mr. Arthur Villalobos. Afterwards, I had lunch with a colleague of mine.
+	=> questions
+
+- What specifically did you two talk about last night? [if ProgressMarkers.has_learned.Night_Call /]
+	Gary: I actually wanted to invite him to the lunch with my colleague today. They have similar mindsets, so I was hoping they could get along.
+	do ProgressMarkers.has_learned.Parent_Colleague = true
+	Lucius: In that case, why did Mr Esteban say that you "brought this on yourself"? What makes this lunch so special?
+	Gary: Ah, well, my colleague can be pretty imposing. It’s like eating with your parents after you made a mistake. You can feel them staring you down, waiting for you to say something. Even though nothing you say will help.
+	=> questions
+
+- Why did you cut the interview short? [if ProgressMarkers.has_learned.Gary_Interview == true /]
+	Gary: Oh, did you interview Mr. Villalobos too?
+	Lucius: Yup, he was waiting for you to come back for a while.
+	Gary: Ah. I should probably apologize to him. I didn’t mean to just leave him waiting.
+	Lucius: Something came up, I suppose?
+	Gary: Yeah, the colleague I was having lunch with can be a bit… impatient
+	Gary: I can’t leave him waiting for too long, or he’ll get mad. As long as he’s happy, I’m happy.
+	Lucius: Are you meeting up with a kid?
+	do ProgressMarkers.has_learned.Child_Colleague = true
+	do unlock_keyword("Kid", "noun")
+	Gary: A kid? Yeah, a kid.
+	=> questions
+
+- So what kind of person is your colleague? [if ProgressMarkers.has_learned.Parent_Colleague and ProgressMarkers.has_learned.Child_Colleague /]
+	Lucius: You’ve described him both as an impatient child and an imposing parent. So which one is it?
+	Gary: Look, those are just descriptions I made on the spot.
+	do unlock_keyword("colleague", "noun")
+	Gary: All you need to know is that my colleague is someone I don’t want to make angry.
+	=> questions
+
+- Do you recognize these documents? [if ProgressMarkers.has_found.Planted_evidence /]
+	do unlock_keyword("Los Fuertes", "name")
+	Gary: The Los Fuertes? How did you get these?
+	Lucius: We found them in his office.
+	do unlock_keyword("Corleón", "name")
+	Gary: His office? But I thought that Corleón…
+	Lucius: Corleón? Isn’t that the name of the Los Fuertes head?
+	Gary: Ah, yes it is. I was just shocked that Benjamin already has ties with the Los Fuertes.
+	Lucius: Already?
+	Gary: I… heard he was plotting something big, you see. Something bigger than the COCHE Mining Corp. scandal. To do that though, he’d need people so I concluded that he must be working with a Sindikato.
+	do ProgressMarkers.has_learned.Sindikato_Ties = true
+	=> questions
+
+- How well do you know the rest of his family?
+	do unlock_keyword("Drew", "name")
+	do unlock_keyword("Sangster", "name")
+	Gary: I actually knew Benjamin’s wife, Francesca, before they got married. Back then, though, she was married to that pop star, Drew Sangster.
+	Gary: She went to a lot of galas and festivals back then. A lot of people knew her.
+	Gary: After she and Drew divorced, she quickly moved on and married Benjamin.
+	do unlock_keyword("Quickly Married", "verb")
+	Lucius: Yeah, I remember that being pretty big news.
+	Gary: "The Knight Who Never Reached His Happily Ever After". A little verbose for my taste, but the people loved it.
+	Gary: Drew didn’t seem to mind, though. "My true love will one day find me," or something.
+	do ProgressMarkers.has_learned.Drew_Relationship = true
+	Gary: Since then, Francesca’s made fewer public appearances. When she does, she’s mostly quietly following her husband around.
+	=> questions
+
+- Thank you for your time.
+	=> END

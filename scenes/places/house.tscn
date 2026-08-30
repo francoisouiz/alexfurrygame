@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://boufoxu8x3hbw"]
+
+[ext_resource type="ArrayMesh" uid="uid://jaj52akler74" path="res://assets/places/house/house_Cube.res" id="1_0qdqe"]
+[ext_resource type="ArrayMesh" uid="uid://buwxxvt4oy6oq" path="res://assets/places/house/house_Cube_001.res" id="2_s0wxo"]
+
+[sub_resource type="Environment" id="Environment_s0wxo"]
+background_mode = 1
+background_color = Color(0.9764706, 0.81960785, 0.6, 1)
+ambient_light_source = 1
+reflected_light_source = 1
+glow_enabled = true
+glow_intensity = 1.21
+glow_strength = 1.31
+glow_bloom = 0.1
+volumetric_fog_density = 0.1
+volumetric_fog_gi_inject = 5.7
+volumetric_fog_length = 1024.0
+
+[node name="House" type="Node3D" unique_id=44911573]
+
+[node name="Environment" type="Node3D" parent="." unique_id=1430742798]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Environment" unique_id=541608703]
+transform = Transform3D(-1, 8.589363e-15, -8.742278e-08, -2.9041445e-08, 0.9432106, 0.33219552, 8.245809e-08, 0.33219552, -0.9432106, -10.821817, 3.6816502, -9.993458)
+light_color = Color(0.96, 0.85599995, 0.7104, 1)
+light_energy = 5.0
+light_indirect_energy = 2.5
+light_bake_mode = 1
+omni_range = 50.0
+omni_attenuation = 1.5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1896280337]
+environment = SubResource("Environment_s0wxo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=1713289208]
+transform = Transform3D(-1, 6.813006e-15, -8.742278e-08, -2.9041445e-08, 0.94321054, 0.3321955, 8.245809e-08, 0.3321955, -0.94321054, 9.667163, 7.4857926, -26.880642)
+light_color = Color(0.9764706, 0.81960785, 0.6, 1)
+shadow_enabled = true
+
+[node name="Meshes" type="Node3D" parent="." unique_id=1564043274]
+
+[node name="HouseCube" type="MeshInstance3D" parent="Meshes" unique_id=858293097]
+mesh = ExtResource("1_0qdqe")
+
+[node name="HouseCube001" type="MeshInstance3D" parent="Meshes" unique_id=392028358]
+transform = Transform3D(0.8110638, 0, 0.58495766, 0, 1, 0, -0.58495766, 0, 0.8110638, -14.25, 0, -20)
+mesh = ExtResource("2_s0wxo")

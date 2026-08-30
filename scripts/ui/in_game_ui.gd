@@ -222,3 +222,10 @@ func _on_verbs_pressed() -> void:
 
 func _on_bahay_pressed() -> void:
 	SceneLoader.load_scene(Constants.SCENE_PATHS.bahay)
+
+func _on_test_level_pressed() -> void:
+	SceneLoader.load_scene(Constants.SCENE_PATHS.bahay)
+
+
+func _on_dialogues_pressed() -> void:
+	SceneLoader.load_scene(Constants.SCENE_PATHS.dialogue_testing)

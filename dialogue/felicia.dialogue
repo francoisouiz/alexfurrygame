@@ -1,0 +1,102 @@
+~ start
+Felicia: If there’s anything you’d like to know, feel free to ask.
+=> questions
+~ questions
+Felicia: -
+- When did you find out about the body?
+	do unlock_keyword("12:00 NN", "noun")
+	do unlock_keyword("discovered", "verb")
+	do unlock_keyword("body", "noun")
+	Felicia: I came back to the office at 12:00 NN after taking my break. I barged in when he didn’t respond beyond the door and well, found that.
+	=> questions
+
+- Who else have you contacted about the case?
+	Felicia: Other than the people in the office, just his family. If word gets out that a senator died in his own office, someone will definitely get fired.
+	Felicia: Still, we needed a detective. I thought of you since you drop by often.
+	=> questions
+
+- Does anyone else visit him often?
+	Felicia: You, mostly. You drop by this hallway and his office all the time for your private investigator work. Other than that? Not really.
+	=> questions
+
+- When was the last time you saw Mr. Esteban alive?
+	do unlock_keyword("11:00 AM", "noun")
+	do unlock_keyword("coughing", "verb")
+	Felicia: I think it was around 11:00 AM? He started coughing loudly at his desk. I thought it was another fit over his food, so I hauled ass outside into my office.
+	do ProgressMarkers.has_learned.Coughing_Fits = true
+	=> questions
+
+- [if ProgressMarkers.has_learned.Coughing_Fits == true /] What do you mean by fits?
+	Felicia: Mr. Esteban never liked me. Whenever I did anything, he would nitpick me to hell.
+	Felicia: He asked me to prepare his lunch this morning, so when he started coughing after eating the food, I was ready for him to stop and hit me with a “How could you mess up heating rice?” bit.
+	=> questions
+	Felicia: I wasn't in a good mood so I left the room before it got worse.
+
+- Do you know if he’s eaten anything weird recently?
+	do unlock_keyword("Homecooked meal", "noun")
+	Felicia: Hmm, now that I think about it, today was probably the first time he brought food from his house. He usually orders food and eats it in his office.
+	do ProgressMarkers.has_learned.Homecooking = true
+	Felicia: Though honestly, I doubt his “homecooked” meal is actually homecooked. His good-for-nothing wife probably can’t even boil an egg.
+	=> questions
+
+- What were you doing this morning?
+	do unlock_keyword("Dropped off Anna", "verb")
+	do unlock_keyword("10:00 AM", "noun")
+	do unlock_keyword("Went to Office", "verb")
+	Felicia: I was with Mr. Esteban’s wife, Francesca. We were dropping off Anna at school and came back to the office at 10:00 AM.
+	Lucius: And after that?
+	do unlock_keyword("Working in Office", "verb")
+	do ProgressMarkers.has_learned.Felicia_Morning = true
+	Felicia: I was simply working in my office here sorting out Mr. Esteban’s documents.
+	=> questions
+
+- Arthur said you guys were on a date. What happened to working in the office? [if ProgressMarkers.has_learned.Cafe_Date == true and ProgressMarkers.has_learned.Felicia_Morning /]
+	do set_expression("lookaway")
+	Felicia: He… told you about that?
+	do set_expression("angry")
+	Felicia: That stupid loose-lipped dog, always doesn’t know when to stop being open with people.
+	do set_expression("lookaway")
+	Felicia: *sigh* Yes, I wasn’t actually working in the office.
+	Felicia: I snuck out with Arthur during my work hours to go on a date with him.
+	Felicia: I just… didn’t tell you since Mr. Esteban has docked my pay so many times already.
+	do set_expression("lookaway")
+	Felicia: Do me a favor though and… don’t tell anyone about this?
+	Felicia: A docked pay with minimum wage… I don’t wanna experience that any more than I have. I’m sure you understand.
+	Lucius: Alright. You sneaking off to go on a date isn’t that important to the case anyway.
+	Lucius: However, I hope you’ll be more honest with me. I need as much information as I can get to solve this case.
+	do unlock_keyword("hanging out", "noun")
+	do unlock_keyword("cafe”, “noun")
+	do ProgressMarkers.has_learned.Drew_Date == true
+	Felicia: Ah, well, I did see something interesting while I was in the cafe. I think I saw someone who looked like Mrs. Esteban. She was hanging out with someone.
+	Felicia: I recognize him from somewhere, but I just can’t remember.
+	Lucius: She was outside at lunchtime? Interesting. Thank you.
+	=> questions
+
+- Do you recognize these documents? [if ProgressMarkers.has_found.Vault_Documents == true /]
+	Felicia: Not particularly. They look like every other letter or document he tells me to give to someone.
+	(pause)
+	Felicia: Wait, I recognize this one. I got it from this scary-looking anthrocrocodile. Warned me that I shouldn’t open it under any circumstances.
+	Lucius: Well, they’re documents discussing the extrajudicial killings, so it makes sense that they wouldn’t want you to read them.
+	Felicia: So they are related to his crimes. Had a feeling it was the case. So, are you going to arrest the people involved?
+	Lucius: Are you sure you want me to arrest them?
+	Felicia: Yeah. Great, don’t tell me you were involved too.
+	Lucius: No. But according to the contents of the letters, you are.
+	(pause)
+	Felicia: …?
+	Felicia: …
+	(pause)
+	do set_expression("angry")
+	Felicia: [shake]What[/shake]
+	do set_expression("angry")
+	Felicia: [shake]THE[/shake]
+	do set_expression("angry")
+	Felicia: [shake]HELL![/shake]
+	do set_expression("angry")
+	Felicia: [shake]Is dying not enough for this guy to stop being a pain in my ass? Now I’m also a part of some killings I don’t even know a single thing about?? What is it with his ass and his uncontrollable urge to blame and scold me for everything I do and didn’t do? Seriously, what did I do to deserve this??? [/shake]
+	do set_expression("angry")
+	(pause)
+	Felicia: (clears throat) … Sorry for lashing out. Listen, I don’t know what the hell he wrote about me, but it’s not true. I’d rather die than be a part of something like that.
+	=> questions
+
+- Thank you for your time.
+	Felicia: Of course. If you need anything else, I'll be waiting nearby. => END

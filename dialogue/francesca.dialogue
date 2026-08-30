@@ -1,0 +1,74 @@
+~ start
+if ProgressMarkers.has_met.Francesca == false
+	Lucius: Mrs. Esteban, how are you feeling?
+	Francesca: You’d like to ask me some questions, I suppose. Please Just give me a moment. 
+	Lucius: Of course. Take your time.
+	Francesca: …
+	Francesca: Alright. What would you like to know, detective?
+	do ProgressMarkers.has_met.Francesca = true
+else
+	Francesca: Detective? Is everything alright?
+	Lucius: I’d just like to ask you a few more things.
+=> questions
+~ questions
+Francesca: -
+- What did you do this morning?
+	Francesca: Let’s see. I prepared his lunch, made sure he was dressed properly, prepared Anna for school, dropped her off with that anthrocat, then went home.
+	=> questions
+
+- How did you prepare his food today? [if ProgressMarkers.has_learned.Homecooking /]
+	Francesca: Ah well. I must confess that I’m not really a good cook. I wanted to prepare something for him, but I just couldn’t figure it out.
+	do unlock_keyword("Delivery", "noun")
+	Francesca: I kind of panicked and just ordered chicken from Min’s Restaurant and called it my own.
+	=> questions
+
+- Do you know anyone with a personal vendetta against your husband?
+	Francesca: He’s unfortunately made a few enemies with the public because of his work. You can’t really blame him. It’s hard trying to please everyone.
+	Lucius: What about the people close to him?
+	do unlock_keyword("Gary", "name")
+	do unlock_keyword("Ortolano", "name")
+	Francesca: Hmm. He did often bring up that Secretary Ortolano. They had different opinions about how to handle their work.
+	do unlock_keyword("call", "verb")
+	do ProgressMarkers.has_learned.Night_Call = true
+	Francesca: He actually called last night. I don’t know what they talked about, but at one point, Benjamin started laughing and said something like, "You really are thickheaded. You brought this on yourself. Don’t bring me into it."
+	Francesca: He then hung up. He seemed pretty happy after that.
+	Lucius: So Secretary Ortolano. Anyone else come to mind?
+	Francesca: Other than that. I don’t particularly like his secretary. She speaks all polite, but I know she dislikes us. I can see it in her eyes.
+	do unlock_keyword("Drive", "verb")
+	do unlock_keyword("Home", "noun")
+	Francesca: And to think I let her drive me and my daughter to her school. She really is bad luck.
+	=> questions
+
+- Can you tell us anything about these documents? [if ProgressMarkers.has_found.Vault_Documents /]
+	Francesca: How did you-
+	Francesca: Listen. I did not partake in the COCHE scandal in any way, do you understand?
+	Lucius: Of course. Of course.
+	Lucius: However, many of these documents discuss controversial events. If someone were to hate your husband, we may be able to find a clue about who it is in here.
+	Francesca: But-
+	Lucius: If we can narrow it down to a few documents, then we don’t need the rest. We can just leave them here. Otherwise, we might have to bring all of them.
+	Francesca: …
+	Francesca: Well, as long as it stays between you and me. He made sure that a lot of those events never made it to the news. The only one that he failed to completely hide was his work in the extrajudicial killings.
+	do unlock_keyword("Extrajudicial Killings", "noun")
+	Francesca: If one of the events caused his death, it’s most likely that one.
+	=> questions
+
+- So, how’s Drew these days? [if ProgressMarkers.has_learned.Drew_Relationship and ProgressMarkers.has_learned.Drew_Date /]
+	Francesca: Wha- why are you bringing him up all of a sudden?
+	Lucius: Just my curiosity. As a detective, I just like knowing things.
+	Francesca: He’s doing well. He’s landed a big role in a new movie, and he plans on running for the Senate in the next election.
+	Lucius: You sure know a lot about him.
+	Francesca: Well, we stayed friends after our divorce. After all, we split up because we both wanted different things. Not because we hated each other.
+	Lucius: Is that why you met with Mr. Sangster today? Just to keep in touch?
+	Francesca: What do you mean? Meeting with Drew? I was at home the entire day.
+	Lucius: I see, then that person with Mr. Sangster must have just been someone very similar to you. My mistake.
+	do unlock_keyword("Met", "verb")
+	Francesca: It’s alright. Though, I am curious why you thought it was me meeting with Mr. Sangster.
+	Lucius: Actually, it wasn’t me who saw them. I was interrogating a suspect earlier, and she said she saw someone who looked like you with Mr. Sangster during lunch.
+	Francesca: Well, I can assure you that it wasn’t me. I don’t even like coffee.
+	Lucius: [i](I see.)[/i]
+	Lucius: [i](I never mentioned that he was seen at a cafe.)[/i]
+	Lucius: Of course. Witness reports can sometimes be unreliable, especially where faces are involved.
+	=> questions
+
+- Thank you for your time.
+	=> END

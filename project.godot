@@ -21,6 +21,7 @@ Constants="*uid://dgxncmmd3c3py"
 SceneLoader="*uid://dl7i7cdpqh6pv"
 Variables="*uid://chq575pl2ackp"
 DialogueManager="*uid://c3rodes2l3gxb"
+ProgressMarkers="*uid://btk5xoijcg7cc"
 
 [debug]
 
@@ -90,7 +91,7 @@ exit_map={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/calim.dialogue", "res://dialogue/remi.dialogue", "res://dialogue/bryan.dialogue", "res://dialogue/map_prompt.dialogue", "res://dialogue/journal_prompt.dialogue", "res://dialogue/file_case.dialogue", "res://dialogue/lucius_room_start.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/calim.dialogue", "res://dialogue/remi.dialogue", "res://dialogue/bryan.dialogue", "res://dialogue/map_prompt.dialogue", "res://dialogue/journal_prompt.dialogue", "res://dialogue/felicia.dialogue", "res://dialogue/arthur.dialogue", "res://dialogue/gary.dialogue", "res://dialogue/francesca.dialogue")
 
 [physics]
 

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cl8dxfc5teva4"
+path="res://.godot/imported/gary.dialogue-8c5b0bbf9a1e158fc5fe6020bbc4ca40.tres"
+
+[deps]
+
+source_file="res://dialogue/gary.dialogue"
+dest_files=["res://.godot/imported/gary.dialogue-8c5b0bbf9a1e158fc5fe6020bbc4ca40.tres"]
+
+[params]
+
+defaults=true
